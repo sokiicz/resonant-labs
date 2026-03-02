@@ -5,7 +5,9 @@
 (function () {
   'use strict';
 
-  const WEB3FORMS_KEY = '42850de2-a56e-41b1-b23a-3070a5560d6e';
+  const WEB3FORMS_KEY  = '42850de2-a56e-41b1-b23a-3070a5560d6e';
+  // Paste your Google Apps Script web app URL here after deploying it
+  const ADMIN_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhtgGKh2cOVhkYT2oa93VdpGYDj-Exgsfu26ARru_ayMppzhhrx3cmcv6X-c1axm6rtg/exec';
 
   const FLOW = [
     {
@@ -163,6 +165,22 @@
 
           // Newsletter opt-in is captured in the Web3Forms submission above.
           // Manually add them to Buttondown from your dashboard if newsletter_opt_in === 'Yes'.
+
+          // Also save to your Google Apps Script inbox (silent fail if not configured)
+          // text/plain avoids CORS preflight — Apps Script still receives valid JSON
+          if (ADMIN_SCRIPT_URL) {
+            fetch(ADMIN_SCRIPT_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain' },
+              body: JSON.stringify({
+                idea: answers.idea || '',
+                problem: answers.problem || '',
+                name: answers.name || '',
+                email: email || '',
+                newsletter_opt_in: newsletterChecked ? 'Yes' : 'No',
+              }),
+            }).catch(() => {});
+          }
         } else {
           submitted = false;
           if (btn) { btn.textContent = 'Send my idea'; btn.disabled = false; }

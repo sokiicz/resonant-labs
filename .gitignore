@@ -12,6 +12,9 @@ desktop.ini
 *.swp
 *.swo
 
+# Admin tool — keep local only (contains password)
+admin.html
+
 # Secrets — never commit these
 .env
 .env.*
