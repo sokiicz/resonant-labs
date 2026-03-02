@@ -358,7 +358,7 @@ function initNewsletter() {
     // Submit to Buttondown embed endpoint — no API key required
     const data = new FormData();
     data.append('email', email);
-    fetch('https://buttondown.email/api/emails/embed-subscribe/resonantstudio', {
+    fetch('https://buttondown.email/api/emails/embed-subscribe/ResonantLabs', {
       method: 'POST',
       body: data,
       mode: 'no-cors',
