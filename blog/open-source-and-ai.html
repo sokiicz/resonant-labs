@@ -118,7 +118,7 @@
             <div class="author-avatar" aria-hidden="true">👋</div>
             <div class="author-name">Resonant Labs</div>
             <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
-            <a href="mailto:contactme@resonantlabs.online" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Say hello →</a>
+            <a href="mailto:contactme@resonantlabs.online?subject=App%20Idea" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send an idea →</a>
           </div>
         </div>
         <div class="sidebar-card">
@@ -129,19 +129,6 @@
             <a href="#article-content">What this enables</a>
             <a href="#article-content">The real value</a>
           </nav>
-        </div>
-        <div class="sidebar-card">
-          <h4>Share</h4>
-          <div class="share-btns">
-            <button class="share-btn" data-share="twitter" aria-label="Share on X/Twitter">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              X
-            </button>
-            <button class="share-btn" data-share="copy" aria-label="Copy link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-              Copy
-            </button>
-          </div>
         </div>
         <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
           <h4 style="color:var(--purple-light);">Build your own app</h4>
@@ -159,6 +146,17 @@
         <div class="tags-list">
           <a href="../blog.html?category=philosophy" class="tag">Open Source</a><a href="../blog.html?category=philosophy" class="tag">AI</a><a href="../blog.html?category=philosophy" class="tag">Philosophy</a><a href="../blog.html?category=philosophy" class="tag">Claude Code</a><a href="../blog.html?category=philosophy" class="tag">Sharing</a>
         </div>
+      </div>
+      <div class="share-inline">
+        <span class="share-inline-label">Share</span>
+        <button class="share-btn" data-share="twitter" aria-label="Share on X/Twitter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </button>
+        <button class="share-btn" data-share="copy" aria-label="Copy link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          Copy link
+        </button>
       </div>
       <div style="display:flex; gap:var(--space-2); flex-wrap:wrap; padding-top:var(--space-3); border-top: 1px solid var(--border-1);">
         <a href="../blog.html" class="btn btn-ghost btn-sm">
@@ -204,6 +202,10 @@
     </div>
   </footer>
 
+  <script src="../js/site-data.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":false,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
 </body>
 </html>

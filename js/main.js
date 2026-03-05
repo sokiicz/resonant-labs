@@ -6,97 +6,11 @@
 document.documentElement.classList.add('js-ready');
 
 /* ============================================
-   APP DATA
+   APP DATA + BLOG POST DATA
+   Loaded from js/site-data.js — edit that file.
    ============================================ */
-const APPS = [
-  {
-    id: 'music-mouse',
-    name: 'Music Mouse',
-    shortDesc: 'An interactive musical canvas inspired by Laurie Spiegel\'s 1986 classic. Move your mouse — make music. No keyboard, no notes, no rules.',
-    tags: ['Web App', 'Music', 'Interactive'],
-    emoji: '\uD83C\uDFB5',
-    image: 'Media/Music-mouse.png',
-    gradientFrom: '#8b5cf6',
-    gradientTo: '#22d3ee',
-    liveUrl: null,
-    liveLabel: null,
-    githubUrl: null,
-    detailUrl: 'apps/music-mouse.html',
-    releaseDate: '3 Mar 2026',
-  },
-  {
-    id: 'keepawake-pro',
-    name: 'KeepAwake Pro',
-    shortDesc: 'Keeps your Windows PC awake when you need it. Smart AFK simulation, system tray, scheduled hours, global hotkeys — invisible until needed.',
-    tags: ['Windows', 'Utility', 'Desktop'],
-    emoji: '\u2615',
-    image: 'Media/KeepAwake.png',
-    gradientFrom: '#f59e0b',
-    gradientTo: '#ef4444',
-    liveUrl: 'https://github.com/sokiicz/keepawake-pro',
-    liveLabel: 'Download',
-    githubUrl: 'https://github.com/sokiicz/keepawake-pro',
-    detailUrl: 'apps/keepawake-pro.html',
-    releaseDate: '12 Feb 2026',
-  },
-  {
-    id: 'spekplatz',
-    name: 'SpekPlatz',
-    shortDesc: 'A community map for discovering and sharing hidden spots — rooftops, viewpoints, parks, beaches, and more. Find places worth remembering.',
-    tags: ['Web App', 'Community', 'Maps'],
-    emoji: '\uD83D\uDCCD',
-    image: 'Media/Spekplatz.png',
-    gradientFrom: '#10b981',
-    gradientTo: '#3b82f6',
-    liveUrl: 'https://spekplatz.app',
-    liveLabel: 'Open App',
-    githubUrl: 'https://github.com/sokiicz/SpekPlatz',
-    detailUrl: 'apps/spekplatz.html',
-    releaseDate: '20 Feb 2026',
-  },
-];
-
-/* ============================================
-   BLOG POST DATA
-   ============================================ */
-const BLOG_POSTS = [
-  {
-    id: 'why-ai-not-code',
-    title: 'Why I\'m Building Apps with AI Instead of Learning to Code',
-    excerpt: 'I\'ve always had ideas. What I lacked was the technical ability to bring them to life — until Claude Code changed everything.',
-    date: '15 Feb 2026',
-    readTime: '5 min read',
-    tag: 'Thoughts',
-    tagClass: 'badge-primary',
-    gradientFrom: '#8b5cf6',
-    gradientTo: '#22d3ee',
-    url: 'blog/why-ai-not-code.html',
-  },
-  {
-    id: 'art-of-prompting',
-    title: 'The Art of Prompting: How I Describe My Vision to Claude',
-    excerpt: 'Talking to an AI is a skill in itself. Here\'s how I\'ve learned to communicate ideas clearly enough to get exactly what I imagine.',
-    date: '22 Feb 2026',
-    readTime: '7 min read',
-    tag: 'Process',
-    tagClass: 'badge-amber',
-    gradientFrom: '#f59e0b',
-    gradientTo: '#ef4444',
-    url: 'blog/art-of-prompting.html',
-  },
-  {
-    id: 'open-source-and-ai',
-    title: 'Open Source and AI: A New Model for Sharing Software',
-    excerpt: 'If an AI wrote every line, should I charge for it? The answer felt obvious — give it all away, and let ideas multiply.',
-    date: '28 Jan 2026',
-    readTime: '4 min read',
-    tag: 'Philosophy',
-    tagClass: 'badge-cyan',
-    gradientFrom: '#10b981',
-    gradientTo: '#3b82f6',
-    url: 'blog/open-source-and-ai.html',
-  },
-];
+const APPS = (window.SITE_DATA && window.SITE_DATA.apps) || [];
+const BLOG_POSTS = (window.SITE_DATA && window.SITE_DATA.posts) || [];
 
 /* ============================================
    RENDER: APP CARDS
@@ -127,14 +41,14 @@ function renderAppCards(containerId) {
 
     return `
       <article class="app-card fade-in fade-in-delay-${delay}">
-        <a href="${app.detailUrl}" class="app-card-preview" aria-label="View ${app.name} details">
+        <div class="app-card-preview">
           ${previewHtml}
-        </a>
+        </div>
         <div class="app-card-body">
           <div class="app-card-meta">
             <span class="app-release-date">${app.releaseDate}</span>
           </div>
-          <h3 class="app-card-title">${app.name}</h3>
+          <h3 class="app-card-title"><a href="${app.detailUrl}">${app.name}</a></h3>
           <p class="app-card-desc">${app.shortDesc}</p>
           <div class="app-card-tags">
             ${app.tags.map(t => `<button class="tag tag-filter-btn" onclick="filterAppsByTag('${t}')">${t}</button>`).join('')}
@@ -162,12 +76,12 @@ function renderBlogPreview(containerId) {
 
   container.innerHTML = BLOG_POSTS.map((post, i) => `
     <article class="blog-card fade-in fade-in-delay-${i + 1}">
-      <a href="${post.url}" class="blog-card-cover">
+      <div class="blog-card-cover">
         <div class="blog-card-cover-bg" style="background:linear-gradient(135deg,${post.gradientFrom},${post.gradientTo});opacity:0.85;position:absolute;inset:0;"></div>
         <div class="blog-card-cover-label">
           <span class="badge ${post.tagClass}">${post.tag}</span>
         </div>
-      </a>
+      </div>
       <div class="blog-card-body">
         <div class="blog-meta">
           <span>${post.date}</span>
@@ -329,13 +243,105 @@ function initCusdis() {
   const thread = document.getElementById('cusdis_thread');
   if (!thread) return;
   const appId = thread.dataset.appId || '';
-  if (!appId) return;
+  const pageId = thread.dataset.pageId || '';
+  if (!appId || !pageId) return;
   if (!thread.dataset.pageUrl) thread.dataset.pageUrl = window.location.href;
   if (!thread.dataset.pageTitle) thread.dataset.pageTitle = document.title;
-  const s = document.createElement('script');
-  s.src = 'https://cusdis.com/js/cusdis.es.js';
-  s.async = true; s.defer = true;
-  document.body.appendChild(s);
+
+  thread.style.display = 'none';
+  const container = thread.parentNode;
+
+  // Check if visitor has accepted functional cookies via ConsentKit
+  function hasFunctionalConsent() {
+    try {
+      const record = JSON.parse(localStorage.getItem('ck_consent') || '{}');
+      return !!(record.choices && record.choices.functional === true);
+    } catch { return false; }
+  }
+
+  // --- Comment list (rendered from Cusdis public API — plain JSON, no iframe) ---
+  const listEl = document.createElement('div');
+  listEl.className = 'cusdis-comment-list';
+  listEl.innerHTML = '<p class="cusdis-loading">Loading comments…</p>';
+  container.insertBefore(listEl, thread);
+
+  // --- Pending approval note ---
+  const pending = document.createElement('div');
+  pending.className = 'comments-pending-note';
+  pending.style.display = 'none';
+  pending.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg> Comments are reviewed before appearing — yours will show up after approval.';
+  container.insertBefore(pending, thread);
+
+  // Fetch approved comments from Cusdis public API
+  fetch(`https://cusdis.com/api/open/comments?appId=${encodeURIComponent(appId)}&pageId=${encodeURIComponent(pageId)}`)
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const comments = data?.data?.data || [];
+      listEl.innerHTML = '';
+      if (comments.length === 0) {
+        listEl.innerHTML = '<p class="cusdis-no-comments">No comments yet — be the first.</p>';
+      } else {
+        comments.forEach(c => {
+          const el = document.createElement('div');
+          el.className = 'cusdis-comment-item';
+          const meta = document.createElement('div');
+          meta.className = 'cusdis-comment-meta';
+          const name = document.createElement('strong');
+          name.textContent = c.by_nickname || 'Anonymous';
+          const date = document.createElement('time');
+          date.textContent = new Date(c.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+          meta.append(name, document.createTextNode(' · '), date);
+          const body = document.createElement('p');
+          body.textContent = c.content;
+          el.append(meta, body);
+          listEl.appendChild(el);
+        });
+      }
+    })
+    .catch(() => { listEl.innerHTML = ''; });
+
+  // --- Write area: button if consent granted, soft note if not ---
+  let writeEl = null;
+  let loaded = false;
+
+  function renderWriteArea() {
+    if (writeEl) { writeEl.remove(); writeEl = null; }
+    if (loaded) return;
+
+    if (hasFunctionalConsent()) {
+      const btn = document.createElement('button');
+      btn.className = 'comments-toggle-btn';
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Write a comment';
+      btn.addEventListener('click', () => {
+        if (!loaded) {
+          loaded = true;
+          listEl.remove();
+          btn.remove();
+          writeEl = null;
+          pending.style.display = '';
+          thread.style.display = '';
+          const s = document.createElement('script');
+          s.src = 'https://cusdis.com/js/cusdis.es.js';
+          s.async = true;
+          document.body.appendChild(s);
+        }
+      });
+      writeEl = btn;
+    } else {
+      const note = document.createElement('p');
+      note.className = 'cusdis-consent-note';
+      note.innerHTML = 'Want to leave a comment? Accept <strong>functional cookies</strong> using the cookie settings button.';
+      writeEl = note;
+    }
+    container.insertBefore(writeEl, thread);
+  }
+
+  renderWriteArea();
+
+  // Re-evaluate if the visitor updates their consent preferences
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'ck_consent') renderWriteArea();
+  });
 }
 
 /* ============================================
@@ -387,6 +393,46 @@ function initNewsletter() {
 /* ============================================
    INIT
    ============================================ */
+/* ============================================
+   LIGHTBOX (app detail page images)
+   ============================================ */
+function initLightbox() {
+  const imgs = document.querySelectorAll('.app-preview-container img');
+  if (!imgs.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img alt="App screenshot enlarged" />';
+  document.body.appendChild(overlay);
+
+  const lb = overlay.querySelector('img');
+
+  function open(src) {
+    lb.src = src;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  imgs.forEach(img => img.addEventListener('click', () => open(img.src)));
+  overlay.addEventListener('click', (e) => { if (e.target !== lb) close(); });
+  overlay.querySelector('.lightbox-close').addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+}
+
+function initBgAmbient() {
+  if (document.getElementById('bg-orb-1')) return;
+  [1, 2, 3].forEach(n => {
+    const el = document.createElement('div');
+    el.id = 'bg-orb-' + n;
+    el.className = 'bg-orb';
+    document.body.appendChild(el);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderAppCards('apps-grid');
   renderBlogPreview('blog-preview-grid');
@@ -397,5 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCusdis();
   initReadingProgress();
   initNewsletter();
+  initLightbox();
+  initBgAmbient();
   requestAnimationFrame(() => observeFadeIns());
 });

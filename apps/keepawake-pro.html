@@ -72,6 +72,8 @@
 
   <section class="app-tabs-section">
     <div class="container">
+      <div class="app-detail-layout">
+      <div>
       <div class="tabs-nav">
         <button class="tab-btn active" data-tab="ka-overview">Overview</button>
         <button class="tab-btn" data-tab="ka-built">How It Was Built</button>
@@ -121,16 +123,30 @@
           <a href="https://github.com/sokiicz/keepawake-pro" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:8px;">View Source on GitHub →</a>
         </div>
       </div>
+      </div><!-- end main -->
+      <aside class="article-sidebar" aria-label="App sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Labs</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
+            <a href="mailto:contactme@resonantlabs.online?subject=App%20Idea" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send an idea →</a>
+          </div>
+        </div>
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own app</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to code. Just describe what you want and let Claude Code build it.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+      </aside>
+      </div><!-- end app-detail-layout -->
     </div>
   </section>
 
   <section class="comments-section">
     <div class="container">
-      <h3>💬 Comments</h3>
-      <span class="comments-no-login-note">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        No account needed — just enter your name and comment
-      </span>
+      <h3>Got thoughts?</h3>
+      <p class="comments-intro">Questions, feedback, or just want to say it helped? All welcome — no account needed, just drop a name and write.</p>
       <div id="cusdis_thread"
            data-host="https://cusdis.com"
            data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e"
@@ -162,6 +178,10 @@
       </div>
     </div>
   </footer>
+  <script src="../js/site-data.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":false,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
 </body>
 </html>
