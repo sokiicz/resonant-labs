@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building Resonant Labs — A Portfolio Site With No HTML Written — Resonant Labs</title>
+  <meta name="description" content="How I built a full portfolio website with dark theme, tag filtering, cookie consent, and comments — entirely through AI conversation, not a line of code written by hand.">
+  <meta property="og:title" content="Building Resonant Labs: A Portfolio Site With No HTML Written">
+  <meta property="og:description" content="How I built a full portfolio website — dark theme, tag filtering, cookie consent, comments — entirely through AI conversation.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 6,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--grad-primary); z-index:200; transition:width 0.1s linear; width:0%; }
+  </style>
+  <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage:              'denied',
+      ad_user_data:            'denied',
+      ad_personalization:      'denied',
+      analytics_storage:       'denied',
+      functionality_storage:   'denied',
+      personalization_storage: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9635SSK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9635SSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo" aria-label="Resonant Labs home">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#lg-rl1)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="lg-rl1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Labs
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#apps">Apps</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" role="menu">
+    <a href="../index.html#apps">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="blog-post-hero" style="padding-top: calc(var(--nav-h) + var(--space-5));">
+    <div class="container" style="max-width: 900px;">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:var(--space-4);">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">Journal</a><span class="breadcrumb-sep">›</span>
+        <span>Building Resonant Labs</span>
+      </nav>
+      <div class="post-meta-header">
+        <span class="badge badge-primary">Process</span>
+        <span class="blog-meta-dot"></span>
+        <span style="font-size:0.85rem; color:var(--text-4);">6 March 2026</span>
+        <span class="blog-meta-dot"></span>
+        <span style="font-size:0.85rem; color:var(--text-4);">8 min read</span>
+      </div>
+      <h1>Building <span class="gradient-text">Resonant Labs</span>:<br>A Portfolio Site with No HTML Written</h1>
+      <p class="post-subtitle">I had apps without a home. So I built one — a full portfolio site with dark space theme, animated background, tag filtering, cookie consent, comments, and newsletter. Every line written by AI. Here's exactly how it came together.</p>
+      <div class="blog-post-cover">
+        <img src="../Media/ResonantLabs.png" alt="Resonant Labs website" style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius-lg);" loading="lazy">
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="max-width: 1100px;">
+    <div class="article-layout">
+      <main class="article-content" id="article-content">
+
+        <p>Before Resonant Labs existed, I had a problem that any solo creator eventually runs into: I was building things with no place to put them. KeepAwake was done. SpekPlatz was live. Music Mouse was working. But they lived scattered across GitHub repos, with no context, no presentation, no story connecting them.</p>
+
+        <p>I needed a home for them. And since I was already using Claude Code to build the apps themselves, building the website the same way felt like the obvious choice.</p>
+
+        <h2>The concept first</h2>
+
+        <p>Before writing — or describing — a single line, I spent time thinking about what this site actually needed to be. Not just technically, but in terms of feel. I wanted something that communicated the right things immediately: these are real apps, they're free, they're built differently, the person behind them is approachable.</p>
+
+        <p>That led to a clear brief: a deep dark space theme, a purple-to-cyan colour palette, app cards with screenshots and live links, a blog for documenting the journey, an about section that actually told the story, and — importantly — a way for people to contact me with ideas.</p>
+
+        <p>This is the part that doesn't get mentioned enough when people talk about AI-generated websites: the AI doesn't decide any of that. I thought through the whole concept, every section, every feature, every design decision. Claude Code's job was to implement what I described. The thinking, the product instincts, the vision — that's all human work. The implementation is the AI's.</p>
+
+        <blockquote>"It's not that the AI builds the site on its own. It's that you build it by describing it — by conversation, not by writing syntax. Your thinking is the skill. The AI is the tool."</blockquote>
+
+        <h2>What actually got built</h2>
+
+        <p>The full site ended up with more features than I originally planned, because once you're in flow the scope naturally expands. The final list:</p>
+
+        <ul style="margin: var(--space-3) 0; padding-left: var(--space-3); color: var(--text-3); line-height: 2;">
+          <li><strong style="color:var(--text-2);">Design system</strong> — CSS custom properties for every colour, spacing unit, shadow, and radius. One file to control the whole visual language.</li>
+          <li><strong style="color:var(--text-2);">Animated ambient orbs</strong> — Fixed background orbs that breathe gently, giving the dark theme a sense of depth and life.</li>
+          <li><strong style="color:var(--text-2);">App cards with tag filtering</strong> — Cards rendered from a simple data file. Filter by category. Each card links to a full detail page.</li>
+          <li><strong style="color:var(--text-2);">Blog with full post layout</strong> — Reading progress bar, table of contents sidebar, share buttons, article footer with tags.</li>
+          <li><strong style="color:var(--text-2);">Cookie consent (ConsentKit)</strong> — Built from scratch when I refused to pay for a third-party tool. Full GDPR, Google Consent Mode v2, four categories.</li>
+          <li><strong style="color:var(--text-2);">Comments (Cusdis)</strong> — Open-source comment system. No account needed to leave a comment. Only loads with consent.</li>
+          <li><strong style="color:var(--text-2);">Idea chatbot</strong> — A floating widget that collects app ideas from visitors and submits them by email. Built to encourage the community to suggest what to build next.</li>
+          <li><strong style="color:var(--text-2);">Newsletter signup</strong> — Buttondown integration for people who want to follow along.</li>
+          <li><strong style="color:var(--text-2);">Google Tag Manager + Analytics</strong> — Proper setup with consent mode so tracking respects user choices.</li>
+        </ul>
+
+        <h2>The development loop</h2>
+
+        <p>Working with Claude Code on a site like this follows a clear rhythm. Describe a section, review what comes out, refine. Describe the next section. Find something that doesn't feel right, describe the fix. The iterations are fast — usually resolved in one or two exchanges.</p>
+
+        <p>The most important skill I developed wasn't technical. It was learning to describe visual and functional ideas precisely enough that the AI could implement them exactly. "A subtle glow behind the card on hover" is clearer than "make it look nice." "The orbs should breathe in place, scale up and down slowly, not drift across the screen" is better than "animate the background."</p>
+
+        <p>That precision comes from actually thinking through what you want before you ask. Which, again, is the human work. The AI handles the rest.</p>
+
+        <h2>The moment it got recursive</h2>
+
+        <p>At some point during the build, I needed a cookie consent widget. I looked at the available options, decided not to pay for any of them, and turned to Claude Code. The result was ConsentKit — a full open-source consent widget that now lives on every page of this site.</p>
+
+        <p>I built the tool for the site inside the same workflow I was using to build the site. Then I published that tool separately so anyone else can use it. The whole thing became recursive: the process produced not just the website, but a piece of open-source software that the website itself now runs on.</p>
+
+        <p>That moment crystallised something for me. The real output of this way of building isn't just the specific thing you set out to make. It's the byproducts — the smaller pieces, the tools, the solutions to problems you encounter along the way. Each one can be extracted, published, and given away.</p>
+
+        <h2>What it cost</h2>
+
+        <p>In money terms: a few dollars of API usage spread across many sessions. The domain. That's it. No designer. No developer. No agency. No monthly platform fee.</p>
+
+        <p>In time terms: a few focused weeks of work — most of it thinking, deciding, describing, reviewing, and iterating. The actual "typing" involved was writing descriptions and reading responses, not writing code.</p>
+
+        <p>For anyone considering building something similar: the barrier is much lower than you think. You don't need to understand CSS variables or JavaScript modules or build systems. You need to be able to articulate clearly what you want. If you can describe a product clearly to a colleague, you can build it with Claude Code.</p>
+
+        <h2>What comes next</h2>
+
+        <p>The site is a living thing. New apps get added as I build them. New posts go up when there's something worth writing about. The idea chatbot collects suggestions from visitors, and the most interesting ones will become actual apps.</p>
+
+        <p>I'm currently working on a time-tracking and invoicing tool — something I currently pay for across two different subscriptions. Same logic as ConsentKit: if you're paying for something simple, ask whether you could just build it instead. The answer is increasingly yes.</p>
+
+        <p>If you're reading this and you have an idea — an app you wish existed, a tool you're currently paying for that feels overpriced, a small thing that would make your work easier — send it. I'll build it and release it here, free for everyone.</p>
+
+      </main>
+
+      <aside class="article-sidebar" aria-label="Article sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Labs</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
+            <a href="mailto:contactme@resonantstudio.online?subject=App%20Idea" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send an idea →</a>
+          </div>
+        </div>
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own site</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to know how to code. Describe what you want and Claude Code builds it. Seriously.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+        <div class="sidebar-card">
+          <h4>In this post</h4>
+          <nav class="toc-list" aria-label="Table of contents">
+            <a href="#article-content">The concept first</a>
+            <a href="#article-content">What got built</a>
+            <a href="#article-content">The development loop</a>
+            <a href="#article-content">When it got recursive</a>
+            <a href="#article-content">What it cost</a>
+            <a href="#article-content">What comes next</a>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 900px;">
+    <footer class="article-footer">
+      <div style="margin-bottom: var(--space-3);">
+        <p style="font-size:0.85rem; font-weight:600; color:var(--text-4); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;">Tags</p>
+        <div class="tags-list">
+          <a href="../blog.html" class="tag">Resonant Labs</a><a href="../blog.html" class="tag">Claude Code</a><a href="../blog.html" class="tag">Process</a><a href="../blog.html" class="tag">Web</a><a href="../blog.html" class="tag">Design</a><a href="../blog.html" class="tag">Open Source</a>
+        </div>
+      </div>
+      <div class="share-inline">
+        <span class="share-inline-label">Share</span>
+        <button class="share-btn" data-share="twitter" aria-label="Share on X/Twitter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </button>
+        <button class="share-btn" data-share="copy" aria-label="Copy link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          Copy link
+        </button>
+      </div>
+      <div style="display:flex; gap:var(--space-2); flex-wrap:wrap; padding-top:var(--space-3); border-top: 1px solid var(--border-1);">
+        <a href="../blog.html" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          All Posts
+        </a>
+        <a href="../index.html#apps" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Explore Apps
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <section class="comments-section" aria-labelledby="comments-heading">
+    <div class="container" style="max-width: 900px;">
+      <h3 id="comments-heading">Got thoughts?</h3>
+      <p class="comments-intro">Reactions, questions, a different take — all welcome. No account needed, just drop a name and write.</p>
+      <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e" data-page-id="building-resonant-labs" data-theme="dark"></div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#flg-rl1)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="flg-rl1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Labs
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../index.html#apps">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantstudio.online">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Labs</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
+</body>
+</html>

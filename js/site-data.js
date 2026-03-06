@@ -103,6 +103,30 @@ window.SITE_DATA = {
   ---------------------------------------------------------- */
   posts: [
     {
+      id: 'building-resonant-labs',
+      title: 'Building Resonant Labs: A Portfolio Site with No HTML Written',
+      excerpt: 'I had apps without a home. So I built one — dark theme, tag filtering, cookie consent, comments. Every line by AI. Here\'s exactly how it came together.',
+      date: '6 Mar 2026',
+      readTime: '8 min read',
+      tag: 'Process',
+      tagClass: 'badge-primary',
+      gradientFrom: '#8b5cf6',
+      gradientTo:   '#22d3ee',
+      url: 'blog/building-resonant-labs.html',
+    },
+    {
+      id: 'i-built-a-cookie-banner',
+      title: 'I Needed a Cookie Banner. So I Built One — Free for Everyone.',
+      excerpt: 'Refused to pay for a consent tool, so I built ConsentKit — open-source, GDPR-compliant, Google Consent Mode v2, fully featured. Zero cost to use.',
+      date: '6 Mar 2026',
+      readTime: '6 min read',
+      tag: 'Build',
+      tagClass: 'badge-cyan',
+      gradientFrom: '#10b981',
+      gradientTo:   '#06b6d4',
+      url: 'blog/i-built-a-cookie-banner.html',
+    },
+    {
       id: 'art-of-prompting',
       title: 'The Art of Prompting: How I Describe My Vision to Claude',
       excerpt: 'Talking to an AI is a skill in itself. Here\'s how I\'ve learned to communicate ideas clearly enough to get exactly what I imagine.',

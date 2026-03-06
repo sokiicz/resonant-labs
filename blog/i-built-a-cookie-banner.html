@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Needed a Cookie Banner. So I Built One — Resonant Labs</title>
+  <meta name="description" content="Refused to pay for a cookie consent tool, so I built ConsentKit — a free, open-source GDPR banner anyone can use. Here's the story.">
+  <meta property="og:title" content="I Needed a Cookie Banner. So I Built One and Made It Free.">
+  <meta property="og:description" content="Refused to pay for a cookie consent tool, so I built ConsentKit — a free, open-source GDPR banner anyone can use.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--grad-primary); z-index:200; transition:width 0.1s linear; width:0%; }
+  </style>
+  <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage:              'denied',
+      ad_user_data:            'denied',
+      ad_personalization:      'denied',
+      analytics_storage:       'denied',
+      functionality_storage:   'denied',
+      personalization_storage: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9635SSK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9635SSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo" aria-label="Resonant Labs home">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#lg-ck1)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="lg-ck1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Labs
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#apps">Apps</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" role="menu">
+    <a href="../index.html#apps">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="blog-post-hero" style="padding-top: calc(var(--nav-h) + var(--space-5));">
+    <div class="container" style="max-width: 900px;">
+      <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:var(--space-4);">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../blog.html">Journal</a><span class="breadcrumb-sep">›</span>
+        <span>ConsentKit</span>
+      </nav>
+      <div class="post-meta-header">
+        <span class="badge badge-cyan">Build</span>
+        <span class="blog-meta-dot"></span>
+        <span style="font-size:0.85rem; color:var(--text-4);">6 March 2026</span>
+        <span class="blog-meta-dot"></span>
+        <span style="font-size:0.85rem; color:var(--text-4);">6 min read</span>
+      </div>
+      <h1>I Needed a Cookie Banner.<br>So I <span class="gradient-text">Built One</span> — Free for Everyone.</h1>
+      <p class="post-subtitle">Refused to pay another monthly fee for a cookie consent tool. So I described what I wanted to Claude Code, and ConsentKit was born — open source, fully featured, and yours to use at zero cost.</p>
+      <div class="blog-post-cover">
+        <img src="../Media/Consentkit.png" alt="ConsentKit cookie consent banner" style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius-lg);" loading="lazy">
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="max-width: 1100px;">
+    <div class="article-layout">
+      <main class="article-content" id="article-content">
+
+        <p>When I set up Resonant Labs, I needed a proper cookie consent banner. GDPR is real, Google Consent Mode v2 is real, and if you're running analytics you need to handle it properly. So I did what most people do: I started looking at solutions.</p>
+
+        <p>The options were fine. CookieYes, Cookiebot, Termly — all solid, all professional. Also all behind a subscription. Monthly fees for a widget. Something that sits on your site and shows a popup. Something that, fundamentally, just needs to store a few values in localStorage and maybe send an event to Google.</p>
+
+        <p>I decided not to pay.</p>
+
+        <h2>The problem with most cookie tools</h2>
+
+        <p>It's not that the tools are bad. It's that the pricing model doesn't make sense once you understand what cookie consent actually requires technically. At its core, a GDPR-compliant banner needs to:</p>
+
+        <ul style="margin: var(--space-3) 0; padding-left: var(--space-3); color: var(--text-3); line-height: 2;">
+          <li>Show a banner and collect consent by category</li>
+          <li>Store the user's preferences</li>
+          <li>Block third-party scripts until consent is granted</li>
+          <li>Support Google Consent Mode v2 signals</li>
+          <li>Let users change their mind later</li>
+        </ul>
+
+        <p>That's it. There's no reason this should cost money every month. There's no reason a small personal site or a startup should be paying the same rate as a large e-commerce platform just to put a popup on their homepage.</p>
+
+        <blockquote>"Monthly fees for a widget that stores a preference in localStorage felt absurd. So I described what I wanted to Claude Code and built it myself."</blockquote>
+
+        <h2>What I built</h2>
+
+        <p><strong style="color:var(--text-1)">ConsentKit</strong> is an open-source cookie consent widget built entirely through AI conversation. It's a single JavaScript file — 20KB raw, under 6KB gzipped — that you drop into any website. No server required. No account. No subscription.</p>
+
+        <p>It supports four consent categories out of the box: Necessary, Analytics, Marketing, and Functional. The banner appearance is fully configurable — colours, position, copy, everything — through a simple JSON config. And it integrates natively with Google Consent Mode v2, automatically sending <code>gtag('consent', 'update', ...)</code> when visitors make their choice.</p>
+
+        <p>Some things I wanted that most paid tools still get wrong:</p>
+
+        <ul style="margin: var(--space-3) 0; padding-left: var(--space-3); color: var(--text-3); line-height: 2;">
+          <li><strong style="color:var(--text-2);">Shadow DOM isolation</strong> — the banner's styles never bleed into your site</li>
+          <li><strong style="color:var(--text-2);">Scroll lock</strong> — visitors can't browse past the banner without making a choice</li>
+          <li><strong style="color:var(--text-2);">Reopener button</strong> — a persistent icon so users can always change their preferences</li>
+          <li><strong style="color:var(--text-2);">Static site friendly</strong> — works with no backend, config lives inline in the page</li>
+          <li><strong style="color:var(--text-2);">Fully on-brand</strong> — I wanted it to look like part of the site, not a generic popup</li>
+        </ul>
+
+        <h2>The build process</h2>
+
+        <p>I described the full widget to Claude Code in a single session: the architecture, the config schema, the Shadow DOM approach, the Google Consent Mode integration. We worked through it layer by layer — the banner UI, the category toggles, the localStorage persistence, the reopener button.</p>
+
+        <p>What came out the other side was clean TypeScript with an esbuild pipeline. I shaped every decision through conversation — which categories to include, what the copy should say, how the animation should feel, where the reopener button should sit. Claude Code handled the implementation. I handled the vision.</p>
+
+        <p>That's the dynamic that makes this work. It's not that AI does it all on its own. I still think through every concept, guide each step, and make every meaningful decision. But instead of writing code, I do it by talking. My thinking, my instincts, my product sense — implemented through conversation rather than syntax.</p>
+
+        <h2>Why free and open source</h2>
+
+        <p>The logic is the same as everything else I build here. The code was generated by AI. I contributed the thinking, the product decisions, the time spent iterating. But the actual implementation — the TypeScript, the CSS, the build config — that came from Claude Code. Charging for it didn't feel right.</p>
+
+        <p>Beyond the ethics, there's a practical argument: the world would be better if more small sites, indie projects, and solo developers had access to a proper consent tool without paying a monthly fee. Privacy compliance shouldn't be a privilege for those who can afford the subscription.</p>
+
+        <p>So here it is. MIT licensed. Free forever.</p>
+
+        <h2>This is one of the best AI use cases</h2>
+
+        <p>I keep coming back to this pattern: don't outsource, don't subscribe, don't pay for something a good AI conversation can build from scratch in an afternoon. ConsentKit cost me a few dollars of API usage and a few hours of focused thinking. The result is something I'd have previously paid for every month, indefinitely.</p>
+
+        <p>The savings compound immediately. No recurring cost. Full control. Exactly the features I want, none I don't. I can extend it whenever I need to. And now anyone else can use it too, for free, for any project.</p>
+
+        <p>If you need cookie consent for your site, use it. If you want to extend it or improve it, fork it. If you'd like something similar built for a different problem you're paying to solve — send me the idea.</p>
+
+      </main>
+
+      <aside class="article-sidebar" aria-label="Article sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Labs</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
+            <a href="mailto:contactme@resonantstudio.online?subject=App%20Idea" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send an idea →</a>
+          </div>
+        </div>
+        <div class="sidebar-card" style="background: var(--cyan-dim); border-color: rgba(34,211,238,0.25);">
+          <h4 style="color:var(--cyan);">ConsentKit on GitHub</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">Free, open-source GDPR cookie consent. Drop one JS file into any site. MIT licensed.</p>
+          <a href="https://github.com/sokiicz/consentkit" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            View on GitHub →
+          </a>
+        </div>
+        <div class="sidebar-card">
+          <h4>In this post</h4>
+          <nav class="toc-list" aria-label="Table of contents">
+            <a href="#article-content">The problem with paid tools</a>
+            <a href="#article-content">What ConsentKit does</a>
+            <a href="#article-content">The build process</a>
+            <a href="#article-content">Why free and open source</a>
+            <a href="#article-content">Best AI use case</a>
+          </nav>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 900px;">
+    <footer class="article-footer">
+      <div style="margin-bottom: var(--space-3);">
+        <p style="font-size:0.85rem; font-weight:600; color:var(--text-4); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;">Tags</p>
+        <div class="tags-list">
+          <a href="../blog.html" class="tag">ConsentKit</a><a href="../blog.html" class="tag">GDPR</a><a href="../blog.html" class="tag">Open Source</a><a href="../blog.html" class="tag">Claude Code</a><a href="../blog.html" class="tag">Build</a><a href="../blog.html" class="tag">Cookies</a>
+        </div>
+      </div>
+      <div class="share-inline">
+        <span class="share-inline-label">Share</span>
+        <button class="share-btn" data-share="twitter" aria-label="Share on X/Twitter">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </button>
+        <button class="share-btn" data-share="copy" aria-label="Copy link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          Copy link
+        </button>
+      </div>
+      <div style="display:flex; gap:var(--space-2); flex-wrap:wrap; padding-top:var(--space-3); border-top: 1px solid var(--border-1);">
+        <a href="../blog.html" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          All Posts
+        </a>
+        <a href="../index.html#apps" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Explore Apps
+        </a>
+        <a href="https://github.com/sokiicz/consentkit" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          ConsentKit on GitHub
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <section class="comments-section" aria-labelledby="comments-heading">
+    <div class="container" style="max-width: 900px;">
+      <h3 id="comments-heading">Got thoughts?</h3>
+      <p class="comments-intro">Reactions, questions, a different take — all welcome. No account needed, just drop a name and write.</p>
+      <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e" data-page-id="i-built-a-cookie-banner" data-theme="dark"></div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none" aria-hidden="true">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#flg-ck1)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="flg-ck1" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Labs
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../index.html#apps">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantstudio.online">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Labs</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
+</body>
+</html>
