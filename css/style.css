@@ -87,6 +87,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -1932,48 +1933,18 @@ footer {
 
 /* ============================================
    BACKGROUND AMBIENT ORBS
-   Each orb is its own element so it can independently
-   drift, breathe, and scale via transform animations.
+   Absolute-positioned within the document — they stay
+   at their spots in the page as the user scrolls past.
+   All sizes/positions/colors set by initBgAmbient() in JS.
    ============================================ */
 .bg-orb {
-  position: fixed;
+  position: absolute;
   pointer-events: none;
   z-index: 0;
   border-radius: 50%;
   filter: blur(90px);
   will-change: transform, opacity;
-}
-
-/* Cyan — top-left, large, slow */
-#bg-orb-1 {
-  width: 46vw;
-  height: 46vw;
-  background: radial-gradient(circle, rgba(34,211,238,0.30) 0%, transparent 65%);
-  top: -20vh;
-  left: -15vw;
-  animation: orbDrift1 8s ease-in-out infinite;
-}
-
-/* Purple — bottom-right, medium */
-#bg-orb-2 {
-  width: 38vw;
-  height: 38vw;
-  background: radial-gradient(circle, rgba(139,92,246,0.28) 0%, transparent 65%);
-  bottom: -18vh;
-  right: -12vw;
-  animation: orbDrift2 11s ease-in-out infinite;
-  animation-delay: -4s;
-}
-
-/* Soft purple — mid-page, smaller, livelier */
-#bg-orb-3 {
-  width: 28vw;
-  height: 28vw;
-  background: radial-gradient(circle, rgba(139,92,246,0.20) 0%, transparent 65%);
-  top: 30vh;
-  left: 15vw;
-  animation: orbDrift3 14s ease-in-out infinite;
-  animation-delay: -7s;
+  transform-origin: center center;
 }
 
 @keyframes orbDrift1 {

@@ -435,10 +435,31 @@ function initLightbox() {
 
 function initBgAmbient() {
   if (document.getElementById('bg-orb-1')) return;
-  [1, 2, 3].forEach(n => {
+  // 8 orbs spread across the full document height — absolute, not fixed.
+  // User scrolls through them; they stay at their spots in the page.
+  const orbs = [
+    { top: '2%',  left: '-8vw',  w: '44vw', color: 'rgba(34,211,238,0.28)',  anim: 'orbDrift1', dur: '8s',  delay: '0s'  },
+    { top: '13%', right: '-6vw', w: '34vw', color: 'rgba(139,92,246,0.26)', anim: 'orbDrift2', dur: '11s', delay: '-4s' },
+    { top: '25%', left: '28vw',  w: '22vw', color: 'rgba(139,92,246,0.20)', anim: 'orbDrift3', dur: '14s', delay: '-7s' },
+    { top: '38%', right: '4vw',  w: '30vw', color: 'rgba(34,211,238,0.22)', anim: 'orbDrift1', dur: '9s',  delay: '-3s' },
+    { top: '52%', left: '-4vw',  w: '38vw', color: 'rgba(139,92,246,0.24)', anim: 'orbDrift2', dur: '12s', delay: '-6s' },
+    { top: '65%', left: '38vw',  w: '20vw', color: 'rgba(34,211,238,0.18)', anim: 'orbDrift3', dur: '10s', delay: '-2s' },
+    { top: '78%', right: '-7vw', w: '32vw', color: 'rgba(139,92,246,0.22)', anim: 'orbDrift1', dur: '13s', delay: '-5s' },
+    { top: '91%', left: '12vw',  w: '26vw', color: 'rgba(34,211,238,0.20)', anim: 'orbDrift2', dur: '7s',  delay: '-1s' },
+  ];
+  orbs.forEach((o, i) => {
     const el = document.createElement('div');
-    el.id = 'bg-orb-' + n;
+    el.id = 'bg-orb-' + (i + 1);
     el.className = 'bg-orb';
+    el.style.cssText = `
+      width:${o.w}; height:${o.w};
+      background:radial-gradient(circle,${o.color} 0%,transparent 65%);
+      top:${o.top};
+      ${o.left  ? 'left:'  + o.left  + ';' : ''}
+      ${o.right ? 'right:' + o.right + ';' : ''}
+      animation:${o.anim} ${o.dur} ease-in-out infinite;
+      animation-delay:${o.delay};
+    `;
     document.body.appendChild(el);
   });
 }

@@ -24,6 +24,36 @@ window.SITE_DATA = {
   ---------------------------------------------------------- */
   apps: [
     {
+      id: 'consentkit',
+      name: 'ConsentKit',
+      shortDesc: 'Free, open-source GDPR cookie consent widget. Drop one JS file into any site — full consent management, Google Consent Mode v2, four categories. No subscription.',
+      tags: ['Open Source', 'GDPR', 'JavaScript'],
+      emoji: '🍪',
+      image: 'Media/Consentkit.png',
+      gradientFrom: '#10b981',
+      gradientTo:   '#06b6d4',
+      githubUrl: 'https://github.com/sokiicz/consentkit',
+      liveUrl:   'https://github.com/sokiicz/consentkit',
+      liveLabel: 'Download',
+      detailUrl: 'apps/consentkit.html',
+      releaseDate: '6 Mar 2026',
+    },
+    {
+      id: 'resonant-labs',
+      name: 'Resonant Labs',
+      shortDesc: 'This very website — a full portfolio site with dark space theme, animated background, tag filtering, cookie consent, comments, and newsletter. Built entirely with Claude Code.',
+      tags: ['Web App', 'Portfolio', 'Open Source'],
+      emoji: '🌊',
+      image: 'Media/ResonantLabs.png',
+      gradientFrom: '#8b5cf6',
+      gradientTo:   '#22d3ee',
+      githubUrl: 'https://github.com/sokiicz/resonant-labs',
+      liveUrl:   null,
+      liveLabel: 'Open App',
+      detailUrl: 'apps/resonant-labs.html',
+      releaseDate: '1 Mar 2026',
+    },
+    {
       // Internal ID — must match the filename in apps/
       id: 'music-mouse',
 
@@ -102,30 +132,6 @@ window.SITE_DATA = {
        the actual blog post file you created.
   ---------------------------------------------------------- */
   posts: [
-    {
-      id: 'building-resonant-labs',
-      title: 'Building Resonant Labs: A Portfolio Site with No HTML Written',
-      excerpt: 'I had apps without a home. So I built one — dark theme, tag filtering, cookie consent, comments. Every line by AI. Here\'s exactly how it came together.',
-      date: '6 Mar 2026',
-      readTime: '8 min read',
-      tag: 'Process',
-      tagClass: 'badge-primary',
-      gradientFrom: '#8b5cf6',
-      gradientTo:   '#22d3ee',
-      url: 'blog/building-resonant-labs.html',
-    },
-    {
-      id: 'i-built-a-cookie-banner',
-      title: 'I Needed a Cookie Banner. So I Built One — Free for Everyone.',
-      excerpt: 'Refused to pay for a consent tool, so I built ConsentKit — open-source, GDPR-compliant, Google Consent Mode v2, fully featured. Zero cost to use.',
-      date: '6 Mar 2026',
-      readTime: '6 min read',
-      tag: 'Build',
-      tagClass: 'badge-cyan',
-      gradientFrom: '#10b981',
-      gradientTo:   '#06b6d4',
-      url: 'blog/i-built-a-cookie-banner.html',
-    },
     {
       id: 'art-of-prompting',
       title: 'The Art of Prompting: How I Describe My Vision to Claude',
