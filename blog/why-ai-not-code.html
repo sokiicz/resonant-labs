@@ -14,8 +14,33 @@
   <style>
     .reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--grad-primary); z-index:200; transition:width 0.1s linear; width:0%; }
   </style>
+  <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage:              'denied',
+      ad_user_data:            'denied',
+      ad_personalization:      'denied',
+      analytics_storage:       'denied',
+      functionality_storage:   'denied',
+      personalization_storage: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9635SSK');</script>
+  <!-- End Google Tag Manager -->
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9635SSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 
@@ -206,7 +231,7 @@
   <script src="../js/site-data.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/chatbot.js"></script>
-  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":false,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
   <script src="../js/consentkit.js" defer></script>
 </body>
 </html>

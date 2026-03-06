@@ -79,10 +79,10 @@
 
 /* === Reset === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 16px; background: var(--bg-1); }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg-1);
+  background: transparent;
   color: var(--text-2);
   line-height: 1.6;
   overflow-x: hidden;
@@ -1913,7 +1913,7 @@ footer {
 .bg-orb {
   position: fixed;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
   border-radius: 50%;
   filter: blur(90px);
   will-change: transform, opacity;
@@ -1923,7 +1923,7 @@ footer {
 #bg-orb-1 {
   width: 46vw;
   height: 46vw;
-  background: radial-gradient(circle, rgba(34,211,238,0.55) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(34,211,238,0.30) 0%, transparent 65%);
   top: -20vh;
   left: -15vw;
   animation: orbDrift1 12s ease-in-out infinite alternate;
@@ -1933,7 +1933,7 @@ footer {
 #bg-orb-2 {
   width: 38vw;
   height: 38vw;
-  background: radial-gradient(circle, rgba(139,92,246,0.50) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,92,246,0.28) 0%, transparent 65%);
   bottom: -18vh;
   right: -12vw;
   animation: orbDrift2 16s ease-in-out infinite alternate;
@@ -1944,7 +1944,7 @@ footer {
 #bg-orb-3 {
   width: 28vw;
   height: 28vw;
-  background: radial-gradient(circle, rgba(139,92,246,0.38) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,92,246,0.20) 0%, transparent 65%);
   top: 30vh;
   left: 15vw;
   animation: orbDrift3 9s ease-in-out infinite alternate;
@@ -1952,25 +1952,25 @@ footer {
 }
 
 @keyframes orbDrift1 {
-  0%   { transform: translate(0vw, 0vh)   scale(1);    opacity: 0.45; }
-  20%  { transform: translate(20vw, 12vh) scale(1.15); opacity: 0.65; }
-  45%  { transform: translate(10vw, 28vh) scale(0.88); opacity: 0.5; }
-  70%  { transform: translate(26vw, 5vh)  scale(1.22); opacity: 0.7; }
-  100% { transform: translate(14vw, 20vh) scale(1.05); opacity: 0.48; }
+  0%   { transform: translate(0vw, 0vh)   scale(1);    opacity: 0.28; }
+  20%  { transform: translate(20vw, 12vh) scale(1.15); opacity: 0.42; }
+  45%  { transform: translate(10vw, 28vh) scale(0.88); opacity: 0.32; }
+  70%  { transform: translate(26vw, 5vh)  scale(1.22); opacity: 0.45; }
+  100% { transform: translate(14vw, 20vh) scale(1.05); opacity: 0.30; }
 }
 
 @keyframes orbDrift2 {
-  0%   { transform: translate(0vw, 0vh)     scale(1);    opacity: 0.4; }
-  35%  { transform: translate(-24vw, -18vh) scale(1.2);  opacity: 0.6; }
-  65%  { transform: translate(-10vw, -5vh)  scale(0.85); opacity: 0.68; }
-  100% { transform: translate(-30vw, -22vh) scale(1.12); opacity: 0.42; }
+  0%   { transform: translate(0vw, 0vh)     scale(1);    opacity: 0.25; }
+  35%  { transform: translate(-24vw, -18vh) scale(1.2);  opacity: 0.38; }
+  65%  { transform: translate(-10vw, -5vh)  scale(0.85); opacity: 0.42; }
+  100% { transform: translate(-30vw, -22vh) scale(1.12); opacity: 0.28; }
 }
 
 @keyframes orbDrift3 {
-  0%   { transform: translate(0vw, 0vh)    scale(1);    opacity: 0.25; }
-  40%  { transform: translate(-18vw, 14vh) scale(1.4);  opacity: 0.42; }
-  75%  { transform: translate(10vw, -20vh) scale(0.7);  opacity: 0.3; }
-  100% { transform: translate(16vw, 8vh)   scale(1.25); opacity: 0.38; }
+  0%   { transform: translate(0vw, 0vh)    scale(1);    opacity: 0.16; }
+  40%  { transform: translate(-18vw, 14vh) scale(1.4);  opacity: 0.28; }
+  75%  { transform: translate(10vw, -20vh) scale(0.7);  opacity: 0.19; }
+  100% { transform: translate(16vw, 8vh)   scale(1.25); opacity: 0.24; }
 }
 
 /* ============================================
