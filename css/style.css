@@ -1923,7 +1923,7 @@ footer {
 #bg-orb-1 {
   width: 46vw;
   height: 46vw;
-  background: radial-gradient(circle, rgba(34,211,238,0.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(34,211,238,0.55) 0%, transparent 65%);
   top: -20vh;
   left: -15vw;
   animation: orbDrift1 12s ease-in-out infinite alternate;
@@ -1933,7 +1933,7 @@ footer {
 #bg-orb-2 {
   width: 38vw;
   height: 38vw;
-  background: radial-gradient(circle, rgba(139,92,246,0.16) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,92,246,0.50) 0%, transparent 65%);
   bottom: -18vh;
   right: -12vw;
   animation: orbDrift2 16s ease-in-out infinite alternate;
@@ -1944,7 +1944,7 @@ footer {
 #bg-orb-3 {
   width: 28vw;
   height: 28vw;
-  background: radial-gradient(circle, rgba(139,92,246,0.10) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(139,92,246,0.38) 0%, transparent 65%);
   top: 30vh;
   left: 15vw;
   animation: orbDrift3 9s ease-in-out infinite alternate;
