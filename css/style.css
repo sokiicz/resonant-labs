@@ -485,6 +485,46 @@ p { line-height: 1.75; }
    APP CARDS
    ============================================ */
 .apps-section { padding: var(--space-7) 0; position: relative; z-index: 1; }
+.wip-section  { padding: var(--space-6) 0 var(--space-7); position: relative; z-index: 1; }
+
+/* WIP card badge overlay */
+.app-card-preview { position: relative; }
+.wip-card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(251, 191, 36, 0.18);
+  color: var(--amber);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  backdrop-filter: blur(4px);
+}
+
+/* Latest update note on WIP cards */
+.app-update-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 0.75rem;
+  color: var(--text-4);
+  font-style: italic;
+  margin: 6px 0 10px;
+  line-height: 1.4;
+}
+.app-update-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: var(--amber);
+  opacity: 0.8;
+}
 .apps-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -1634,6 +1674,7 @@ footer {
 
   /* Reduce section padding */
   .apps-section,
+  .wip-section,
   .about-section,
   .blog-preview,
   .cta-section { padding: var(--space-6) 0; }
