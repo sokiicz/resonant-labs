@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Clock — Resonant Labs</title>
+  <meta name="description" content="An intentionally inconvenient clock. The time is hidden inside a QR code that updates every second. Scan to find out what time it is.">
+  <meta property="og:title" content="QR Clock — Resonant Labs">
+  <meta property="og:description" content="An intentionally inconvenient clock. The time is hidden inside a QR code that updates every second. Scan to find out what time it is.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://resonantlabs.online/apps/qr-clock.html">
+  <meta property="og:site_name" content="Resonant Labs">
+  <link rel="canonical" href="https://resonantlabs.online/apps/qr-clock.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M2 16 C4 8,6 8,8 16 C10 24,12 24,14 16 C16 8,18 8,20 16 C22 24,24 24,26 16 C28 8,30 8,30 16' stroke='%238b5cf6' stroke-width='2.5' stroke-linecap='round' fill='none'/></svg>">
+  <style>:root{--app-from:#0d0d0d;--app-to:#1a1a2e;}</style>
+  <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage:              'denied',
+      ad_user_data:            'denied',
+      ad_personalization:      'denied',
+      analytics_storage:       'denied',
+      functionality_storage:   'denied',
+      personalization_storage: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9635SSK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9635SSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#lg3)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="lg3" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Labs
+      </a>
+      <div class="nav-links">
+        <a href="../apps.html">Apps</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../apps.html">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="app-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../apps.html">Apps</a><span class="breadcrumb-sep">›</span>
+        <span>QR Clock</span>
+      </nav>
+      <div class="app-hero-grid">
+        <div class="app-hero-info fade-in">
+          <span class="badge badge-cyan" style="margin-bottom:20px;">Web App · Fun · Vanilla JS</span>
+          <h1>QR Clock</h1>
+          <p class="app-hero-tagline">To find out what time it is, you must scan a QR code. That's it. That's the whole app.</p>
+          <div class="app-hero-actions">
+            <a href="https://sokiicz.github.io/qr-clock/" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Open Clock
+            </a>
+            <a href="https://github.com/sokiicz/qr-clock" target="_blank" rel="noopener" class="btn btn-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+          <div class="app-hero-meta">
+            <span class="app-hero-meta-item">🗓️ 17 Mar 2026</span>
+            <span class="app-hero-meta-item">🤖 Built with Claude Code</span>
+            <span class="app-hero-meta-item">⬛ JS · QR · GitHub Pages</span>
+          </div>
+        </div>
+
+        <!-- Live QR Clock preview — actually running -->
+        <div class="app-preview-container fade-in fade-in-delay-2" style="background:#0d0d0d; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; position:relative;">
+          <canvas id="preview-qr" style="display:block; image-rendering:pixelated; image-rendering:crisp-edges;"></canvas>
+          <p style="color:rgba(255,255,255,0.25); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; margin:0;">live — scan to read the time</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="app-tabs-section">
+    <div class="container">
+      <div class="app-detail-layout">
+      <div>
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="qrc-overview">Overview</button>
+        <button class="tab-btn" data-tab="qrc-built">How It Was Built</button>
+        <button class="tab-btn" data-tab="qrc-tech">Tech Stack</button>
+      </div>
+
+      <div class="tab-pane active" id="qrc-overview">
+        <div class="content-prose fade-in">
+          <h3>What is QR Clock?</h3>
+          <p>QR Clock is a clock that refuses to show you the time. Instead, it fills the entire screen with a QR code. The QR code contains the current time — plus a short message. The only way to read it is to scan it with your phone.</p>
+          <p>It updates every second. The message changes every 10 seconds. The whole thing is slightly absurd on purpose.</p>
+          <h3>What you get when you scan</h3>
+          <ul>
+            <li>The current time in <code>HH:MM:SS</code> format</li>
+            <li>A rotating message — quotes, jokes, fun facts, or a secret code</li>
+            <li>Occasional multi-part stories that unfold across consecutive scans</li>
+            <li>Easter eggs hidden at specific timestamps (try scanning at 11:11:11)</li>
+          </ul>
+          <h3>Secret codes</h3>
+          <p>Mixed into the rotation are messages like <em>"Code: DRINK-42 — show this to the bartender."</em> They appear unpredictably. There's no backend, no leaderboard — just the absurdity of discovering a code inside a QR clock and wondering what to do with it.</p>
+          <h3>Why does this exist?</h3>
+          <p>Because the most interesting design constraint isn't "how do we show the time more clearly?" — it's "what if we made it as inconvenient as possible, and put something worth reading inside?"</p>
+          <blockquote>"The best clock I've ever had to work for."</blockquote>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="qrc-built">
+        <div class="content-prose fade-in">
+          <h3>The idea</h3>
+          <p>I wanted something genuinely weird to put on a screen at an event. Not a slideshow, not a countdown — something that made people reach for their phones for the right reasons. The constraint of "you can only read the time by scanning" felt like the right amount of absurd.</p>
+          <h3>Building with Claude Code</h3>
+          <p>The spec grew quickly once I started writing it out. What started as "QR clock that updates every second" became a layered message system with categories, stories that unfold across time slots, weighted random selection, and easter eggs at exact timestamps.</p>
+          <p>Claude Code handled all of it in one session — including a production fix when the initial QR library CDN URL turned out to be a dead path, and a full retina/DPI upgrade when it became clear the QR needed to be crisp enough to actually scan.</p>
+          <p>The entire project — spec, code, deployment, and this page — took a single afternoon.</p>
+          <blockquote>"The clock works. The messages are better than expected. Scanning a QR to check the time never stops being funny."</blockquote>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="qrc-tech">
+        <div class="content-prose fade-in">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><span class="tech-icon">⬛</span>Vanilla JS</div>
+            <div class="tech-item"><span class="tech-icon">📷</span>qrcode-generator</div>
+            <div class="tech-item"><span class="tech-icon">🖼️</span>Canvas API</div>
+            <div class="tech-item"><span class="tech-icon">🔷</span>HiDPI / devicePixelRatio</div>
+            <div class="tech-item"><span class="tech-icon">📄</span>Static HTML</div>
+            <div class="tech-item"><span class="tech-icon">🐙</span>GitHub Pages</div>
+            <div class="tech-item"><span class="tech-icon">📊</span>Google Sheets CSV (optional)</div>
+            <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
+          </div>
+          <h3 style="margin-top:var(--space-5);">No build step. No framework. No backend.</h3>
+          <p>The entire app is three files: <code>index.html</code>, <code>app.js</code>, and <code>messages.js</code>. Open it in a browser and it works. Messages can optionally be pulled from a public Google Sheet CSV — swap the URL in the config and the clock reads from your sheet automatically.</p>
+          <a href="https://github.com/sokiicz/qr-clock" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:var(--space-4);display:inline-flex;">View Source on GitHub →</a>
+        </div>
+      </div>
+      </div><!-- end main -->
+
+      <aside class="article-sidebar" aria-label="App sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Labs</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
+            <a href="mailto:contactme@resonantlabs.online?subject=App%20Idea" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send an idea →</a>
+          </div>
+        </div>
+        <div class="sidebar-card" data-changelog-id="qr-clock"></div>
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own app</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to code. Just describe what you want and let Claude Code build it.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+      </aside>
+      </div><!-- end app-detail-layout -->
+    </div>
+  </section>
+
+  <section class="comments-section">
+    <div class="container">
+      <h3>Got thoughts?</h3>
+      <p class="comments-intro">Questions, feedback, or just want to say it helped? All welcome — no account needed, just drop a name and write.</p>
+      <div id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e"
+           data-page-id="qr-clock"
+           data-theme="dark">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#flg3)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="flg3" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Labs
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../apps.html">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantlabs.online">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Labs</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
+
+  <!-- Live QR preview in the hero — qrcode-generator, same lib as the app itself -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+  <script>
+  (function () {
+    var canvas = document.getElementById('preview-qr');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var lastPayload = '';
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function render() {
+      var d   = new Date();
+      var hms = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds());
+      var payload = hms + ' - scan me';
+      if (payload === lastPayload) return;
+      lastPayload = payload;
+
+      try {
+        var qr = qrcode(0, 'L');
+        qr.addData(payload, 'Byte');
+        qr.make();
+
+        var mods    = qr.getModuleCount();
+        var margin  = 2;
+        var total   = mods + margin * 2;
+        var dpr     = Math.ceil(window.devicePixelRatio || 1);
+
+        // Size the preview to fit the container (max ~220px logical)
+        var container = canvas.parentElement;
+        var available = Math.min(container.clientWidth * 0.72, container.clientHeight * 0.72, 220);
+        var cellL   = Math.max(1, Math.floor(available / total));
+        var sizeL   = cellL * total;
+        var cellP   = cellL * dpr;
+        var sizeP   = sizeL * dpr;
+        var off     = margin * cellP;
+
+        canvas.width        = sizeP;
+        canvas.height       = sizeP;
+        canvas.style.width  = sizeL + 'px';
+        canvas.style.height = sizeL + 'px';
+
+        ctx.fillStyle = '#0d0d0d';
+        ctx.fillRect(0, 0, sizeP, sizeP);
+        ctx.fillStyle = '#ffffff';
+        for (var r = 0; r < mods; r++) {
+          for (var c = 0; c < mods; c++) {
+            if (qr.isDark(r, c)) {
+              ctx.fillRect(off + c * cellP, off + r * cellP, cellP, cellP);
+            }
+          }
+        }
+      } catch (e) { /* keep last frame */ }
+    }
+
+    render();
+    // Align to the next whole second then tick every second
+    setTimeout(function () { render(); setInterval(render, 1000); }, 1000 - (Date.now() % 1000));
+  }());
+  </script>
+</body>
+</html>
