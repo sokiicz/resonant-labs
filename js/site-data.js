@@ -126,7 +126,7 @@ window.SITE_DATA = {
       shortDesc: 'Keeps your Windows PC awake when you need it. Smart AFK simulation, system tray, scheduled hours, global hotkeys — invisible until needed.',
       tags: ['Desktop', 'Open Source'],
       emoji: '☕',
-      status: 'live',
+      status: 'hidden',
       image: 'Media/KeepAwake.png',
       gradientFrom: '#f59e0b',
       gradientTo: '#ef4444',
