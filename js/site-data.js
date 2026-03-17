@@ -74,7 +74,7 @@ window.SITE_DATA = {
       githubUrl: 'https://github.com/sokiicz/qr-clock',
       liveUrl: 'https://sokiicz.github.io/qr-clock/',
       liveLabel: 'Open Clock',
-      detailUrl: '/apps/qr-clock.html',
+      detailUrl: 'apps/qr-clock.html',
       releaseDate: '2026-03-17',
       updates: [
         { date: '2026-03-17', note: 'Initial release — fullscreen QR clock with quotes, jokes, facts, multi-part stories, secret codes, easter eggs, and optional Google Sheets CSV source.', label: 'v1.0' },
