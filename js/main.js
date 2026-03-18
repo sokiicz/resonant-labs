@@ -612,6 +612,80 @@ function populateDynamicStats() {
   }
 }
 
+/* ============================================
+   DRAGGABLE CONSENTKIT REOPENER
+   Watches for the ConsentKit reopener button (open shadow DOM)
+   and makes it draggable. Drag past 85% of screen height to hide.
+   ============================================ */
+function initDraggableCookieWidget() {
+  const observer = new MutationObserver(() => {
+    const host = document.getElementById('consentkit-reopener');
+    if (!host || !host.shadowRoot) return;
+    observer.disconnect();
+
+    requestAnimationFrame(() => {
+      const btn = host.shadowRoot.querySelector('.ck-reopener');
+      if (!btn) return;
+
+      // Convert from bottom/left to top/left for easier drag math
+      btn.style.bottom = 'auto';
+      btn.style.top = (window.innerHeight - 20 - 42) + 'px';
+      btn.style.cursor = 'grab';
+      btn.style.touchAction = 'none';
+
+      let dragging = false, hasMoved = false, startX, startY;
+
+      function onDown(e) {
+        dragging = true;
+        hasMoved = false;
+        const rect = btn.getBoundingClientRect();
+        const cx = e.touches ? e.touches[0].clientX : e.clientX;
+        const cy = e.touches ? e.touches[0].clientY : e.clientY;
+        startX = cx - rect.left;
+        startY = cy - rect.top;
+        btn.style.cursor = 'grabbing';
+        btn.style.transition = 'none';
+        e.preventDefault();
+      }
+
+      function onMove(e) {
+        if (!dragging) return;
+        hasMoved = true;
+        const cx = e.touches ? e.touches[0].clientX : e.clientX;
+        const cy = e.touches ? e.touches[0].clientY : e.clientY;
+        btn.style.left = (cx - startX) + 'px';
+        btn.style.top  = (cy - startY) + 'px';
+        e.preventDefault();
+      }
+
+      function onUp() {
+        if (!dragging) return;
+        dragging = false;
+        btn.style.cursor = 'grab';
+        if (hasMoved) {
+          // Suppress the click that fires after mouseup/touchend
+          btn.addEventListener('click', ev => ev.stopPropagation(), { once: true, capture: true });
+          // Hide if dragged below 85% of viewport
+          const rect = btn.getBoundingClientRect();
+          if (rect.top > window.innerHeight * 0.85) {
+            host.style.display = 'none';
+          }
+        }
+        hasMoved = false;
+      }
+
+      btn.addEventListener('mousedown', onDown);
+      btn.addEventListener('touchstart', onDown, { passive: false });
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('touchmove', onMove, { passive: false });
+      document.addEventListener('mouseup', onUp);
+      document.addEventListener('touchend', onUp);
+    });
+  });
+
+  observer.observe(document.body, { childList: true });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderActivityTicker('activity-ticker');
   populateDynamicStats();
@@ -629,5 +703,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletter();
   initLightbox();
   initBgAmbient();
+  initDraggableCookieWidget();
   requestAnimationFrame(() => observeFadeIns());
 });
