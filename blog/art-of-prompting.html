@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Art of Prompting: How I Actually Work — Resonant Labs</title>
-  <meta name="description" content="After 12 apps built with Claude Code, here's the honest truth: the workflow finds you. You don't study prompting. You just start building.">
+  <meta name="description" content="After 10+ apps built with Claude Code, here's the honest truth: the workflow finds you. You don't study prompting. You just start building.">
   <meta property="og:title" content="The Art of Prompting: How I Actually Work">
-  <meta property="og:description" content="After 12 apps built with Claude Code, here's the honest truth: the workflow finds you. You don't study prompting. You just start building.">
+  <meta property="og:description" content="After 10+ apps built with Claude Code, here's the honest truth: the workflow finds you. You don't study prompting. You just start building.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://resonantlabs.online/blog/art-of-prompting.html">
   <meta property="og:image" content="https://resonantlabs.online/Media/ResonantLabs.png">
@@ -111,7 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <h2>It starts with an itch</h2>
 
-        <p>Every app I've built started with a feeling — something I was missing, something that seemed like it would be genuinely fun to use, or sometimes something a specific person needed. DayLog came from sitting with a friend who was tracking his coffee intake by scratching marks on a beer coaster. He just wanted to see streaks. The idea was that clear, that fast.</p>
+        <p>Every app I've built started with a feeling — something I was missing, something that seemed like it would be genuinely fun to use, or sometimes something a specific person needed. DayLog came from sitting with a friend who wanted to track her coffee spills. The idea was that simple.</p>
 
         <p>That's always the starting point: a real itch. Not "I should build something," but "this specific thing should exist." The specificity matters. Vague ideas produce vague results.</p>
 
@@ -119,17 +119,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <p>If the idea is self-contained — a specific tool, a fun experiment, something I can describe in a paragraph — I open Claude Code and start talking. Like I'm describing it to a friend who's about to build it tonight. Not a spec, not a requirements list. Just: here's what it should do, here's why it should exist, here's what it should feel like to use.</p>
 
-        <p>The QR Clock started that way. "I want a clock that displays the current time as a scannable QR code." Done in one conversation. KeepAwake Pro: "A small Mac utility that prevents sleep when active." Same. Music Mouse: "A generative instrument — the cursor position controls what notes play and how fast, so moving around the screen becomes musical." One evening.</p>
+        <p>The QR Clock started that way. "I want a clock that displays the current time as a scannable QR code." Done in one conversation. Music Mouse: "A generative instrument — the cursor position controls what notes play and how fast, so moving around the screen becomes musical." One evening.</p>
 
         <p>For things like these, there's no planning phase. The planning IS the first message.</p>
 
         <h2>Bigger idea? Think with Perplexity first</h2>
 
-        <p>If the idea involves real architecture — a database, authentication, multiple interconnected features — or if I'm not sure whether something similar already exists and I should just use it, I'll spend 20-30 minutes in Perplexity before touching Claude Code at all.</p>
+        <p>If the idea is more complex — or if I'm not sure I've fully thought it through — I'll spend some time in Perplexity before going anywhere near Claude Code. Not to get technical answers. Just to think the idea out loud and let it push back.</p>
 
-        <p>Not prompting it to build anything. Just thinking out loud. "What are the standard approaches to group scheduling apps? What tradeoffs exist between storing availability server-side vs client-side?" It's a thinking tool. It helps me arrive at Claude Code with a clearer picture of what I actually want, rather than what I think I want in the abstract.</p>
+        <p>"What would a group activity planner actually need to handle?" "Does something like this already exist, and if so, what's missing from it?" "What would make this genuinely useful versus just another app that sounds good in theory?" Perplexity is good at helping me see angles I hadn't considered — features I'd want once I thought about real use, edge cases I'd regret ignoring, or sometimes realising the idea is actually simpler than I made it. The technical side is always Claude Code's problem. Perplexity just helps me arrive with a better picture of what I actually want to build.</p>
 
-        <p>VagoshIt — the group activity planner — had several Perplexity conversations before the first line of code was written. By the time I started building, I knew I wanted Next.js with Supabase, why, and what the database schema roughly needed to look like. That preparation shows in the result.</p>
+        <p>VagoshIt had several of those conversations before I opened a single Claude Code session. By the time I started, I had a clear enough idea of the experience I was after that the building felt focused rather than exploratory.</p>
 
         <blockquote>"Good prompting isn't about phrasing. It's about arriving at the conversation with a clear enough picture of what you want that the AI can act on it without guessing."</blockquote>
 
