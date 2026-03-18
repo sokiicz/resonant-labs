@@ -119,49 +119,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <h2>Scripts, ChatGPT, and a pattern I didn't notice at the time</h2>
 
-        <p>Around 2022 I was managing Google Ads accounts and running into the limits of what the interface could do. Bid management was clumsy. Reporting was tedious. There were things I needed that required scripts — but I didn't write scripts.</p>
+        <p><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT</a> launched in late 2022 and I was immediately curious. I started using it in my marketing work, and at some point something shifted: I stopped asking "what problem do I have that I need help with?" and started asking "what could I actually build with this?" The tool came first, and it opened up a whole new layer of thinking about what was possible.</p>
 
-        <p>Then ChatGPT launched, and I did something completely instinctive: I described what I wanted the script to do. In plain language. To an AI. It wrote the script. I tested it, found the edge cases, described them back. It fixed them. I ran it.</p>
+        <p>Google Ads scripts were the first real test. I wanted to automate things the interface just couldn't do — custom bid logic, smarter reporting, bulk operations that would take hours manually. Before ChatGPT, scripts meant finding a developer or giving up. Now I could just describe what I wanted: what the script should do, what data it should touch, what the output should look like. ChatGPT wrote it. I tested it, found the edge cases, described them back. It fixed them. I ran it.</p>
 
-        <p>I didn't fully appreciate what had just happened. I thought I was using a smarter search engine. In retrospect, I had discovered the exact pattern that would eventually define everything: have a clear idea of what you want, describe it precisely, test what comes back, refine. Repeat until it works. The only thing missing was an AI capable of handling real complexity.</p>
+        <p>Each new AI feature that arrived expanded that mental layer further. Not "what problem does this solve?" but "what new thing does this make possible?" That curious accumulation — of tools, of ideas, of half-finished concepts — is what set everything in motion.</p>
 
         <h2>Every tool that almost got there</h2>
 
-        <p>By 2023 I had actual app ideas. Not just scripts — things I wanted to exist in the world. I tried everything that promised to make that possible without learning to write code from scratch.</p>
+        <p>By 2023 I had real app ideas collecting in my head and in old chat histories. I tried everything that promised to close the gap: ChatGPT's code generation, <a href="https://github.com/features/copilot" target="_blank" rel="noopener">GitHub Copilot</a>, <a href="https://www.perplexity.ai" target="_blank" rel="noopener">Perplexity</a>, <a href="https://aistudio.google.com" target="_blank" rel="noopener">Google AI Studio</a> with Gemini. Each new one came with bigger promises than the last.</p>
 
-        <p>ChatGPT's code generation. GitHub Copilot. Perplexity. Google AI Studio with Gemini. Each one came with bigger promises than the last. And for small, self-contained things, they delivered. I built <a href="../apps/bitcoin-100k.html">jeuzbtcza100k.cz</a> — a fun app tracking whether Bitcoin would hit $100K — and a <a href="../apps/qr-clock.html">QR Clock</a> that generates a scannable code from the current time. Simple, satisfying, done.</p>
+        <p>For small, self-contained things they delivered. I built <a href="../apps/bitcoin-100k.html">jeuzbtcza100k.cz</a> — a fun app for tracking whether Bitcoin would hit $100K — and a <a href="../apps/qr-clock.html">QR Clock</a> that generates a scannable code from the current time. Simple, satisfying, done.</p>
 
-        <p>But then I tried to build SpekPlatz.</p>
-
-        <p>SpekPlatz was supposed to be a personal map app — curated places, collections, a sense of your own geography rather than everyone's. I had a clear vision. I could describe every detail. But every AI tool I pointed at it either produced a toy that missed the point entirely, or gave me something so fragile that adding one feature broke three others. The gap between "I can describe this clearly" and "this actually exists and works" was still enormous for anything beyond the trivially simple.</p>
-
-        <p>It was genuinely frustrating, because I knew the problem wasn't my ability to explain what I wanted. The bottleneck was somewhere else.</p>
+        <p>But anything more ambitious hit a wall. <a href="../apps/spekplatz.html">SpekPlatz</a> was supposed to be a community map for sharing beautiful spots — curated places, a sense of collective geography. I had a clear vision. I could describe every detail. But every tool I tried either produced something that missed the point, or something so fragile that adding one feature broke three others. It sat unfinished, month after month. That gap between "I can describe this clearly" and "this actually works" was still wide for anything beyond the trivially simple.</p>
 
         <blockquote>"I had ideas. I had the ability to describe them clearly. What I was missing was a tool capable of acting on that description at the level of complexity I needed."</blockquote>
 
-        <h2>Then Claude Code happened</h2>
+        <h2>One evening in February</h2>
 
-        <p>I don't remember the exact moment I started using Claude Code. I remember the feeling — the same one I had in Chrome DevTools, but multiplied. You describe something, it appears. You say "that's not right," it changes. You ask for something you couldn't have predicted wanting, and it's there. Not a rough draft. A thing.</p>
+        <p>In February 2026 I finally opened <a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a> and described SpekPlatz — properly, the full thing, the idea I'd been carrying around for months and maybe longer. Interactive map, place collections, community sharing, a custom visual design. It was live that same evening.</p>
 
-        <p>SpekPlatz — the app that had beaten everything else I tried — came together. The full version: interactive map, place collections, community sharing, a custom visual design. It launched in February 2026. I hadn't typed a line of the actual code.</p>
+        <p>Something I'd been stuck on for what felt like years, finished in one focused session. That felt significant enough that I went back through my old GPT and Gemini conversation history and started pulling out everything I'd given up on. Old ideas, abandoned prototypes, half-baked concepts I'd shelved because the tools weren't ready. I started trying them again.</p>
 
-        <p>What followed was almost embarrassing in its pace. KeepAwake Pro — a desktop utility. Music Mouse — a generative instrument that plays itself based on cursor movement. The Resonant Labs website itself. ConsentKit — a real, open-source cookie consent library that developers can actually use. DayLog — a habit tracker I built for a friend in what was essentially a focused evening. VagoshIt — a full group activity planner with authentication, a Supabase database, a real-time calendar.</p>
+        <p>They worked. Most of them worked on the first or second attempt. <a href="../apps/music-mouse.html">Music Mouse</a> — a generative instrument where cursor movement becomes music. <a href="../apps/consentkit.html">ConsentKit</a> — a proper cookie consent library I'd previously been paying for as a SaaS. <a href="../apps/daylog.html">DayLog</a> — a habit tracker I built for a friend in one evening. <a href="../apps/vagoshit.html">VagoshIt</a> — a full group activity planner with real authentication and a live database. TimeInvoice — a freelancer invoicing tool I'd been paying a monthly subscription for.</p>
 
-        <p>Twelve apps in about six weeks. I'd gone from "ideas I couldn't build" to "ideas I can't ship fast enough."</p>
+        <p>After watching this work, I decided to build <a href="../index.html">this website</a> — a place to share everything I'd made, freely, so others could use it and maybe feel the same nudge I did: that building something yourself is closer than you think.</p>
 
-        <h2>Why everything is free and open source</h2>
+        <h2>Why everything is free, and what I'm actually learning</h2>
 
-        <p>When I started shipping apps, the question of whether to charge for them came up quickly. The honest answer was straightforward: no. Not because the apps aren't useful — I think some of them genuinely are — but because the barrier to building them was so low for me that charging felt dishonest. The cost was mostly time and curiosity. The AI did the heavy lifting I couldn't do.</p>
+        <p>All my life I've been curious about things that interested me — not because I wanted to make a career from them, but because exploring them was exciting. Sometimes those things turned into work anyway, and people started paying me for what I'd originally done just because I liked it. Marketing was like that. CSS was like that.</p>
 
-        <p>I've also gotten an enormous amount from open source software over the years without contributing much back. This felt like a way to change that. And practically: open source apps are more interesting. People use them, find bugs, suggest things. They live longer and evolve further than closed ones.</p>
+        <p>Building apps feels the same. I don't want to put these behind a paywall. I want to give them to people, see what they do with them, build more. But I'm aware that the skills I'm accumulating — understanding what makes software work, how to think through a product, how to collaborate with AI at this level — are going to be genuinely valuable in ways I can't fully predict yet. I'm learning something real here, even when it feels like I'm just having fun.</p>
 
-        <p>So everything on Resonant Labs is free, open, and yours to use or build on.</p>
-
-        <h2>What I'd tell my father now</h2>
-
-        <p>He wasn't wrong that it was worth knowing. He just showed me the wrong door. Hello World wasn't thrilling because it was abstract — there was nothing behind it I could see or touch. CSS was thrilling because the feedback was instant and visual. Google Ads scripts were useful because they solved a real problem I had that week. Claude Code is where I live now because it connects ideas directly to working things, with nothing useless in between.</p>
-
-        <p>The underlying skill was never syntax. It was clarity — being able to describe precisely what you want and why, and then being able to evaluate whether what comes back is right. That's a marketer's skill. Turns out it was a builder's skill too. I just needed the right tools to find that out.</p>
+        <p>So everything on <a href="../apps.html">Resonant Labs</a> is free and open source. Use it, fork it, build on it. And if it makes you want to try building something of your own — that's more than enough.</p>
 
       </main>
 
@@ -178,11 +168,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>In this post</h4>
           <nav class="toc-list" aria-label="Table of contents">
             <a href="#article-content">The first crack in the wall</a>
-            <a href="#article-content">Scripts + ChatGPT</a>
+            <a href="#article-content">Scripts, ChatGPT, and a pattern</a>
             <a href="#article-content">Every tool that almost got there</a>
-            <a href="#article-content">Then Claude Code happened</a>
-            <a href="#article-content">Why open source</a>
-            <a href="#article-content">What I'd tell my father now</a>
+            <a href="#article-content">One evening in February</a>
+            <a href="#article-content">Why everything is free</a>
           </nav>
         </div>
         <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
