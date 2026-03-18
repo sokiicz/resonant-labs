@@ -1448,6 +1448,17 @@ footer {
   color: var(--text-3);
   font-style: italic;
 }
+.article-content a, .content-prose a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-decoration-color: rgba(34, 211, 238, 0.3);
+  text-underline-offset: 3px;
+  transition: color var(--duration), text-decoration-color var(--duration);
+}
+.article-content a:hover, .content-prose a:hover {
+  color: var(--cyan-light);
+  text-decoration-color: rgba(103, 232, 249, 0.7);
+}
 .article-content code {
   background: var(--bg-3);
   padding: 2px 8px;
