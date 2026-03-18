@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Art of Prompting: How I Describe My Vision to Claude — Resonant Labs</title>
-  <meta name="description" content="Talking to an AI is a skill in itself. Here's how I've learned to communicate ideas clearly enough to get exactly what I imagine.">
-  <meta property="og:title" content="The Art of Prompting: How I Describe My Vision to Claude">
-  <meta property="og:description" content="Talking to an AI is a skill. Here's how I communicate ideas clearly enough to get exactly what I imagine.">
+  <title>The Art of Prompting: How I Actually Work — Resonant Labs</title>
+  <meta name="description" content="After 12 apps built with Claude Code, here's the honest truth: the workflow finds you. You don't study prompting. You just start building.">
+  <meta property="og:title" content="The Art of Prompting: How I Actually Work">
+  <meta property="og:description" content="After 12 apps built with Claude Code, here's the honest truth: the workflow finds you. You don't study prompting. You just start building.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://resonantlabs.online/blog/art-of-prompting.html">
   <meta property="og:image" content="https://resonantlabs.online/Media/ResonantLabs.png">
   <meta property="og:site_name" content="Resonant Labs">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="The Art of Prompting: How I Describe My Vision to Claude">
+  <meta name="twitter:title" content="The Art of Prompting: How I Actually Work">
   <meta name="twitter:description" content="Talking to an AI is a skill. Here's how I communicate ideas clearly enough to get exactly what I imagine.">
   <meta name="twitter:image" content="https://resonantlabs.online/Media/ResonantLabs.png">
   <link rel="canonical" href="https://resonantlabs.online/blog/art-of-prompting.html">
@@ -93,8 +93,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="blog-meta-dot"></span>
         <span style="font-size:0.85rem; color:var(--text-4);">7 min read</span>
       </div>
-      <h1>The Art of Prompting:<br><span class="gradient-text">How I Describe My Vision</span> to Claude</h1>
-      <p class="post-subtitle">Talking to an AI is a skill in itself. After building several apps entirely through conversation, here's what I've learned about communicating ideas clearly enough to get exactly what I imagine.</p>
+      <h1>The Art of Prompting:<br><span class="gradient-text">How I Actually Work</span></h1>
+      <p class="post-subtitle">People ask me about prompting technique as if it's a thing you study. After 12 apps, here's what I've actually learned: the workflow builds itself. You just have to start.</p>
       <div class="blog-post-cover">
         <div style="position:absolute; inset:0; background: linear-gradient(135deg, #f59e0b, #ef4444); opacity:0.85;"></div>
       </div>
@@ -105,45 +105,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="article-layout">
       <main class="article-content" id="article-content">
 
-        <p>When I tell people I build apps by talking to an AI, the first question is usually: "But how do you tell it what you want?" It's a fair question. And it turns out the answer is more interesting than "just type stuff."</p>
+        <p>People ask me about my "prompting technique" as though there's a specific format, a magic phrasing, a system you can learn and apply. I understand why they ask — there's a whole industry built around prompt engineering tips that imply the right wording unlocks better results.</p>
 
-        <p>Over months of building — SpekPlatz, Music Mouse, DayLog, and more — I've developed a way of thinking about prompting that makes a real difference in what comes back. It's not magic. It's just clarity.</p>
+        <p>My honest answer is that I don't have a technique. I have a habit of mind. And that habit wasn't built by reading about prompting — it was built by building things, making mistakes, and noticing what was slow.</p>
 
-        <h2>Start with the feeling, not the feature list</h2>
+        <h2>It starts with an itch</h2>
 
-        <p>The worst prompts I've written started with a list of technical requirements. "Build a web app with a sidebar, a map, user authentication, and a search bar." That's a spec, not a vision. What comes back tends to be technically correct but soulless.</p>
+        <p>Every app I've built started with a feeling — something I was missing, something that seemed like it would be genuinely fun to use, or sometimes something a specific person needed. DayLog came from sitting with a friend who was tracking his coffee intake by scratching marks on a beer coaster. He just wanted to see streaks. The idea was that clear, that fast.</p>
 
-        <p>The best prompts start with: "I want something that feels like..." or "The experience should be..." When I described SpekPlatz, I didn't start with the tech stack. I started with: "I want something between a note app and Google Maps — personal, curated, the feeling of a handwritten travel journal but on your phone." That orientation shapes everything that follows.</p>
+        <p>That's always the starting point: a real itch. Not "I should build something," but "this specific thing should exist." The specificity matters. Vague ideas produce vague results.</p>
 
-        <blockquote>"Good prompting is more like being a film director than a software engineer. You're describing the scene, not writing the script."</blockquote>
+        <h2>Small idea? Straight to Claude Code</h2>
 
-        <h2>Be specific about what you don't want</h2>
+        <p>If the idea is self-contained — a specific tool, a fun experiment, something I can describe in a paragraph — I open Claude Code and start talking. Like I'm describing it to a friend who's about to build it tonight. Not a spec, not a requirements list. Just: here's what it should do, here's why it should exist, here's what it should feel like to use.</p>
 
-        <p>One of the most useful things I've learned: tell Claude what to avoid. "No onboarding screens," "don't use modal dialogs for this," "I want it to feel minimal — not cluttered with options." Constraints are generative. They focus the output and save rounds of "can you remove that thing."</p>
+        <p>The QR Clock started that way. "I want a clock that displays the current time as a scannable QR code." Done in one conversation. KeepAwake Pro: "A small Mac utility that prevents sleep when active." Same. Music Mouse: "A generative instrument — the cursor position controls what notes play and how fast, so moving around the screen becomes musical." One evening.</p>
 
-        <p>I also find it helpful to reference things that already exist. "Think Notion but without the complexity." "Like iOS, where everything just works." "Like Craigslist, but designed by someone who cares." References carry a lot of information efficiently.</p>
+        <p>For things like these, there's no planning phase. The planning IS the first message.</p>
 
-        <h2>Break it into conversations, not one big prompt</h2>
+        <h2>Bigger idea? Think with Perplexity first</h2>
 
-        <p>The biggest mistake I see people make is trying to describe the entire app upfront. In one go. Everything they've ever wanted.</p>
+        <p>If the idea involves real architecture — a database, authentication, multiple interconnected features — or if I'm not sure whether something similar already exists and I should just use it, I'll spend 20-30 minutes in Perplexity before touching Claude Code at all.</p>
 
-        <p>That rarely works well. Not because Claude can't handle complexity, but because you don't actually know exactly what you want until you start seeing options. A better approach: describe the core, see what you get, then refine from there.</p>
+        <p>Not prompting it to build anything. Just thinking out loud. "What are the standard approaches to group scheduling apps? What tradeoffs exist between storing availability server-side vs client-side?" It's a thinking tool. It helps me arrive at Claude Code with a clearer picture of what I actually want, rather than what I think I want in the abstract.</p>
 
-        <p>SpekPlatz started as "a map app where I can save places." Three conversations later it had collections, community features, and a specific visual language. I couldn't have described all of that upfront — I discovered it through the process.</p>
+        <p>VagoshIt — the group activity planner — had several Perplexity conversations before the first line of code was written. By the time I started building, I knew I wanted Next.js with Supabase, why, and what the database schema roughly needed to look like. That preparation shows in the result.</p>
 
-        <h2>Feedback is a superpower</h2>
+        <blockquote>"Good prompting isn't about phrasing. It's about arriving at the conversation with a clear enough picture of what you want that the AI can act on it without guessing."</blockquote>
 
-        <p>When something isn't quite right, don't scrap it and start over. Describe precisely what's wrong and what you'd prefer instead. "The card is too dense — I want more breathing room between the image and the text." "The color feels too cold — warmer, please." "The button is correct but it feels generic — make it more distinctive."</p>
+        <h2>The workflow that built itself</h2>
 
-        <p>Specific, directional feedback — like giving notes to a designer — is far more effective than "I don't like this, try again."</p>
+        <p>Here's the part that nobody tells you: after enough apps, the workflow becomes the output.</p>
 
-        <h2>Trust the expertise you don't have</h2>
+        <p>I have around 12 apps built with Claude Code now. Each one taught me something about what slows the process down. A design decision I had to re-explain every session became a CLAUDE.md file — a project context document that Claude reads at the start of every conversation. Repeating the same setup steps became a custom skill — a slash command I can invoke in one line. The process of updating the Resonant Labs website every time I ship something new became an automated tracker that reads metadata files from each project and builds the entire data layer automatically.</p>
 
-        <p>Sometimes Claude will suggest something I hadn't considered. A different interaction pattern. A more elegant solution. An approach I wouldn't have known to ask for. The best thing I've learned to do: say yes, see how it feels, then decide.</p>
+        <p>None of this was designed upfront. It emerged from friction. App 1 took three times as long as app 8, not because I got dramatically better at prompting, but because by app 8, Claude already knew everything about how I work. The context was already there. The system remembered.</p>
 
-        <p>Working with AI well means knowing when to steer and when to let it drive. It knows things about web development, about design patterns, about accessibility, that I simply don't. The collaboration works better when I'm open to being surprised.</p>
+        <p>If I'd tried to build that system before building the apps, I would have built the wrong system. The actual workflow only becomes visible once you're inside it.</p>
 
-        <p>The apps I'm most proud of have that quality — they're mine in vision, but better in execution than I could have specified in advance.</p>
+        <h2>What I'd actually tell someone starting out</h2>
+
+        <p>Start with what's missing from your life — not what would be impressive to build. Small ideas are fine. Better than fine: they ship in an evening and teach you things a big project takes weeks to teach.</p>
+
+        <p>Be open-minded when something comes back differently than you imagined. Sometimes that's because you described it wrong. Sometimes it's because the AI found a better solution than the one you had in mind. You won't always know which until you use it for a day.</p>
+
+        <p>Be patient. Not with the AI — with yourself. The first few apps feel slow because you're learning what to ask for. By the fifth or sixth, you'll move much faster. Not because you mastered some technique, but because you've internalized what clarity actually looks like.</p>
+
+        <p>Most importantly: just start. Don't read ten more articles about how to prompt. Don't wait until you've planned the perfect project. Build something small, ship it, notice what was hard, do it again. The workflow finds you. You just have to show up.</p>
 
       </main>
 
@@ -159,11 +167,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sidebar-card">
           <h4>In this post</h4>
           <nav class="toc-list" aria-label="Table of contents">
-            <a href="#article-content">Start with the feeling</a>
-            <a href="#article-content">What you don't want</a>
-            <a href="#article-content">Break it into conversations</a>
-            <a href="#article-content">Feedback is a superpower</a>
-            <a href="#article-content">Trust the expertise</a>
+            <a href="#article-content">It starts with an itch</a>
+            <a href="#article-content">Small idea? Straight to Claude Code</a>
+            <a href="#article-content">Bigger idea? Perplexity first</a>
+            <a href="#article-content">The workflow that built itself</a>
+            <a href="#article-content">What I'd tell someone starting out</a>
           </nav>
         </div>
         <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">

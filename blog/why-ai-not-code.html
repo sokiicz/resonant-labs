@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Why I'm Building Apps with AI Instead of Learning to Code — Resonant Labs</title>
-  <meta name="description" content="The story of how a digital marketer with no coding skills started shipping real apps through AI conversation — and why that changes everything.">
+  <meta name="description" content="From Hello World that bored me to death, through CSS experiments in Chrome DevTools and Google Ads scripts powered by ChatGPT — and then Claude Code changed everything.">
   <meta property="og:title" content="Why I'm Building Apps with AI Instead of Learning to Code">
-  <meta property="og:description" content="The story of how a digital marketer with no coding skills started shipping real apps through AI conversation.">
+  <meta property="og:description" content="From Hello World that bored me to death, through CSS experiments and Google Ads scripts — and then Claude Code changed everything.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://resonantlabs.online/blog/why-ai-not-code.html">
   <meta property="og:image" content="https://resonantlabs.online/Media/ResonantLabs.png">
@@ -91,10 +91,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="blog-meta-dot"></span>
         <span style="font-size:0.85rem; color:var(--text-4);">15 February 2026</span>
         <span class="blog-meta-dot"></span>
-        <span style="font-size:0.85rem; color:var(--text-4);">5 min read</span>
+        <span style="font-size:0.85rem; color:var(--text-4);">9 min read</span>
       </div>
       <h1>Why I'm Building Apps with AI<br>Instead of <span class="gradient-text">Learning to Code</span></h1>
-      <p class="post-subtitle">The story of how a digital marketer with too many ideas discovered they could ship real software without ever touching a code editor — and why that changes everything.</p>
+      <p class="post-subtitle">I tried Hello World as a kid and hated it. Then CSS, then Google Ads scripts, then every AI tool that promised to finally bridge the gap. Most of them couldn't. Then one did.</p>
       <div class="blog-post-cover">
         <div style="position:absolute; inset:0; background: linear-gradient(135deg, #8b5cf6, #22d3ee); opacity:0.85;"></div>
       </div>
@@ -105,43 +105,63 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="article-layout">
       <main class="article-content" id="article-content">
 
-        <p>I've always had ideas. That's never been the problem. The problem was always the gap between "I wish this existed" and actually making it exist.</p>
+        <p>My father tried to teach me to code when I was a kid. Not in a serious way — more of a "this is the future, you should know this" kind of conversation. I don't remember the language. I just remember the feeling: Hello World, a blinking cursor, and a complete blankness about why any of it would matter to me. It felt like being handed the wrong instrument for music I hadn't heard yet.</p>
 
-        <p>For years, that gap was filled by either hiring someone, convincing a developer friend to help, or simply letting the idea die. Learning to code myself always felt like a multi-year commitment — and honestly, it wasn't the code I wanted. It was the thing the code would make.</p>
+        <p>I went into marketing. Words, ideas, audiences, what moves people and why. That felt right. Software was someone else's problem.</p>
 
-        <p>I'm a digital marketer. I spend my days thinking about audiences, messages, user journeys, what people need. I have a good sense of what makes something useful and what makes it feel right. What I've never had is the ability to build it myself.</p>
+        <h2>The first crack in the wall</h2>
+
+        <p>Years later, I started doing CSS work for clients' eshops. Small things — a header redesign here, a product card layout there. I'd open Chrome DevTools, change a value, watch the page respond instantly, change it back, try something else. There was no compilation, no abstraction. Just: adjust this, see that.</p>
+
+        <p>It felt like playing. More specifically, it felt thrillingly curious — the same way I imagine people feel when they first pick up a musical instrument and accidentally make something that sounds good. I wasn't learning to code. I was just exploring what was already there, which is a completely different thing.</p>
+
+        <p>That was the first hint that the gap between me and software wasn't as wide as I'd assumed. It was just that the entry points I'd been shown before were the wrong ones for how I think.</p>
+
+        <h2>Scripts, ChatGPT, and a pattern I didn't notice at the time</h2>
+
+        <p>Around 2022 I was managing Google Ads accounts and running into the limits of what the interface could do. Bid management was clumsy. Reporting was tedious. There were things I needed that required scripts — but I didn't write scripts.</p>
+
+        <p>Then ChatGPT launched, and I did something completely instinctive: I described what I wanted the script to do. In plain language. To an AI. It wrote the script. I tested it, found the edge cases, described them back. It fixed them. I ran it.</p>
+
+        <p>I didn't fully appreciate what had just happened. I thought I was using a smarter search engine. In retrospect, I had discovered the exact pattern that would eventually define everything: have a clear idea of what you want, describe it precisely, test what comes back, refine. Repeat until it works. The only thing missing was an AI capable of handling real complexity.</p>
+
+        <h2>Every tool that almost got there</h2>
+
+        <p>By 2023 I had actual app ideas. Not just scripts — things I wanted to exist in the world. I tried everything that promised to make that possible without learning to write code from scratch.</p>
+
+        <p>ChatGPT's code generation. GitHub Copilot. Perplexity. Google AI Studio with Gemini. Each one came with bigger promises than the last. And for small, self-contained things, they delivered. I built <a href="../apps/bitcoin-100k.html">jeuzbtcza100k.cz</a> — a fun app tracking whether Bitcoin would hit $100K — and a <a href="../apps/qr-clock.html">QR Clock</a> that generates a scannable code from the current time. Simple, satisfying, done.</p>
+
+        <p>But then I tried to build SpekPlatz.</p>
+
+        <p>SpekPlatz was supposed to be a personal map app — curated places, collections, a sense of your own geography rather than everyone's. I had a clear vision. I could describe every detail. But every AI tool I pointed at it either produced a toy that missed the point entirely, or gave me something so fragile that adding one feature broke three others. The gap between "I can describe this clearly" and "this actually exists and works" was still enormous for anything beyond the trivially simple.</p>
+
+        <p>It was genuinely frustrating, because I knew the problem wasn't my ability to explain what I wanted. The bottleneck was somewhere else.</p>
+
+        <blockquote>"I had ideas. I had the ability to describe them clearly. What I was missing was a tool capable of acting on that description at the level of complexity I needed."</blockquote>
 
         <h2>Then Claude Code happened</h2>
 
-        <p>I started using Claude Code on a whim. I had a small web app idea — nothing complex, just a tool I wanted for myself. I described it, conversationally, like I was explaining it to a friend who happened to be a brilliant developer.</p>
+        <p>I don't remember the exact moment I started using Claude Code. I remember the feeling — the same one I had in Chrome DevTools, but multiplied. You describe something, it appears. You say "that's not right," it changes. You ask for something you couldn't have predicted wanting, and it's there. Not a rough draft. A thing.</p>
 
-        <p>An hour later, the app existed.</p>
+        <p>SpekPlatz — the app that had beaten everything else I tried — came together. The full version: interactive map, place collections, community sharing, a custom visual design. It launched in February 2026. I hadn't typed a line of the actual code.</p>
 
-        <p>Not a prototype. Not a wireframe. A working, styled, functional application. And I hadn't typed a single line of code.</p>
+        <p>What followed was almost embarrassing in its pace. KeepAwake Pro — a desktop utility. Music Mouse — a generative instrument that plays itself based on cursor movement. The Resonant Labs website itself. ConsentKit — a real, open-source cookie consent library that developers can actually use. DayLog — a habit tracker I built for a friend in what was essentially a focused evening. VagoshIt — a full group activity planner with authentication, a Supabase database, a real-time calendar.</p>
 
-        <blockquote>"The most valuable skill in the AI era isn't coding — it's knowing what you want to build, and being able to describe it clearly."</blockquote>
+        <p>Twelve apps in about six weeks. I'd gone from "ideas I couldn't build" to "ideas I can't ship fast enough."</p>
 
-        <h2>What actually changed</h2>
+        <h2>Why everything is free and open source</h2>
 
-        <p>The bottleneck in my creative process wasn't ideas. It was implementation. Claude Code removed that bottleneck entirely. Now when I have an idea, the question is no longer "can I build this?" — it's always yes. The question becomes "should I build this? Does it solve a real problem? Will it be useful?"</p>
+        <p>When I started shipping apps, the question of whether to charge for them came up quickly. The honest answer was straightforward: no. Not because the apps aren't useful — I think some of them genuinely are — but because the barrier to building them was so low for me that charging felt dishonest. The cost was mostly time and curiosity. The AI did the heavy lifting I couldn't do.</p>
 
-        <p>That's a much more interesting question to spend your energy on.</p>
+        <p>I've also gotten an enormous amount from open source software over the years without contributing much back. This felt like a way to change that. And practically: open source apps are more interesting. People use them, find bugs, suggest things. They live longer and evolve further than closed ones.</p>
 
-        <p>And here's the thing: as a digital marketer, I'm actually well placed to answer it. I understand audiences. I understand user needs. I understand what makes something worth using. I was already good at the part that matters most — I just couldn't execute. Now I can.</p>
+        <p>So everything on Resonant Labs is free, open, and yours to use or build on.</p>
 
-        <h2>The open source decision</h2>
+        <h2>What I'd tell my father now</h2>
 
-        <p>When I started shipping apps, I faced a question I hadn't anticipated: should I charge for them? The honest answer was: no. Not because the apps aren't valuable, but because the value came from the AI that wrote them. Charging felt like claiming credit I hadn't earned.</p>
+        <p>He wasn't wrong that it was worth knowing. He just showed me the wrong door. Hello World wasn't thrilling because it was abstract — there was nothing behind it I could see or touch. CSS was thrilling because the feedback was instant and visual. Google Ads scripts were useful because they solved a real problem I had that week. Claude Code is where I live now because it connects ideas directly to working things, with nothing useless in between.</p>
 
-        <p>So I made everything free and open source. Every app on Resonant Labs is available to use, fork, learn from, or build upon. No strings attached.</p>
-
-        <h2>What I want you to take away</h2>
-
-        <p>If you're reading this and you have ideas but no coding skills — this is your moment. The tools exist. The barrier is lower than it's ever been. You don't need to spend two years learning JavaScript. You need to learn how to describe what you want, clearly and with specificity.</p>
-
-        <p>That's it. That's the new skill. And you probably already have most of it.</p>
-
-        <p>Try Claude Code. Build something small. See what happens.</p>
+        <p>The underlying skill was never syntax. It was clarity — being able to describe precisely what you want and why, and then being able to evaluate whether what comes back is right. That's a marketer's skill. Turns out it was a builder's skill too. I just needed the right tools to find that out.</p>
 
       </main>
 
@@ -157,11 +177,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sidebar-card">
           <h4>In this post</h4>
           <nav class="toc-list" aria-label="Table of contents">
-            <a href="#article-content">The idea problem</a>
+            <a href="#article-content">The first crack in the wall</a>
+            <a href="#article-content">Scripts + ChatGPT</a>
+            <a href="#article-content">Every tool that almost got there</a>
             <a href="#article-content">Then Claude Code happened</a>
-            <a href="#article-content">What actually changed</a>
-            <a href="#article-content">The open source decision</a>
-            <a href="#article-content">What I want you to take away</a>
+            <a href="#article-content">Why open source</a>
+            <a href="#article-content">What I'd tell my father now</a>
           </nav>
         </div>
         <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
