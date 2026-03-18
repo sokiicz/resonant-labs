@@ -1748,8 +1748,14 @@ footer {
   /* Smaller hero eyebrow */
   .hero-eyebrow { flex-direction: column; gap: var(--space-1); }
 
-  /* Chatbot */
-  .chatbot-panel { width: calc(100vw - 32px); right: 16px; bottom: 80px; }
+  /* Chatbot — icon-only trigger, compact panel */
+  #idea-chatbot { bottom: 16px; right: 16px; }
+  .chatbot-trigger { padding: 14px; border-radius: 50%; }
+  .chatbot-trigger-label { display: none; }
+  .chatbot-panel { width: calc(100vw - 32px); right: 0; bottom: 64px; max-height: 70vh; }
+  .chatbot-messages { min-height: 120px; max-height: 180px; }
+  .chatbot-header { padding: 12px 14px; }
+  .chatbot-input-row { padding: 8px; }
 }
 
 /* ============================================
