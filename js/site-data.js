@@ -231,8 +231,8 @@ window.SITE_DATA = {
   posts: [
     {
       id: 'art-of-prompting',
-      title: 'The Art of Prompting: How I Describe My Vision to Claude',
-      excerpt: 'Talking to an AI is a skill in itself. Here\'s how I\'ve learned to communicate ideas clearly enough to get exactly what I imagine.',
+      title: 'The Art of Prompting: How I Actually Work',
+      excerpt: 'After 12 apps built with Claude Code, here\'s the honest truth: the workflow builds itself. You don\'t study prompting. You just start building.',
       date: '22 Feb 2026',
       readTime: '7 min read',
 
@@ -250,9 +250,9 @@ window.SITE_DATA = {
     {
       id: 'why-ai-not-code',
       title: 'Why I\'m Building Apps with AI Instead of Learning to Code',
-      excerpt: 'I\'ve always had ideas. What I lacked was the technical ability to bring them to life — until Claude Code changed everything.',
+      excerpt: 'I tried Hello World as a kid and hated it. Then CSS, then Google Ads scripts, then every AI tool that promised to bridge the gap. Most couldn\'t. Then one did.',
       date: '15 Feb 2026',
-      readTime: '5 min read',
+      readTime: '9 min read',
       tag: 'Thoughts',
       tagClass: 'badge-primary',
       gradientFrom: '#8b5cf6',
