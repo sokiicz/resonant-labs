@@ -614,26 +614,77 @@ function populateDynamicStats() {
 
 /* ============================================
    DRAGGABLE CONSENTKIT REOPENER
-   Watches for the ConsentKit reopener button (open shadow DOM)
-   and makes it draggable. Drag past 85% of screen height to hide.
+   - Draggable via mouse and touch
+   - Drag below 85% of viewport to hide for the session
+   - Session persistence via sessionStorage
+   - Shows a drag hint on first appearance
    ============================================ */
 function initDraggableCookieWidget() {
+  const SESSION_KEY = 'ck-reopener-hidden';
+
   const observer = new MutationObserver(() => {
     const host = document.getElementById('consentkit-reopener');
     if (!host || !host.shadowRoot) return;
     observer.disconnect();
 
+    // If hidden this session, instantly hide and bail
+    if (sessionStorage.getItem(SESSION_KEY)) {
+      host.style.display = 'none';
+      return;
+    }
+
     requestAnimationFrame(() => {
       const btn = host.shadowRoot.querySelector('.ck-reopener');
       if (!btn) return;
 
-      // Convert from bottom/left to top/left for easier drag math
+      // Convert bottom/left to top/left for drag math
       btn.style.bottom = 'auto';
       btn.style.top = (window.innerHeight - 20 - 42) + 'px';
       btn.style.cursor = 'grab';
       btn.style.touchAction = 'none';
 
+      // Inject drag hint tooltip into shadow DOM
+      const hintStyle = document.createElement('style');
+      hintStyle.textContent = `
+        .ck-drag-hint {
+          position: fixed;
+          font-family: -apple-system, sans-serif;
+          font-size: 11px;
+          color: rgba(255,255,255,0.75);
+          background: rgba(0,0,0,0.7);
+          padding: 4px 8px;
+          border-radius: 6px;
+          white-space: nowrap;
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.4s;
+          z-index: 2147483644;
+        }
+        .ck-drag-hint.visible { opacity: 1; }
+      `;
+      host.shadowRoot.appendChild(hintStyle);
+
+      const hint = document.createElement('div');
+      hint.className = 'ck-drag-hint';
+      hint.textContent = 'drag to move · drag down to hide';
+      host.shadowRoot.appendChild(hint);
+
+      // Position hint above the button and show briefly
+      function positionHint() {
+        const rect = btn.getBoundingClientRect();
+        hint.style.left = Math.max(8, rect.left - 60) + 'px';
+        hint.style.top  = (rect.top - 30) + 'px';
+      }
+      positionHint();
+      requestAnimationFrame(() => hint.classList.add('visible'));
+      setTimeout(() => hint.classList.remove('visible'), 3000);
+
       let dragging = false, hasMoved = false, startX, startY;
+
+      function hideWidget() {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        host.style.display = 'none';
+      }
 
       function onDown(e) {
         dragging = true;
@@ -645,6 +696,7 @@ function initDraggableCookieWidget() {
         startY = cy - rect.top;
         btn.style.cursor = 'grabbing';
         btn.style.transition = 'none';
+        hint.classList.remove('visible');
         e.preventDefault();
       }
 
@@ -655,6 +707,16 @@ function initDraggableCookieWidget() {
         const cy = e.touches ? e.touches[0].clientY : e.clientY;
         btn.style.left = (cx - startX) + 'px';
         btn.style.top  = (cy - startY) + 'px';
+        positionHint();
+
+        // Show hint when nearing the bottom threshold
+        const rect = btn.getBoundingClientRect();
+        if (rect.top > window.innerHeight * 0.7) {
+          hint.textContent = 'release to hide';
+          hint.classList.add('visible');
+        } else {
+          hint.classList.remove('visible');
+        }
         e.preventDefault();
       }
 
@@ -662,13 +724,13 @@ function initDraggableCookieWidget() {
         if (!dragging) return;
         dragging = false;
         btn.style.cursor = 'grab';
+        hint.classList.remove('visible');
+        hint.textContent = 'drag to move · drag down to hide';
         if (hasMoved) {
-          // Suppress the click that fires after mouseup/touchend
           btn.addEventListener('click', ev => ev.stopPropagation(), { once: true, capture: true });
-          // Hide if dragged below 85% of viewport
           const rect = btn.getBoundingClientRect();
           if (rect.top > window.innerHeight * 0.85) {
-            host.style.display = 'none';
+            hideWidget();
           }
         }
         hasMoved = false;

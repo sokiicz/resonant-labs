@@ -299,7 +299,7 @@ p { line-height: 1.75; }
 .hero {
   position: relative;
   z-index: 1;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1684,7 +1684,7 @@ footer {
   .nav-toggle { display: flex; }
 
   /* Hero */
-  .hero { padding: calc(var(--nav-h) + var(--space-1)) var(--space-2) var(--space-5); }
+  .hero { padding: calc(var(--nav-h) + var(--space-2)) var(--space-2) var(--space-6); }
   .hero-desc { font-size: 1rem; }
   .hero-cta { flex-direction: column; align-items: center; }
   .hero-cta .btn { width: 100%; max-width: 300px; justify-content: center; }
