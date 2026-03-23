@@ -230,6 +230,18 @@ window.SITE_DATA = {
   ---------------------------------------------------------- */
   posts: [
     {
+      id: 'bitcoin-100k',
+      title: 'I Built a Website So I\'d Stop Checking CoinMarketCap',
+      excerpt: 'Bitcoin was approaching $100K and I kept refreshing CMC for one number. So I built a page that only answers that one question. Here\'s the story and where it\'s going.',
+      date: '18 Mar 2026',
+      readTime: '4 min read',
+      tag: 'Crypto',
+      tagClass: 'badge-amber',
+      gradientFrom: '#f59e0b',
+      gradientTo: '#f97316',
+      url: 'blog/bitcoin-100k.html',
+    },
+    {
       id: 'art-of-prompting',
       title: 'The Art of Prompting: How I Actually Work',
       excerpt: 'After 12 apps built with Claude Code, here\'s the honest truth: the workflow builds itself. You don\'t study prompting. You just start building.',
