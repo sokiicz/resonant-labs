@@ -601,14 +601,20 @@ function populateDynamicStats() {
   const inProgressEl = document.getElementById('stat-in-progress');
   if (inProgressEl) inProgressEl.textContent = WIP_APPS.length;
 
-  // Apps with any update in the last 7 days
-  const releasedEl = document.getElementById('stat-released-week');
-  if (releasedEl) {
-    const cutoff = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-    const count = LIVE_APPS.filter(app =>
-      (app.updates || []).some(u => new Date(u.date) >= cutoff)
-    ).length;
-    releasedEl.textContent = count;
+  // Code lines written (last 7 days) — from code-stats.js
+  const codeLinesEl = document.getElementById('stat-code-lines');
+  if (codeLinesEl) {
+    const n = (window.CODE_STATS && window.CODE_STATS.lines7d) || 0;
+    codeLinesEl.textContent = n >= 1000 ? (n / 1000).toFixed(1) + 'k' : n;
+  }
+
+  // Apps released this month
+  const releasedMonthEl = document.getElementById('stat-released-month');
+  if (releasedMonthEl) {
+    const now = new Date();
+    const ym = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+    const count = LIVE_APPS.filter(a => (a.releaseDate || '').startsWith(ym)).length;
+    releasedMonthEl.textContent = count;
   }
 }
 
