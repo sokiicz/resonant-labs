@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OtočSvět — Resonant Labs</title>
+  <meta name="description" content="A map tile puzzle game — rotate scrambled map tiles to reconstruct real city maps. Solo play, daily challenge, and a leaderboard. Built on OpenStreetMap and MapTiler.">
+  <meta property="og:title" content="OtočSvět — Resonant Labs">
+  <meta property="og:description" content="A map tile puzzle game — rotate scrambled map tiles to reconstruct real city maps. Solo play, daily challenge, and a leaderboard.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://resonantlabs.online/apps/otocsvet.html">
+  <meta property="og:site_name" content="Resonant Labs">
+  <link rel="canonical" href="https://resonantlabs.online/apps/otocsvet.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>:root{--app-from:#1e3a5f;--app-to:#6366f1;}</style>
+  <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage:              'denied',
+      ad_user_data:            'denied',
+      ad_personalization:      'denied',
+      analytics_storage:       'denied',
+      functionality_storage:   'denied',
+      personalization_storage: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9635SSK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9635SSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#oc-lg)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="oc-lg" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Labs
+      </a>
+      <div class="nav-links">
+        <a href="../apps.html">Apps</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../apps.html">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="app-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../apps.html">Apps</a><span class="breadcrumb-sep">›</span>
+        <span>OtočSvět</span>
+      </nav>
+      <div class="app-hero-grid">
+        <div class="app-hero-info fade-in">
+          <span class="badge badge-primary" style="margin-bottom:20px;">Game · Maps · Puzzle · OpenStreetMap</span>
+          <h1>OtočSvět</h1>
+          <p class="app-hero-tagline">A map tile puzzle — scrambled tiles of real city maps, rotated back into place. The faster you solve it, the higher the score.</p>
+          <div class="app-hero-actions">
+            <a href="https://frontend-sokiiczs-projects.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Play Beta
+            </a>
+          </div>
+          <div class="app-hero-meta">
+            <span class="app-hero-meta-item">🗓️ 22 Apr 2026</span>
+            <span class="app-hero-meta-item">🤖 Built with Claude Code</span>
+            <span class="app-hero-meta-item">🌍 React · Fastify · PostgreSQL · MapTiler</span>
+          </div>
+        </div>
+        <div class="app-preview-container fade-in fade-in-delay-2" style="background: linear-gradient(135deg, #1e3a5f 0%, #6366f1 100%); display:flex; align-items:center; justify-content:center;">
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:4px; padding:24px; opacity:0.85;">
+            <div style="width:64px;height:64px;background:rgba(255,255,255,0.1);border-radius:6px;border:1px solid rgba(255,255,255,0.2);transform:rotate(90deg);"></div>
+            <div style="width:64px;height:64px;background:rgba(255,255,255,0.15);border-radius:6px;border:1px solid rgba(255,255,255,0.25);"></div>
+            <div style="width:64px;height:64px;background:rgba(255,255,255,0.08);border-radius:6px;border:1px solid rgba(255,255,255,0.2);transform:rotate(180deg);"></div>
+            <div style="width:64px;height:64px;background:rgba(255,255,255,0.12);border-radius:6px;border:1px solid rgba(255,255,255,0.2);transform:rotate(270deg);"></div>
+            <div style="width:64px;height:64px;background:rgba(99,102,241,0.4);border-radius:6px;border:2px solid rgba(99,102,241,0.8);"></div>
+            <div style="width:64px;height:64px;background:rgba(255,255,255,0.1);border-radius:6px;border:1px solid rgba(255,255,255,0.2);transform:rotate(90deg);"></div>
+            <div style="width:64px;height:64px;background:rgba(255,255,255,0.08);border-radius:6px;border:1px solid rgba(255,255,255,0.15);"></div>
+            <div style="width:64px;height:64px;background:rgba(255,255,255,0.13);border-radius:6px;border:1px solid rgba(255,255,255,0.2);transform:rotate(180deg);"></div>
+            <div style="width:64px;height:64px;background:rgba(255,255,255,0.1);border-radius:6px;border:1px solid rgba(255,255,255,0.2);transform:rotate(90deg);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="app-tabs-section">
+    <div class="container">
+      <div class="app-detail-layout">
+      <div>
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="oc-overview">Overview</button>
+        <button class="tab-btn" data-tab="oc-built">How It Was Built</button>
+        <button class="tab-btn" data-tab="oc-tech">Tech Stack</button>
+      </div>
+
+      <div class="tab-pane active" id="oc-overview">
+        <div class="content-prose fade-in">
+          <h3>What is OtočSvět?</h3>
+          <p>OtočSvět (Czech for "Rotate the World") is a puzzle game built around real geography. Each round, you're shown a grid of map tiles — satellite-quality images of an actual city, cut into pieces and scrambled with random rotations. Your job is to click each tile back into its correct orientation.</p>
+          <p>It sounds simple. In practice, distinguishing a rotated road intersection from a rotated riverbank at speed is genuinely tricky — and satisfying when it clicks.</p>
+
+          <h3>Game modes</h3>
+          <ul>
+            <li><strong>Solo</strong> — 5 puzzles in a row, your choice of grid size: 3×3, 4×4, or 5×5. Score is based on correctness and speed.</li>
+            <li><strong>Daily challenge</strong> — a fixed set of 5 puzzles, same for everyone on that day. Compare scores on the leaderboard.</li>
+          </ul>
+
+          <h3>Scoring</h3>
+          <p>Each correct solution earns up to 1,000 points. The time bonus decays from the moment a round starts — the faster you confirm, the more you keep. Wrong attempts cost 200 points each. Skip a round for 0 points and move on. Gold medal starts at 3,500 total points across 5 rounds.</p>
+
+          <h3>The cities</h3>
+          <p>Puzzles are generated from city maps across the world using the MapTiler Cloud API — the same high-quality tiles used in many professional mapping tools. Every puzzle is reviewed and rated for difficulty by a human before it goes live. Unsolvable or ambiguous puzzles (too much water, featureless rooftops) are filtered out.</p>
+
+          <h3>Still in beta</h3>
+          <p>The game is live and playable. The puzzle library is growing. Multiplayer arena mode — where players race through the same puzzle simultaneously — is planned as phase two.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="oc-built">
+        <div class="content-prose fade-in">
+          <h3>The idea</h3>
+          <p>The starting point was a whitepaper — not a technical spec, but a one-page game design document describing what the game should feel like: fast, geographic, satisfying. The constraint of "real maps" as the puzzle surface felt unique. Every puzzle is inherently different because every city looks different.</p>
+
+          <h3>Building with Claude Code</h3>
+          <p>The backend puzzle generator was the first challenge. MapTiler's static API returns image tiles at specific coordinates and zoom levels — the generator slices those into a grid, stores the tiles, and records their correct rotations. Claude Code wrote the CLI tool, the Fastify API, and the Prisma schema in a single session.</p>
+          <p>The frontend game loop was built next: loading a session, showing tiles, handling rotations, computing scores on the server, advancing rounds. The tile rotation animation alone went through three rewrites before the CSS transition approach was abandoned in favour of a per-tile animation component that didn't fight React's rendering cycle.</p>
+          <p>The admin panel was the last piece — a password-protected review interface where puzzles can be approved, rated for difficulty (1–5), and assigned to daily challenges. Rate limiting was added after the first load test revealed the review endpoint had no protection against rapid-fire submissions.</p>
+
+          <h3>The hardest part</h3>
+          <p>Session resume. If a player closes the tab mid-game, the session should survive. If they refresh, the timer should account for elapsed time. Getting the client and server to agree on game state across disconnects required careful design — the server is the authority, the client reconstructs from the session payload on resume.</p>
+
+          <blockquote>"The rotation animation going from CSS transitions to a React component was the right call. It stopped fighting the state machine."</blockquote>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="oc-tech">
+        <div class="content-prose fade-in">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><span class="tech-icon">⚛️</span>React 19</div>
+            <div class="tech-item"><span class="tech-icon">🔷</span>TypeScript</div>
+            <div class="tech-item"><span class="tech-icon">⚡</span>Vite 6</div>
+            <div class="tech-item"><span class="tech-icon">💨</span>Tailwind CSS v4</div>
+            <div class="tech-item"><span class="tech-icon">🚀</span>Fastify</div>
+            <div class="tech-item"><span class="tech-icon">🗄️</span>PostgreSQL + Prisma 5</div>
+            <div class="tech-item"><span class="tech-icon">🌍</span>MapTiler Cloud API</div>
+            <div class="tech-item"><span class="tech-icon">🗺️</span>OpenStreetMap</div>
+            <div class="tech-item"><span class="tech-icon">▲</span>Vercel (frontend)</div>
+            <div class="tech-item"><span class="tech-icon">🐳</span>Docker (backend)</div>
+            <div class="tech-item"><span class="tech-icon">🔗</span>pnpm monorepo</div>
+            <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
+          </div>
+
+          <h3 style="margin-top:var(--space-5);">Architecture</h3>
+          <p>The project is a pnpm monorepo with three packages: <code>backend</code> (Fastify API + Prisma + puzzle generator CLI), <code>frontend</code> (React + Vite + Tailwind), and <code>shared</code> (TypeScript types shared across both). The frontend is deployed to Vercel. The backend runs in a Docker container.</p>
+
+          <h3>Puzzle generation</h3>
+          <p>Puzzles are generated offline by a CLI tool: <code>pnpm generate -- --gridSize 3 --count 10</code>. It calls the MapTiler Static API for a random city coordinate, downloads the image, slices it into an N×N grid of tiles, stores them as WebP files, and records each tile's correct rotation (always 0 — the initial scramble is applied at session start). Generated puzzles start in <code>draft</code> status and must be reviewed and activated before players see them.</p>
+
+          <h3>Scoring</h3>
+          <p>Score calculation runs server-side on submission. Time bonus starts at 500 points and decays at 5 points per second from when the round began (server timestamp). Wrong attempts subtract 200 from the final round score. The server validates the submitted rotations against the stored correct values and returns the earned score immediately.</p>
+        </div>
+      </div>
+      </div><!-- end main -->
+
+      <aside class="article-sidebar" aria-label="App sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Labs</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
+            <a href="mailto:contactme@resonantlabs.online?subject=OtočSvět" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send feedback →</a>
+          </div>
+        </div>
+        <div class="sidebar-card" data-changelog-id="otocsvet"></div>
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own app</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to code. Just describe what you want and let Claude Code build it.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+      </aside>
+      </div><!-- end app-detail-layout -->
+    </div>
+  </section>
+
+  <section class="comments-section">
+    <div class="container">
+      <h3>Got thoughts?</h3>
+      <p class="comments-intro">Played a round? Found a city you recognised? Drop a comment — no account needed, just a name and a message.</p>
+      <div id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e"
+           data-page-id="otocsvet"
+           data-theme="dark">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#oc-flg)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="oc-flg" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Labs
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../apps.html">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantlabs.online">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Labs</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
+</body>
+</html>

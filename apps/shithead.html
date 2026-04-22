@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shithead — Resonant Labs</title>
+  <meta name="description" content="Real-time multiplayer card game. Last player holding cards loses. Play with friends or bots, drag-sort your hand, and enjoy the chaos.">
+  <meta property="og:title" content="Shithead — Resonant Labs">
+  <meta property="og:description" content="Real-time multiplayer card game. Last player holding cards loses. Play with friends or bots, drag-sort your hand, and enjoy the chaos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://resonantlabs.online/apps/shithead.html">
+  <meta property="og:site_name" content="Resonant Labs">
+  <link rel="canonical" href="https://resonantlabs.online/apps/shithead.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>:root{--app-from:#1a4a2e;--app-to:#2d6a46;}</style>
+  <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage:              'denied',
+      ad_user_data:            'denied',
+      ad_personalization:      'denied',
+      analytics_storage:       'denied',
+      functionality_storage:   'denied',
+      personalization_storage: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9635SSK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9635SSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#sh-lg)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="sh-lg" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Labs
+      </a>
+      <div class="nav-links">
+        <a href="../apps.html">Apps</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../apps.html">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="app-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../apps.html">Apps</a><span class="breadcrumb-sep">›</span>
+        <span>Shithead</span>
+      </nav>
+      <div class="app-hero-grid">
+        <div class="app-hero-info fade-in">
+          <span class="badge badge-primary" style="margin-bottom:20px;">Game · Multiplayer · Cards · Real-time</span>
+          <h1>Shithead 💩</h1>
+          <p class="app-hero-tagline">The classic card game, online. Get rid of all your cards — last player holding them loses and earns the title. No accounts, no installs, play in your browser.</p>
+          <div class="app-hero-actions">
+            <a href="https://shithead-3d6b3.web.app/" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Play Now
+            </a>
+          </div>
+          <div class="app-hero-meta">
+            <span class="app-hero-meta-item">🗓️ 11 Mar 2026</span>
+            <span class="app-hero-meta-item">🤖 Built with Claude Code</span>
+            <span class="app-hero-meta-item">🃏 React · Node.js · Socket.IO · Firebase</span>
+          </div>
+        </div>
+        <div class="app-preview-container fade-in fade-in-delay-2" style="background: linear-gradient(135deg, #1a4a2e 0%, #2d6a46 100%); display:flex; align-items:center; justify-content:center;">
+          <div style="text-align:center;">
+            <div style="font-size:4rem; margin-bottom:12px;">💩</div>
+            <div style="display:flex; gap:6px; justify-content:center;">
+              <div style="width:36px;height:52px;background:white;border-radius:5px;border:1px solid rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:bold;color:#1a4a2e;">A</div>
+              <div style="width:36px;height:52px;background:white;border-radius:5px;border:1px solid rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:bold;color:#c00;">K</div>
+              <div style="width:36px;height:52px;background:white;border-radius:5px;border:1px solid rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:bold;color:#1a4a2e;">Q</div>
+              <div style="width:36px;height:52px;background:white;border-radius:5px;border:1px solid rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:bold;color:#c00;">3</div>
+              <div style="width:36px;height:52px;background:rgba(255,255,255,0.15);border-radius:5px;border:1px solid rgba(255,255,255,0.3);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="app-tabs-section">
+    <div class="container">
+      <div class="app-detail-layout">
+      <div>
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="sh-overview">Overview</button>
+        <button class="tab-btn" data-tab="sh-rules">How to Play</button>
+        <button class="tab-btn" data-tab="sh-built">How It Was Built</button>
+        <button class="tab-btn" data-tab="sh-tech">Tech Stack</button>
+      </div>
+
+      <div class="tab-pane active" id="sh-overview">
+        <div class="content-prose fade-in">
+          <h3>The classic card game, online</h3>
+          <p>Shithead is a shedding-type card game that's been played at kitchen tables, campsites, and hostels for decades. The goal is simple: get rid of all your cards before everyone else. The last player holding cards is the Shithead.</p>
+          <p>This version brings it online with real-time multiplayer, bot opponents, in-game chat, and enough polish to feel like a proper game — not a prototype. No account required. Create a room, share the link, and play.</p>
+
+          <h3>Features</h3>
+          <ul>
+            <li><strong>Real-time multiplayer</strong> — up to 4 players via WebSocket, synchronised game state</li>
+            <li><strong>Bot opponents</strong> — fill empty seats with bots and start immediately</li>
+            <li><strong>Lobby chat</strong> — chat before and during the game with reaction sounds</li>
+            <li><strong>Drag-to-sort hand</strong> — rearrange your cards before locking them face-up</li>
+            <li><strong>Turn and game timers</strong> — keeps the game moving, auto-plays on timeout</li>
+            <li><strong>Quick-play mechanic</strong> — multiple identical cards can be played at once</li>
+            <li><strong>Ready badges</strong> — see when each player is ready to start</li>
+            <li><strong>Idle poop animation</strong> — the Shithead earns a special animation while waiting their turn</li>
+            <li><strong>Mute / surrender controls</strong> — step away gracefully</li>
+            <li><strong>24h game expiry</strong> — abandoned games clean up automatically</li>
+          </ul>
+
+          <h3>Source code is private</h3>
+          <p>Like RPS Battle, this game's source code is kept private. The game is free to play for everyone.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="sh-rules">
+        <div class="content-prose fade-in">
+          <h3>The goal</h3>
+          <p>Get rid of every card in your hand, then your face-up cards, then your face-down cards. The last player with cards is the Shithead.</p>
+
+          <h3>Setup</h3>
+          <p>Each player is dealt 9 cards: 3 face-down (locked, don't look), 3 face-up on top of the face-down pile (you choose which 3 before the game starts), and 3 in hand. Before the game begins, you can swap hand cards for face-up cards to build a stronger final layer.</p>
+
+          <h3>Playing</h3>
+          <ul>
+            <li>Play a card equal to or higher than the top card of the discard pile.</li>
+            <li>Play multiple cards of the same rank at once.</li>
+            <li>If you can't play, pick up the entire discard pile.</li>
+            <li>Special cards: <strong>2</strong> resets the pile (anything can be played next), <strong>10</strong> burns the pile (it's discarded, play again), <strong>7</strong> reverses the rule (must play equal or lower).</li>
+          </ul>
+
+          <h3>End game</h3>
+          <p>Once your hand is empty, play from your face-up cards. Once those are gone, flip and play face-down cards blind — no peeking. If a face-down card can't be played, you pick up the pile. The first player to clear all three layers wins. The last to clear theirs is the Shithead.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="sh-built">
+        <div class="content-prose fade-in">
+          <h3>Why this game</h3>
+          <p>Shithead is one of those games that almost everyone has played at some point, but nobody could ever find online in a form that felt right. Most versions are buried in Flash-era sites or require account creation. This one is just a link.</p>
+
+          <h3>Building with Claude Code</h3>
+          <p>The game engine was the core challenge. Shithead has a deceptively complex rule set — the three-phase hand structure (hand → face-up → face-down blind), the pile-reset and pile-burn special cards, the 7-reverse rule, and the edge cases around playing multiple identical cards all had to be implemented correctly before anything else could work.</p>
+          <p>Claude Code built the full game engine, real-time Socket.IO synchronisation, and the React frontend in one extended session. Bot logic came next — bots needed to make legal moves without breaking the game state, with a preference for burning the pile when possible.</p>
+          <p>Polish came last: drag-and-drop hand ordering, the idle poop animation, fart sound effects, turn timers with auto-play, and lobby chat with sound reactions. Each feature was described conversationally and implemented incrementally.</p>
+
+          <blockquote>"The face-down phase is where the game gets truly chaotic. You flip blind, hope for the best, and sometimes pick up the entire pile. Getting that feeling right required careful attention to timing and animation."</blockquote>
+
+          <h3>The quick-play mechanic</h3>
+          <p>One of the trickier implementation details: if you have multiple cards of the same rank, you can play them all at once. If those cards include a 10, the pile burns immediately. If combined with a 7, the reverse rule applies to the entire play. All these interactions had to be resolved in the right order, server-side, with the result broadcast to all clients atomically.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="sh-tech">
+        <div class="content-prose fade-in">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><span class="tech-icon">⚛️</span>React 19</div>
+            <div class="tech-item"><span class="tech-icon">🔷</span>TypeScript</div>
+            <div class="tech-item"><span class="tech-icon">⚡</span>Vite</div>
+            <div class="tech-item"><span class="tech-icon">💨</span>Tailwind CSS v4</div>
+            <div class="tech-item"><span class="tech-icon">🔌</span>Socket.IO</div>
+            <div class="tech-item"><span class="tech-icon">🚂</span>Node.js + Express</div>
+            <div class="tech-item"><span class="tech-icon">🔥</span>Firebase Hosting</div>
+            <div class="tech-item"><span class="tech-icon">☁️</span>Google Cloud Run</div>
+            <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
+          </div>
+
+          <h3 style="margin-top:var(--space-5);">Architecture</h3>
+          <p>The game is split into a React frontend hosted on Firebase and a Node.js + Express backend running on Google Cloud Run. All game state lives on the server — the client is a pure renderer. Socket.IO handles real-time communication between players and bots.</p>
+          <p>Game rooms expire after 24 hours of inactivity. Abandoned sockets are cleaned up on disconnect. The server uses an in-memory store for active games (no database required at this scale).</p>
+
+          <h3>Source code</h3>
+          <p>The source code for this project is kept private. The game itself is completely free to play — no account, no ads, no cost.</p>
+        </div>
+      </div>
+      </div><!-- end main -->
+
+      <aside class="article-sidebar" aria-label="App sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Labs</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code.</div>
+            <a href="mailto:contactme@resonantlabs.online?subject=Shithead" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send feedback →</a>
+          </div>
+        </div>
+        <div class="sidebar-card" data-changelog-id="shithead"></div>
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own app</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to code. Just describe what you want and let Claude Code build it.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+      </aside>
+      </div><!-- end app-detail-layout -->
+    </div>
+  </section>
+
+  <section class="comments-section">
+    <div class="container">
+      <h3>Got thoughts?</h3>
+      <p class="comments-intro">Played a game? Have rules feedback or a feature request? Drop it here — no account needed.</p>
+      <div id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e"
+           data-page-id="shithead"
+           data-theme="dark">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#sh-flg)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="sh-flg" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Labs
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../apps.html">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantlabs.online">Email</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Labs</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
+</body>
+</html>
