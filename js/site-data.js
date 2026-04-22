@@ -75,7 +75,7 @@ window.SITE_DATA = {
       githubUrl: null,
       liveUrl: 'https://frontend-sokiiczs-projects.vercel.app',
       liveLabel: 'Play Beta',
-      detailUrl: null,
+      detailUrl: 'apps/otocsvet.html',
       releaseDate: '2026-04-22',
       updates: [
         { date: '2026-04-17', note: 'Project started — pnpm monorepo, Fastify + Prisma + PostgreSQL backend, MapTiler puzzle generator, React 19 frontend', label: 'Scaffold' },
@@ -140,7 +140,7 @@ window.SITE_DATA = {
       githubUrl: null,
       liveUrl: 'https://shithead-3d6b3.web.app/',
       liveLabel: 'Play',
-      detailUrl: null,
+      detailUrl: 'apps/shithead.html',
       releaseDate: '2026-03-11',
       updates: [
         { date: '2026-03-10', note: 'Initial build: full game engine, bot opponents, in-game chat, sound reactions', label: 'v0.1' },
