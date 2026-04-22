@@ -1767,6 +1767,24 @@ footer {
   .chatbot-messages { min-height: 120px; max-height: 180px; }
   .chatbot-header { padding: 12px 14px; }
   .chatbot-input-row { padding: 8px; }
+  /* Blog post cover — less squashed on narrow screens */
+  .blog-post-cover { aspect-ratio: 16/9; }
+}
+
+@media (max-width: 375px) {
+  /* Tighter container padding */
+  .container { padding: 0 12px; }
+
+  /* Stats — single column so numbers aren't squeezed */
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-item { border-right: none !important; border-bottom: 1px solid var(--border-1); }
+  .stat-item:last-child { border-bottom: none; }
+
+  /* Allow button text to wrap instead of overflowing */
+  .btn { white-space: normal; }
+
+  /* Slightly smaller h1 */
+  h1 { font-size: 1.8rem; }
 }
 
 /* ============================================
