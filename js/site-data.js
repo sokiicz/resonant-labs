@@ -73,7 +73,7 @@ window.SITE_DATA = {
       gradientFrom: '#1e3a5f',
       gradientTo: '#6366f1',
       githubUrl: null,
-      liveUrl: 'https://frontend-sokiiczs-projects.vercel.app',
+      liveUrl: 'https://otocsvet-sokiiczs-projects.vercel.app',
       liveLabel: 'Play Beta',
       detailUrl: 'apps/otocsvet.html',
       releaseDate: '2026-04-22',
