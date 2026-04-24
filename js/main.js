@@ -597,6 +597,10 @@ function initBgAmbient() {
 }
 
 function populateDynamicStats() {
+  // Total apps built (live + wip, excludes hidden)
+  const appsTotalEl = document.getElementById('stat-apps-total');
+  if (appsTotalEl) appsTotalEl.textContent = LIVE_APPS.length + WIP_APPS.length;
+
   // Apps in progress
   const inProgressEl = document.getElementById('stat-in-progress');
   if (inProgressEl) inProgressEl.textContent = WIP_APPS.length;
