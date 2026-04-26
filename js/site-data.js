@@ -75,7 +75,7 @@ window.SITE_DATA = {
       githubUrl: null,
       liveUrl: 'https://wildround.fly.dev',
       liveLabel: 'Play now',
-      detailUrl: null,
+      detailUrl: 'apps/wildround.html',
       releaseDate: '2026-04-26',
       updates: [
         { date: '2026-03-14', note: 'Initial scaffold: lobby, QR join, real-time tasks, scoreboard', label: 'MVP scaffold' },
