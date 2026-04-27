@@ -73,7 +73,7 @@ window.SITE_DATA = {
       gradientFrom: '#7c3aed',
       gradientTo: '#4f46e5',
       githubUrl: null,
-      liveUrl: 'https://wildround.fly.dev',
+      liveUrl: 'https://wildround-game.web.app',
       liveLabel: 'Play now',
       detailUrl: 'apps/wildround.html',
       releaseDate: '2026-04-26',

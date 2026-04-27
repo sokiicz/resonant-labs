@@ -83,7 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h1>Wildround 🎲</h1>
           <p class="app-hero-tagline">The party game that gets wild. Every round a new daring task lands on your phone — complete it, earn points, outlast your friends. No accounts, no installs. Share the link or scan the QR.</p>
           <div class="app-hero-actions">
-            <a href="https://wildround.fly.dev" target="_blank" rel="noopener" class="btn btn-primary">
+            <a href="https://wildround-game.web.app" target="_blank" rel="noopener" class="btn btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Play now
             </a>
@@ -218,7 +218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>The task pool is managed through a password-protected admin panel at <code>/tasks</code>. Anyone can suggest a task through the public suggestion form — it lands in a pending queue. The admin reviews, adjusts difficulty, and approves or rejects. Tasks that rate poorly in post-game feedback get surfaced for re-evaluation. It's a lightweight content pipeline that doesn't require a CMS.</p>
 
           <h3>Deployment</h3>
-          <p>The full stack — React client, Express server, and SQLite database — runs in a single Docker container on Fly.io. A persistent volume stores the database across deploys. The free tier covers everything: the machine is always-on (no cold starts, important for WebSocket connections), and the volume is encrypted and snapshot-backed.</p>
+          <p>The frontend is hosted on Firebase Hosting (instant global CDN delivery). The backend runs on Google Cloud Run with min-instances=0 — the container scales to zero when no game is active and spins up in 2–3 seconds when the first player arrives. Because active Socket.IO connections keep the container warm for the entire duration of a game session, this cold-start is a one-time event per session, not a mid-game disruption.</p>
         </div>
       </div>
 
@@ -234,7 +234,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="tech-item"><span class="tech-icon">🗄️</span>SQLite (better-sqlite3)</div>
             <div class="tech-item"><span class="tech-icon">🧩</span>Drizzle ORM</div>
             <div class="tech-item"><span class="tech-icon">🐳</span>Docker</div>
-            <div class="tech-item"><span class="tech-icon">🪂</span>Fly.io</div>
+            <div class="tech-item"><span class="tech-icon">🔥</span>Firebase Hosting</div>
+            <div class="tech-item"><span class="tech-icon">☁️</span>Google Cloud Run</div>
             <div class="tech-item"><span class="tech-icon">📦</span>pnpm workspaces</div>
             <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
           </div>
