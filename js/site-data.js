@@ -79,7 +79,7 @@ window.SITE_DATA = {
       releaseDate: '2026-04-26',
       updates: [
         { date: '2026-03-14', note: 'Initial scaffold: lobby, QR join, real-time tasks, scoreboard', label: 'MVP scaffold' },
-        { date: '2026-04-26', note: '101 tasks, game timer, host end-game, confetti results, game state recovery, deployed to Fly.io', label: 'v1.0 Live' },
+        { date: '2026-04-26', note: '101 tasks, game timer, host end-game, confetti results, game state recovery, deployed to Firebase + Cloud Run (min-instances=0)', label: 'v1.0 Live' },
       ],
     },
     {
