@@ -73,13 +73,15 @@ window.SITE_DATA = {
       gradientFrom: '#7c3aed',
       gradientTo: '#4f46e5',
       githubUrl: null,
-      liveUrl: 'https://wildround-game.web.app',
+      liveUrl: 'https://wildround.cz',
       liveLabel: 'Play now',
       detailUrl: 'apps/wildround.html',
       releaseDate: '2026-04-26',
       updates: [
         { date: '2026-03-14', note: 'Initial scaffold: lobby, QR join, real-time tasks, scoreboard', label: 'MVP scaffold' },
         { date: '2026-04-26', note: '101 tasks, game timer, host end-game, confetti results, game state recovery, deployed to Firebase + Cloud Run (min-instances=0)', label: 'v1.0 Live' },
+        { date: '2026-04-30', note: 'Web Push notifications (VAPID + service worker) for true background alerts on Android/iOS PWAs; mobile viewport fix (min-h-dvh) so content fits without scrolling', label: 'Push notifications' },
+        { date: '2026-05-06', note: 'Migrated server DB from ephemeral local SQLite to Turso (libSQL) — durable across redeploys/scale; full async DB layer; Cloud Run env wired and live', label: 'Turso (durable DB)' },
       ],
     },
     {
@@ -204,26 +206,6 @@ window.SITE_DATA = {
       releaseDate: '20 Feb 2026',
       updates: [
         { date: '2026-02-20', note: 'Initial release — community map, spot submission, Firebase backend', label: 'v1 released' },
-      ],
-    },
-    {
-      id: 'rps-battle',
-      name: 'RPS Battle',
-      shortDesc: 'Real-time multiplayer Rock Paper Scissors battle game with virtual coins. No real money — a reminder that the thrill of betting never needs to cost you anything.',
-      tags: ['Game', 'Multiplayer', 'Real-time', 'WebSockets'],
-      emoji: '⚔️',
-      status: 'live',
-      image: 'Media/RPS-Battle.png',
-      gradientFrom: '#6366f1',
-      gradientTo: '#f43f5e',
-      githubUrl: null,
-      liveUrl: 'https://rps-battle-5486e.web.app',
-      liveLabel: 'Play Now',
-      detailUrl: 'apps/rps-battle.html',
-      releaseDate: '12 Mar 2026',
-      updates: [
-        { date: '2026-03-11', note: 'Initial development — full-stack multiplayer game with auth, betting, real-time battles', label: 'v0.1' },
-        { date: '2026-03-12', note: 'Polished and ready for deployment. Source kept private — built to demonstrate fun betting without real money. Gambling is harmful; this game is a safe alternative.', label: 'v1.0' },
       ],
     },
     {
