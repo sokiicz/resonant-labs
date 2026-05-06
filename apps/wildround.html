@@ -91,7 +91,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="app-hero-meta">
             <span class="app-hero-meta-item">🗓️ 26 Apr 2026</span>
             <span class="app-hero-meta-item">🤖 Built with Claude Code</span>
-            <span class="app-hero-meta-item">🔌 React · Node.js · Socket.IO · SQLite · Fly.io</span>
+            <span class="app-hero-meta-item">🔌 React · Node.js · Socket.IO · Turso · Cloud Run</span>
           </div>
         </div>
         <div class="app-preview-container fade-in fade-in-delay-2" style="background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%); display:flex; align-items:center; justify-content:center; padding: 32px;">
@@ -231,7 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="tech-item"><span class="tech-icon">💨</span>Tailwind CSS v3</div>
             <div class="tech-item"><span class="tech-icon">🔌</span>Socket.IO</div>
             <div class="tech-item"><span class="tech-icon">🚂</span>Node.js + Express</div>
-            <div class="tech-item"><span class="tech-icon">🗄️</span>SQLite (better-sqlite3)</div>
+            <div class="tech-item"><span class="tech-icon">🗄️</span>Turso (libSQL)</div>
             <div class="tech-item"><span class="tech-icon">🧩</span>Drizzle ORM</div>
             <div class="tech-item"><span class="tech-icon">🐳</span>Docker</div>
             <div class="tech-item"><span class="tech-icon">🔥</span>Firebase Hosting</div>
@@ -242,11 +242,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <h3 style="margin-top:var(--space-5);">Architecture</h3>
           <p>Monorepo with three packages: <code>client</code> (React SPA), <code>server</code> (Express + Socket.IO), and <code>shared</code> (TypeScript types). In production, the server builds and serves the client bundle as static files — one container, one origin, no CORS.</p>
-          <p>All game state is stored in SQLite via Drizzle ORM. The schema is straightforward: games, players, tasks, and game_task_assignments. The assignments table tracks which task each player received in each round, their outcome (completed / rejected / expired), any submission note, and a post-game rating. This makes it easy to compute aggregate task quality metrics over time.</p>
+          <p>All game state lives in Turso (managed libSQL) accessed through Drizzle ORM. The schema is straightforward: games, players, tasks, and game_task_assignments. The assignments table tracks which task each player received in each round, their outcome (completed / rejected / expired), any submission note, and a post-game rating. This makes it easy to compute aggregate task quality metrics over time.</p>
           <p>Socket.IO rooms map 1:1 to games (<code>game:{id}</code>). Score updates are broadcast to the whole room; task assignments are sent directly to the individual player's socket. In-process Maps track active game timers and per-player round counters — these are rebuilt on startup by <code>recoverActiveGames()</code>.</p>
 
           <h3>Persistence strategy</h3>
-          <p>SQLite + Fly.io persistent volume. The database file lives at <code>/app/server/data/wildround.db</code>, which is mounted from an encrypted Fly.io volume. Tasks are seeded automatically on first startup. Redeploys don't touch the volume — all game history, task ratings, and suggestions persist across container swaps.</p>
+          <p>Server runs on Google Cloud Run with the database hosted on Turso — a managed libSQL service that speaks the same dialect as SQLite, so the original Drizzle schema and queries port over without changes. The previous setup used a local SQLite file inside the container, which was wiped on every redeploy. Turso decouples storage from compute: the Cloud Run container can scale to zero or be replaced at any time, and game history, task ratings, and suggestions persist independently. Tasks are seeded idempotently on first startup.</p>
 
           <h3>Source code</h3>
           <p>The source code for this project is kept private. The game itself is completely free to play — no account, no ads, no cost.</p>
