@@ -252,6 +252,21 @@ window.SITE_DATA = {
       ],
     },
     {
+      name: 'gochords',
+      status: 'wip',
+      image: null,
+      githubUrl: null,
+      liveUrl: null,
+      detailUrl: null,
+      releaseDate: null,
+      updates: [
+        { date: '2026-05-06', note: 'scaffolded' },
+      ],
+      stack: 'vite',
+      created: '2026-05-06',
+      repo: null,
+    },
+    {
       id: 'ylaway',
       name: 'Ylaway',
       shortDesc: 'Coordinate care for your pets and plants while away. Share trusted helpers, assign days, and get simple reassuring updates.',
