@@ -24,6 +24,33 @@ window.SITE_DATA = {
   ---------------------------------------------------------- */
   apps: [
     {
+      id: 'gochords',
+      name: 'GoChords',
+      shortDesc: 'A free, local-first chord-sheet app. Paste any chord sheet, transpose with capo support, see canvas chord diagrams, and auto-scroll while you play. No account, no backend — everything lives in your browser.',
+      tags: ['Music', 'Web App', 'Open Source'],
+      emoji: '🎸',
+      status: 'live',
+      image: null,
+      gradientFrom: '#f97316',
+      gradientTo: '#a855f7',
+      githubUrl: 'https://github.com/sokiicz/gochords',
+      liveUrl: 'https://gochords.online',
+      liveLabel: 'Open App',
+      detailUrl: 'apps/gochords.html',
+      releaseDate: '6 May 2026',
+      updates: [
+        { date: '2026-05-06', note: 'Scaffolded — Vite + React + TypeScript, smart parser ([Am]inline / {Am} / (Am) / chord-above-lyric), seed songs, localStorage persistence', label: 'Scaffold' },
+        { date: '2026-05-07', note: 'Parser fixes — broader chord grammar, bar-lines, N.C., repeats, fixed section annotations', label: 'Parser v2' },
+        { date: '2026-05-08', note: 'Transpose: capo = fingering at defaultCapo, signed transpose, Key picker, modality filter', label: 'Transpose + Key picker' },
+        { date: '2026-05-10', note: 'Mobile polish, artist pages, contributions, multi-artist parsing, search normalization', label: 'Artist pages' },
+        { date: '2026-05-11', note: 'Mobile chord-lyric wrap fix, compact header, scroll-speed slider, sticky-chords toggle', label: 'Mobile polish' },
+        { date: '2026-05-12', note: 'UG paste support, strumming patterns, auto-detect song language tag', label: 'UG paste + strumming' },
+      ],
+      stack: 'vite',
+      created: '2026-05-06',
+      repo: 'https://github.com/sokiicz/gochords',
+    },
+    {
       id: 'consentkit',
       name: 'ConsentKit',
       shortDesc: 'Free, open-source GDPR cookie consent widget. Drop one JS file into any site — full consent management, Google Consent Mode v2, four categories. No subscription.',
@@ -252,21 +279,6 @@ window.SITE_DATA = {
       ],
     },
     {
-      name: 'gochords',
-      status: 'wip',
-      image: null,
-      githubUrl: null,
-      liveUrl: null,
-      detailUrl: null,
-      releaseDate: null,
-      updates: [
-        { date: '2026-05-06', note: 'scaffolded' },
-      ],
-      stack: 'vite',
-      created: '2026-05-06',
-      repo: null,
-    },
-    {
       id: 'ylaway',
       name: 'Ylaway',
       shortDesc: 'Coordinate care for your pets and plants while away. Share trusted helpers, assign days, and get simple reassuring updates.',
@@ -334,18 +346,6 @@ window.SITE_DATA = {
        the actual blog post file you created.
   ---------------------------------------------------------- */
   posts: [
-    {
-      id: 'bitcoin-100k',
-      title: 'I Built a Website So I\'d Stop Checking CoinMarketCap',
-      excerpt: 'Bitcoin was approaching $100K and I kept refreshing CMC for one number. So I built a page that only answers that one question. Here\'s the story and where it\'s going.',
-      date: '18 Mar 2026',
-      readTime: '4 min read',
-      tag: 'Crypto',
-      tagClass: 'badge-amber',
-      gradientFrom: '#f59e0b',
-      gradientTo: '#f97316',
-      url: 'blog/bitcoin-100k.html',
-    },
     {
       id: 'art-of-prompting',
       title: 'The Art of Prompting: How I Actually Work',
