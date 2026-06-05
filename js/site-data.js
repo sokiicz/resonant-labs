@@ -279,6 +279,22 @@ window.SITE_DATA = {
       ],
     },
     {
+      name: 'countrio',
+      status: 'wip',
+      image: null,
+      githubUrl: null,
+      liveUrl: null,
+      detailUrl: null,
+      releaseDate: null,
+      updates: [
+        { date: '2026-06-03', note: 'scaffolded' },
+        { date: '2026-06-04', note: 'renamed from higher-lower-countries to countrio' },
+      ],
+      stack: 'vite',
+      created: '2026-06-03',
+      repo: null,
+    },
+    {
       id: 'ylaway',
       name: 'Ylaway',
       shortDesc: 'Coordinate care for your pets and plants while away. Share trusted helpers, assign days, and get simple reassuring updates.',
@@ -286,8 +302,8 @@ window.SITE_DATA = {
       emoji: '🐾',
       status: 'wip',
       image: null,
-      gradientFrom: '#a8edca',
-      gradientTo: '#4fbdba',
+      gradientFrom: '#f5e8d8',
+      gradientTo: '#c07a3b',
       githubUrl: null,
       liveUrl: null,
       liveLabel: 'Open App',
@@ -295,6 +311,8 @@ window.SITE_DATA = {
       releaseDate: null,
       updates: [
         { date: '2026-03-23', note: 'Project started. Scaffold created.' },
+        { date: '2026-05-18', note: 'Pre-launch LP shipped: warm cream/orange brand (Instrument Serif + DM Sans), Czech copy, waitlist with double opt-in via Resend + Google Sheets. App gated behind ?unlock= cookie.' },
+        { date: '2026-05-18', note: 'Added first_sitting priority field for early-access ordering. Contact email surfaced in footer + confirmed page + welcome email. COPY.md created for centralized copy review. Phase B in-app feedback design documented.' },
       ],
     },
     {
