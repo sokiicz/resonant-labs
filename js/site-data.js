@@ -321,6 +321,7 @@ window.SITE_DATA = {
         { date: '2026-03-23', note: 'Project started. Scaffold created.' },
         { date: '2026-05-18', note: 'Pre-launch LP shipped: warm cream/orange brand (Instrument Serif + DM Sans), Czech copy, waitlist with double opt-in via Resend + Google Sheets. App gated behind ?unlock= cookie.' },
         { date: '2026-05-18', note: 'Added first_sitting priority field for early-access ordering. Contact email surfaced in footer + confirmed page + welcome email. COPY.md created for centralized copy review. Phase B in-app feedback design documented.' },
+        { date: '2026-06-06', note: 'Phase A polish complete. New tagline „Méně domlouvání, více mazlení." rolled across LP + emails + OG. Animal field switched to multi-select checkboxes. Contact page + form + Brevo send (replaced Resend). Formal Czech legal pages (Zásady ochrany osobních údajů / Obchodní podmínky / Cookies) with controller Jan Zavadil, IČO 03721418, Brno. ConsentKit cookie banner + Google Tag Manager (GTM-PMLMKHM3) wired with Google Consent Mode v2 defaults to denied. Scroll-reveal animations + cycling hero pill (3 mock notifications) + card hover lift. Updated Pexels photos for hero/quote. Em-dash → en-dash sweep across user-facing copy. Favicon + Apple touch icon via Next.js icon convention.' },
       ],
     },
     {
