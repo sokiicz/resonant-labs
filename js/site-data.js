@@ -303,6 +303,22 @@ window.SITE_DATA = {
       ],
     },
     {
+      name: 'rect',
+      status: 'live',
+      image: null,
+      githubUrl: null,
+      liveUrl: 'https://sokiicz.github.io/rect/',
+      detailUrl: null,
+      releaseDate: null,
+      updates: [
+        { date: '2026-06-19', note: 'scaffolded' },
+        { date: '2026-06-19', note: 'built mobile-first Shikaku game; published public repo + GitHub Pages' },
+      ],
+      stack: 'single-file-html-canvas',
+      created: '2026-06-19',
+      repo: 'https://github.com/sokiicz/rect',
+    },
+    {
       id: 'ylaway',
       name: 'Ylaway',
       shortDesc: 'Coordinate care for your pets and plants while away. Share trusted helpers, assign days, and get simple reassuring updates.',
