@@ -87,6 +87,7 @@ window.SITE_DATA = {
       releaseDate: '3 Mar 2026',
       updates: [
         { date: '2026-03-03', note: 'Initial release — interactive canvas, Web Audio API, Laurie Spiegel-inspired', label: 'v1 released' },
+        { date: '2026-04-26', note: 'Detail page live, published on resonantlabs.online', label: 'Published' },
       ],
     },
     {
@@ -106,7 +107,7 @@ window.SITE_DATA = {
       releaseDate: '2026-06-05',
       updates: [
         { date: '2026-06-03', note: 'Project scaffolded — Vite + TypeScript, core higher/lower game loop, endless mode', label: 'Scaffold' },
-        { date: '2026-06-04', note: 'Renamed from higher-lower-countries to countrio. Daily challenge mode added (deterministic deck, same for everyone). Global leaderboards via Upstash Redis (sorted sets, per-board top 100, daily boards auto-expire after 14 days).', label: 'Daily + leaderboards' },
+        { date: '2026-06-04', note: 'Daily challenge mode added — same deck for everyone, every day. Global leaderboards with all-time and daily scores.', label: 'Daily + leaderboards' },
         { date: '2026-06-05', note: 'Published live on GitHub Pages. Mobile-first UI, area + population modes, this-device and global top 10 with auto-refresh.', label: 'v1.0 Live' },
       ],
       stack: 'vite',
@@ -130,9 +131,9 @@ window.SITE_DATA = {
       releaseDate: '2026-04-26',
       updates: [
         { date: '2026-03-14', note: 'Initial scaffold: lobby, QR join, real-time tasks, scoreboard', label: 'MVP scaffold' },
-        { date: '2026-04-26', note: '101 tasks, game timer, host end-game, confetti results, game state recovery, deployed to Firebase + Cloud Run (min-instances=0)', label: 'v1.0 Live' },
-        { date: '2026-04-30', note: 'Web Push notifications (VAPID + service worker) for true background alerts on Android/iOS PWAs; mobile viewport fix (min-h-dvh) so content fits without scrolling', label: 'Push notifications' },
-        { date: '2026-05-06', note: 'Migrated server DB from ephemeral local SQLite to Turso (libSQL) — durable across redeploys/scale; full async DB layer; Cloud Run env wired and live', label: 'Turso (durable DB)' },
+        { date: '2026-04-26', note: '101 tasks, game timer, host end-game, confetti results, game state recovery. Deployed live.', label: 'v1.0 Live' },
+        { date: '2026-04-30', note: 'Web Push notifications for background alerts on iOS and Android; mobile layout improvements', label: 'Push notifications' },
+        { date: '2026-05-06', note: 'Database upgrade for improved reliability and uptime', label: 'Infrastructure' },
       ],
     },
     {
@@ -151,9 +152,9 @@ window.SITE_DATA = {
       detailUrl: 'apps/otocsvet.html',
       releaseDate: '2026-04-22',
       updates: [
-        { date: '2026-04-17', note: 'Project started — pnpm monorepo, Fastify + Prisma + PostgreSQL backend, MapTiler puzzle generator, React 19 frontend', label: 'Scaffold' },
+        { date: '2026-04-17', note: 'Project started — MapTiler puzzle generator, daily challenge, leaderboard, React 19 frontend', label: 'Scaffold' },
         { date: '2026-04-21', note: 'Scoring system, admin puzzle review panel, daily challenge, session resume on reload, Czech city name generator, leaderboard by grid size, zoom/skip controls, loading screen, city labels on puzzles', label: 'Core gameplay' },
-        { date: '2026-04-22', note: 'GitHub Actions deploy to Vercel, admin rate limiting, timer drift fixes', label: 'Deploy' },
+        { date: '2026-04-22', note: 'Deployed to production; timer and stability fixes', label: 'Deploy' },
       ],
     },
     {
@@ -193,9 +194,9 @@ window.SITE_DATA = {
       updates: [
         { date: '2026-03-13', note: 'Initial scaffold — Next.js 15 + Supabase. Auth, groups, activities, voting, availability grid, calendar, friends, notifications. Build passing.', label: 'Scaffold' },
         { date: '2026-03-15', note: 'Launched live at vagoshit.com. Added avatar upload, recurring events, saved places, group channels with archiving, friend system with invite links, user profile pages, activity co-organizers, \'Plan again\' duplicate feature, \'Happening now\' banners.', label: 'Live' },
-        { date: '2026-03-19', note: 'Major UI overhaul: tabless group layout, context nav, dashboard redesign. Group slugs and personalised URLs. Birthday tracking in group calendar and members tab. Event share links with rich OG preview images. Unified notifications feed. Security hardening, rate limiting, GDPR data export.', label: 'UI overhaul' },
+        { date: '2026-03-19', note: 'Major UI overhaul: tabless group layout, context nav, dashboard redesign. Group slugs and personalised URLs. Birthday tracking in group calendar. Event share links. Unified notifications feed.', label: 'UI overhaul' },
         { date: '2026-03-25', note: 'Birthday detail pages with auto-created group chat channels 7 days before each birthday.', label: 'Birthday channels' },
-        { date: '2026-04-10', note: 'Web Push notifications (VAPID + service worker) with per-type toggles. \'The Game\' mini-game — admin-triggered group challenge sent to all members. Multi-day events with end date. Chat emoji reactions with double-tap heart, quick bar, and popup picker.', label: 'Push + mini-game' },
+        { date: '2026-04-10', note: 'Web Push notifications with per-type toggles. \'The Game\' mini-game — group challenge sent to all members. Multi-day events. Chat emoji reactions with double-tap heart and popup picker.', label: 'Push + mini-game' },
         { date: '2026-04-17', note: 'Group notepads with topic folders. Emoji reactions on notes. Dreams folder. Beztak RSVP type. Event list filters.', label: 'Notepads + reactions' },
         { date: '2026-04-20', note: 'The Game frequency setting (one-off vs. recurring). Cross-device read sync for notepads. Save confirmation in mini-game settings.', label: 'The Game v2' },
       ],
@@ -218,26 +219,6 @@ window.SITE_DATA = {
       updates: [
         { date: '2026-03-10', note: 'Initial build: full game engine, bot opponents, in-game chat, sound reactions', label: 'v0.1' },
         { date: '2026-03-11', note: 'Lobby chat, ready badges, drag-and-drop hand ordering, turn/game timers, quick-play, discard pile visual, idle poop animation + fart sound, mute/surrender, 24h game expiry, phase-3 chain mechanic, rules fixes', label: 'v1.0 Live' },
-      ],
-    },
-    {
-      id: 'music-mouse',
-      name: 'Music Mouse',
-      shortDesc: 'An interactive musical canvas inspired by Laurie Spiegel\'s 1986 classic. Move your mouse — make music. No keyboard, no notes, no rules.',
-      tags: ['Music', 'Web App', 'Open Source'],
-      emoji: '🎵',
-      status: 'live',
-      image: null,
-      gradientFrom: '#8b5cf6',
-      gradientTo: '#22d3ee',
-      githubUrl: 'https://github.com/sokiicz/music-mouse',
-      liveUrl: 'https://sokiicz.github.io/Music-Mouse/',
-      liveLabel: 'Open App',
-      detailUrl: 'apps/music-mouse.html',
-      releaseDate: '2026-03-03',
-      updates: [
-        { date: '2026-03-03', note: 'Initial release — interactive canvas, Web Audio API, Laurie Spiegel-inspired', label: 'v1 released' },
-        { date: '2026-04-26', note: 'Moved to standard workspace, detail page live links fixed, published on resonantlabs.online', label: 'Published' },
       ],
     },
     {
@@ -303,16 +284,22 @@ window.SITE_DATA = {
       ],
     },
     {
-      name: 'rect',
+      id: 'rect',
+      name: 'Rect',
+      shortDesc: 'A minimalist Shikaku puzzle game. Draw rectangles to fill the grid — every number tells you exactly how many cells its rectangle must cover. Mobile-first, no install.',
+      tags: ['Game', 'Web App', 'Open Source'],
+      emoji: '⬜',
       status: 'live',
       image: null,
-      githubUrl: null,
+      gradientFrom: '#1e293b',
+      gradientTo: '#6366f1',
+      githubUrl: 'https://github.com/sokiicz/rect',
       liveUrl: 'https://sokiicz.github.io/rect/',
-      detailUrl: null,
-      releaseDate: null,
+      liveLabel: 'Play',
+      detailUrl: 'apps/rect.html',
+      releaseDate: '2026-06-19',
       updates: [
-        { date: '2026-06-19', note: 'scaffolded' },
-        { date: '2026-06-19', note: 'built mobile-first Shikaku game; published public repo + GitHub Pages' },
+        { date: '2026-06-19', note: 'Built mobile-first Shikaku puzzle game, published on GitHub Pages', label: 'v1.0 Live' },
       ],
       stack: 'single-file-html-canvas',
       created: '2026-06-19',
@@ -334,10 +321,9 @@ window.SITE_DATA = {
       detailUrl: null,
       releaseDate: null,
       updates: [
-        { date: '2026-03-23', note: 'Project started. Scaffold created.' },
-        { date: '2026-05-18', note: 'Pre-launch LP shipped: warm cream/orange brand (Instrument Serif + DM Sans), Czech copy, waitlist with double opt-in via Resend + Google Sheets. App gated behind ?unlock= cookie.' },
-        { date: '2026-05-18', note: 'Added first_sitting priority field for early-access ordering. Contact email surfaced in footer + confirmed page + welcome email. COPY.md created for centralized copy review. Phase B in-app feedback design documented.' },
-        { date: '2026-06-06', note: 'Phase A polish complete. New tagline „Méně domlouvání, více mazlení." rolled across LP + emails + OG. Animal field switched to multi-select checkboxes. Contact page + form + Brevo send (replaced Resend). Formal Czech legal pages (Zásady ochrany osobních údajů / Obchodní podmínky / Cookies) with controller Jan Zavadil, IČO 03721418, Brno. ConsentKit cookie banner + Google Tag Manager (GTM-PMLMKHM3) wired with Google Consent Mode v2 defaults to denied. Scroll-reveal animations + cycling hero pill (3 mock notifications) + card hover lift. Updated Pexels photos for hero/quote. Em-dash → en-dash sweep across user-facing copy. Favicon + Apple touch icon via Next.js icon convention.' },
+        { date: '2026-03-23', note: 'Project started', label: 'Started' },
+        { date: '2026-05-18', note: 'Landing page launched — waitlist open', label: 'Landing page live' },
+        { date: '2026-06-06', note: 'Brand polish, legal pages, cookie consent, animations', label: 'Polish' },
       ],
     },
     {
