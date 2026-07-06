@@ -23,6 +23,12 @@ Media/                  — KeepAwake.png, Music-mouse.png, Spekplatz.png, Reson
 
 **Critical bug fixed:** missing comma after apps array → invalid JS → no apps rendered. Fixed in `tracker.py` (`"  ],"` not `"  ]"`). If site renders 0 apps, check that first.
 
+**Permanent guards (added 2026-07-06):**
+- `tracker.py` escapes all strings via `json.dumps` (double-quoted; newlines/quotes/backslashes can no longer break the file).
+- `tracker.py` validates the generated file with `node` (syntax + non-empty `SITE_DATA.apps`) BEFORE writing/committing/pushing — invalid output aborts the run and leaves site-data.js untouched. Fails closed if node is missing.
+- `main.js` renders a visible "App data failed to load" message in `#apps-grid` when `SITE_DATA` is missing/empty, instead of a silent blank page.
+- Strings in site-data.js become double-quoted on the next tracker run — expect a one-time large diff; that's normal.
+
 Run trigger: any change to status, URLs, tags, or `updates[]` entries.
 
 ## Tag system (simplified — all apps are Open Source)

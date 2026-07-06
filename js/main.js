@@ -11,6 +11,11 @@ document.documentElement.classList.add('js-ready');
    ============================================ */
 const APPS      = (window.SITE_DATA && window.SITE_DATA.apps) || [];
 const BLOG_POSTS = (window.SITE_DATA && window.SITE_DATA.posts) || [];
+
+// If site-data.js failed to load or parse, don't fail silently into an empty
+// page — render a visible error in the grid so the outage is obvious.
+const DATA_LOAD_FAILED = !window.SITE_DATA || !APPS.length;
+const DATA_ERROR_HTML = '<p style="color:var(--text-3);padding:2rem 0;">⚠️ App data failed to load. Please refresh the page — if this persists, the site data file is broken.</p>';
 const LIVE_APPS  = APPS.filter(a => a.status === 'live').sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
 const WIP_APPS   = APPS.filter(a => a.status === 'wip');
 
@@ -20,6 +25,11 @@ const WIP_APPS   = APPS.filter(a => a.status === 'wip');
 function renderAppCards(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
+
+  if (DATA_LOAD_FAILED) {
+    container.innerHTML = DATA_ERROR_HTML;
+    return;
+  }
 
   container.innerHTML = LIVE_APPS.map((app, i) => {
     const delay = (i % 3) + 1;
