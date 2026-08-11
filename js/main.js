@@ -19,6 +19,18 @@ const DATA_ERROR_HTML = '<p style="color:var(--text-3);padding:2rem 0;">⚠️ A
 const LIVE_APPS  = APPS.filter(a => a.status === 'live').sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
 const WIP_APPS   = APPS.filter(a => a.status === 'wip');
 
+/* Render one card in isolation. A card built from incomplete app data used to
+   throw mid-.map(), which abandoned the whole innerHTML assignment and wiped
+   every app off the page. Now a bad entry costs exactly one card. */
+function safeCard(app, build) {
+  try {
+    return build();
+  } catch (err) {
+    console.error('[site] skipped app card:', (app && app.name) || '<unnamed>', err);
+    return '';
+  }
+}
+
 /* ============================================
    RENDER: APP CARDS
    ============================================ */
@@ -31,7 +43,7 @@ function renderAppCards(containerId) {
     return;
   }
 
-  container.innerHTML = LIVE_APPS.map((app, i) => {
+  container.innerHTML = LIVE_APPS.map((app, i) => safeCard(app, () => {
     const delay = (i % 3) + 1;
 
     const previewHtml = app.image
@@ -76,7 +88,7 @@ function renderAppCards(containerId) {
           </div>
         </div>
       </article>`;
-  }).join('');
+  })).join('');
 }
 
 /* ============================================
@@ -147,15 +159,16 @@ function renderAppUpdateLog() {
    RENDER: WIP SECTION
    ============================================ */
 function renderWipSection(containerId) {
-  if (WIP_APPS.length === 0) {
-    section.style.display = 'none';
-    return;
-  }
-
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  container.innerHTML = WIP_APPS.map((app, i) => {
+  if (WIP_APPS.length === 0) {
+    const section = container.closest('section');
+    if (section) section.style.display = 'none';
+    return;
+  }
+
+  container.innerHTML = WIP_APPS.map((app, i) => safeCard(app, () => {
     const delay = (i % 3) + 1;
 
     const previewHtml = app.image
@@ -206,7 +219,7 @@ function renderWipSection(containerId) {
           </div>
         </div>
       </article>`;
-  }).join('');
+  })).join('');
 }
 
 /* ============================================
