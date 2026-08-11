@@ -938,6 +938,24 @@ footer {
   transition: color var(--duration);
 }
 .footer-col a:hover { color: var(--purple-light); }
+
+/* === Support / Buy me a coffee === */
+.footer-coffee { color: var(--amber) !important; }
+.footer-coffee::before { content: "\2615"; margin-right: 6px; }
+.footer-coffee:hover { color: #fcd34d !important; }
+
+.btn-coffee {
+  background: var(--amber-dim);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  color: var(--amber);
+}
+.btn-coffee:hover {
+  background: rgba(251, 191, 36, 0.22);
+  border-color: rgba(251, 191, 36, 0.6);
+  color: #fcd34d;
+  transform: translateY(-2px);
+}
+
 .footer-bottom {
   padding-top: var(--space-4);
   border-top: 1px solid var(--border-1);
