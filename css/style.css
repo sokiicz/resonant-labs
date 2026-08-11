@@ -944,6 +944,35 @@ footer {
 .footer-coffee::before { content: "\2615"; margin-right: 6px; }
 .footer-coffee:hover { color: #fcd34d !important; }
 
+/* Reusable support block — blog post ends and app detail sidebars */
+.support-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  margin-top: var(--space-4);
+  background: var(--amber-dim);
+  border: 1px solid rgba(251, 191, 36, 0.22);
+  border-radius: var(--radius-lg);
+}
+.support-card-icon {
+  flex: none;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.support-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-3);
+}
+.support-card a {
+  color: var(--amber);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.support-card a:hover { color: #fcd34d; text-decoration: underline; }
+
 .btn-coffee {
   background: var(--amber-dim);
   border: 1px solid rgba(251, 191, 36, 0.35);
