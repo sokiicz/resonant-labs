@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Šichta — Resonant Labs</title>
+  <meta name="description" content="A social deduction party game for one table and no narrator. Everyone plays on their own phone, the app deals the roles, runs the phases, and shows each player only what they are allowed to see.">
+  <meta property="og:title" content="Šichta — Resonant Labs">
+  <meta property="og:description" content="A social deduction party game for one table and no narrator. Everyone plays on their own phone, the app deals the roles, runs the phases, and shows each player only what they are allowed to see.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://resonantlabs.online/apps/sichta.html">
+  <meta property="og:site_name" content="Resonant Labs">
+  <link rel="canonical" href="https://resonantlabs.online/apps/sichta.html">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>document.documentElement.classList.add('js-ready');</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>:root{--app-from:#E88B45;--app-to:#2A2E33;}</style>
+  <!-- Google Consent Mode v2 defaults (must fire before GTM) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage:              'denied',
+      ad_user_data:            'denied',
+      ad_personalization:      'denied',
+      analytics_storage:       'denied',
+      functionality_storage:   'denied',
+      personalization_storage: 'denied',
+      wait_for_update: 2000
+    });
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T9635SSK');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9635SSK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <svg class="logo-icon" width="32" height="28" viewBox="0 0 32 28" fill="none">
+          <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#scLg)" stroke-width="2.5" stroke-linecap="round"/>
+          <defs><linearGradient id="scLg" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+        </svg>
+        Resonant Labs
+      </a>
+      <div class="nav-links">
+        <a href="../apps.html">Apps</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#about">About</a>
+        <a href="https://github.com/sokiicz" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="../apps.html">Apps</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../index.html#about">About</a>
+  </div>
+
+  <header class="app-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
+        <a href="../apps.html">Apps</a><span class="breadcrumb-sep">›</span>
+        <span>Šichta</span>
+      </nav>
+      <div class="app-hero-grid">
+        <div class="app-hero-info fade-in">
+          <span class="badge badge-amber" style="margin-bottom:20px;">Party Game · Web App · Work in progress</span>
+          <h1>Šichta</h1>
+          <p class="app-hero-tagline">A social deduction game for one table and no narrator. Everyone plays on their own phone. The app deals the roles, runs the clock, and shows each player only what they are allowed to see.</p>
+          <p style="font-size:0.9rem; color:var(--text-3); line-height:1.7; margin-bottom:var(--space-4);">
+            Not released yet. It is playable end to end and waiting on its first real playtest.
+            <a href="mailto:contactme@resonantlabs.online?subject=Sichta%20playtest" style="color:var(--purple-light); font-weight:600;">Want a shout when it is out?</a>
+          </p>
+          <div class="app-hero-meta">
+            <span class="app-hero-meta-item">🗓️ September 2026</span>
+            <span class="app-hero-meta-item">🤖 Built with Claude Code</span>
+            <span class="app-hero-meta-item">🧱 React · TypeScript · Cloudflare</span>
+            <span class="app-hero-meta-item">👥 5 to 12 players</span>
+            <span class="app-hero-meta-item">💬 Czech interface</span>
+          </div>
+        </div>
+        <div class="app-preview-container fade-in fade-in-delay-2">
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#E88B45,#2A2E33);display:flex;align-items:center;justify-content:center;">
+            <span style="font-size:7rem;filter:drop-shadow(0 4px 20px rgba(0,0,0,0.4));">🔧</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="app-tabs-section">
+    <div class="container">
+      <div class="app-detail-layout">
+      <div>
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="sc-overview">Overview</button>
+        <button class="tab-btn" data-tab="sc-rules">How It Plays</button>
+        <button class="tab-btn" data-tab="sc-built">How It Was Built</button>
+        <button class="tab-btn" data-tab="sc-tech">Tech Stack</button>
+      </div>
+
+      <div class="tab-pane active" id="sc-overview">
+        <div class="content-prose fade-in">
+          <h3>What is it?</h3>
+          <p><em>Šichta</em> is Czech for <em>a shift</em>, the kind you work at a factory. It is a social deduction game for five to twelve people sitting around one table, each holding their own phone. Some of you are workers. A few of you are quietly wrecking the place. Nobody hosts, nobody reads from a card, nobody sits the game out to run it.</p>
+          <p>The app handles everything a human narrator would normally do. It deals the roles, picks who goes on shift, collects the secret votes, runs the countdown, and keeps every private thing private. What it deliberately does not do is play the game for you. The interesting part is still five people arguing across a table about who is lying.</p>
+
+          <h3>The problem it solves</h3>
+          <p>Reality shows like <em>The Traitors</em> are gripping on screen and fall apart at a kitchen table. On television the murders happen off camera, between episodes, and the audience gets to watch. Around a real table there is no off camera. If the traitors simply pick someone to eliminate each night, the rest of the group has nothing to reason about. You are not deducing, you are guessing, and after two rounds everyone knows it.</p>
+          <p>The other direction has the opposite problem. <em>Blood on the Clocktower</em> solves deduction beautifully, but it needs a dedicated storyteller, a rulebook, and a group willing to learn dozens of roles before the first game. That is a great evening for the right crowd and a terrible first thirty minutes for everyone else.</p>
+          <p>Šichta aims at the gap between them. No narrator, no role encyclopedia, and still something real to argue about.</p>
+
+          <h3>The idea that makes it work</h3>
+          <p>Every round a small crew is sent on a shift. Everyone on that crew privately chooses to work or to wreck it. The app reveals only how many chose to wreck it, never who.</p>
+          <p>That single number is the whole engine. A failed shift proves that at least one of those four specific people is a saboteur. It does not say which. The table now has a hard fact to reason from, and every future crew list is an argument about who deserves to be on it.</p>
+          <p>The twist is what a failed shift buys. It is not just evidence against the saboteurs, it is also their reward, and they get to choose which one: a murder that night, immunity granted to anyone at the table including an innocent they want to frame, or darkness over the next vote so nobody sees who voted for whom. Sabotage is therefore never free and never pointless. It hands the workers information and hands the saboteurs power in the same move.</p>
+
+          <h3>Who this is for</h3>
+          <p>People who already enjoy this genre and want a version that starts in under a minute, needs no host, and rewards talking rather than tracking. A full game runs roughly forty minutes.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="sc-rules">
+        <div class="content-prose fade-in">
+          <h3>A round, start to finish</h3>
+          <ul>
+            <li><strong>The shift.</strong> A crew is picked. Everyone on it privately taps work or wreck. The app publishes only the count of wreckers.</li>
+            <li><strong>The reward.</strong> If the shift failed, the saboteurs pick one: a murder tonight, immunity for anyone they name, or a blacked out vote. They cannot murder two nights in a row.</li>
+            <li><strong>The argument.</strong> This is the part the app stays out of. Phones are meant to be face down.</li>
+            <li><strong>The vote.</strong> Nominate, hear the last word, vote, banish. The banished player's role is revealed.</li>
+            <li><strong>The night.</strong> The saboteurs propose a target, their foreman decides. He can listen to them or ignore them entirely.</li>
+          </ul>
+
+          <h3>Shadows</h3>
+          <p>Being eliminated does not send you to the kitchen. You become a shadow: you stay at the table, you keep talking, you keep accusing. What you lose is the ability to nominate, and you get exactly one vote for the entire rest of the game. Spend it well.</p>
+          <p>This exists for a blunt practical reason. In a game built on conversation, removing people from the conversation is the worst thing you can do to them, and a lopsided endgame with four silent spectators is a bad evening for four people.</p>
+
+          <h3>Winning</h3>
+          <p>The workers win by banishing the last saboteur. The saboteurs win when the shifts run out and at least one of them is still standing.</p>
+          <p>There is deliberately no parity rule, the usual "evil wins when they equal the good." Simulation showed it ended games in two rounds, long before anyone had enough to reason with. Removing it turned a coin flip into a conversation.</p>
+
+          <h3>Numbers, not instinct</h3>
+          <p>The player counts, crew sizes, saboteur ratios and round limits were not guessed. They came out of six thousand simulated games plus an exact Bayesian solver that plays the informational ceiling: a player who reasons perfectly from the published numbers and reads nobody's face. That solver sets the upper bound on how much the mechanics alone can tell you, which is exactly what you want to know when the goal is to leave room for the human part.</p>
+          <p>One saboteur never works at any table size. The ratio that holds up is roughly three in eight.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="sc-built">
+        <div class="content-prose fade-in">
+          <h3>Design before code</h3>
+          <p>This one was argued on paper long before anything ran. The first version of the design had a cooldown on murders, which looked balanced on a spreadsheet and would have been miserable in practice, because it asks a table full of people drinking beer to track a timer. It got thrown out and replaced with the reward menu, which carries the same weight and needs no bookkeeping.</p>
+          <p>A second draft had the saboteurs only knowing how many of them there were. That was a mistake in a different direction. The entire appeal of this genre is an informed minority operating inside an uninformed majority. They know each other by name now.</p>
+
+          <h3>Building it inside out</h3>
+          <p>The rules were written first as a pure function with no interface attached, and covered with tests that play whole games start to finish. Only then did any screen exist. It sounds like a detour and it was the opposite: three rule bugs turned up before a single pixel was drawn, at a point where fixing them was free.</p>
+          <p>The same discipline applies to secrecy. There is exactly one function through which game state can reach a phone, and it has its own tests asserting that a worker's payload does not contain the string "saboteur" anywhere. Not "we remembered to hide it", but "it structurally cannot leave."</p>
+
+          <h3>Where the interesting bugs were</h3>
+          <p>Not in the game logic. Forty one tests kept that honest. The bugs were in the seams.</p>
+          <p>One screen was being skipped entirely because a side effect had been tucked inside a state updater, and React runs those twice in development, which advanced the game by two phases instead of one. No unit test could see it. Playing the game in a real browser found it in thirty seconds.</p>
+          <p>The best one: the room code generator on the server used a 32 character alphabet, while the keypad in the app only offered 17 of them. Every test passed. Every code was valid. And roughly half of all generated codes were physically impossible to type. Both now read from the same constant, with tests that fail if they ever drift apart again.</p>
+
+          <blockquote>"Tests prove the parts work. Only playing it proves the game works."</blockquote>
+
+          <h3>The brand rule that shaped the interface</h3>
+          <p>Both roles must see the same screen. Not a similar screen, the same one. If the wreck button were greyed out for workers, anyone glancing across the table would learn a role for free. So the button is always there, always identical, and simply does nothing. The same rule governs the sound: every phase makes the same noise for everyone, and only one phone plays it out loud.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="sc-tech">
+        <div class="content-prose fade-in">
+          <div class="tech-stack-grid">
+            <div class="tech-item"><span class="tech-icon">⚛️</span>React</div>
+            <div class="tech-item"><span class="tech-icon">🔷</span>TypeScript</div>
+            <div class="tech-item"><span class="tech-icon">⚡</span>Vite</div>
+            <div class="tech-item"><span class="tech-icon">📱</span>PWA</div>
+            <div class="tech-item"><span class="tech-icon">☁️</span>Cloudflare Durable Objects</div>
+            <div class="tech-item"><span class="tech-icon">🔌</span>WebSockets</div>
+            <div class="tech-item"><span class="tech-icon">🔊</span>Web Audio API</div>
+            <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
+          </div>
+
+          <h3 style="margin-top:var(--space-5);">One room, one object, one source of truth</h3>
+          <p>Each game room is a single Cloudflare Durable Object. It owns the state, advances the phases on its own timer, and pushes every phone its own tailored view of the world. Ten phones cannot disagree about which round it is, because none of them are counting.</p>
+          <p>The reason for choosing Durable Objects over a database was specific. The rules are a pure TypeScript function, so the server runs the exact same code as the browser, unchanged. A SQL backend would have meant writing the rules a second time and maintaining two truths that quietly diverge. This way there is only one.</p>
+
+          <h3>Built for a bad connection and a sleeping phone</h3>
+          <p>Phones lock, browsers suspend tabs, someone walks into the kitchen. The client assumes the connection will drop and holds nothing of value: state lives on the server, and a token in local storage puts you back exactly where you were. The countdown pauses rather than running on without you, and the table can choose to wait or carry on.</p>
+
+          <h3>Small on purpose</h3>
+          <p>Ten phones loading at once on someone else's wifi is the real world test. The whole app is 68 kB gzipped with no animation library and no image assets, since the logo and every icon are inline SVG and every sound is generated by oscillators rather than downloaded. If the first screen does not appear in two seconds, the group starts wondering whether it is worth it.</p>
+
+          <h3>Status</h3>
+          <p>Playable end to end, online and on a single shared phone. The backend is live, the interface is finished, and the only thing standing between here and a release is the part no amount of simulation replaces: sitting down with five people and actually playing it.</p>
+        </div>
+      </div>
+      </div><!-- end main -->
+
+      <aside class="article-sidebar" aria-label="App sidebar">
+        <div class="sidebar-card">
+          <div class="author-card">
+            <div class="author-avatar" aria-hidden="true">👋</div>
+            <div class="author-name">Resonant Labs</div>
+            <div class="author-bio">A digital marketer building apps through AI conversation. All ideas, no code. Everything free and open source.</div>
+            <a href="mailto:contactme@resonantlabs.online?subject=Sichta%20idea" style="font-size:0.82rem; color:var(--purple-light); font-weight:600;">Send an idea →</a>
+          </div>
+          <div class="support-card">
+            <span class="support-card-icon" aria-hidden="true">☕</span>
+            <p>Free to play, no account, no ads. <a href="https://buymeacoffee.com/sokii?utm_source=resonant-labs&amp;utm_medium=app-detail&amp;utm_campaign=support" target="_blank" rel="noopener">Buy me a coffee</a></p>
+          </div>
+        </div>
+        <div class="sidebar-card" data-changelog-id="sichta"></div>
+        <div class="sidebar-card" style="background: var(--purple-dim); border-color: rgba(139,92,246,0.25);">
+          <h4 style="color:var(--purple-light);">Build your own app</h4>
+          <p style="font-size:0.85rem; color:var(--text-3); margin-bottom:12px; line-height:1.6;">You don't need to code. Just describe what you want and let Claude Code build it.</p>
+          <a href="https://claude.ai/code" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width:100%; justify-content:center;">Try Claude Code →</a>
+        </div>
+      </aside>
+      </div><!-- end app-detail-layout -->
+    </div>
+  </section>
+
+  <section class="comments-section">
+    <div class="container">
+      <h3>Got thoughts?</h3>
+      <p class="comments-intro">Played something similar? Spotted a hole in the rules before I do? Tell me, no account needed.</p>
+      <div id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e"
+           data-page-id="sichta"
+           data-theme="dark">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <svg class="logo-icon" width="28" height="24" viewBox="0 0 32 28" fill="none">
+              <path d="M2 14 C4 6,6 6,8 14 C10 22,12 22,14 14 C16 6,18 6,20 14 C22 22,24 22,26 14 C28 6,30 6,30 14" stroke="url(#scFlg)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="scFlg" x1="2" y1="0" x2="30" y2="0"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+            </svg>
+            Resonant Labs
+          </a>
+          <p>AI-built apps, freely shared.</p>
+        </div>
+        <div class="footer-col"><h4>Explore</h4><ul><li><a href="../apps.html">All Apps</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../index.html#about">About</a></li></ul></div>
+        <div class="footer-col"><h4>Connect</h4><ul><li><a href="https://github.com/sokiicz" target="_blank" rel="noopener">GitHub</a></li><li><a href="mailto:contactme@resonantlabs.online">Email</a></li><li><a href="https://buymeacoffee.com/sokii?utm_source=resonant-labs&utm_medium=footer&utm_campaign=support" target="_blank" rel="noopener" class="footer-coffee">Buy me a coffee</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-built-with">Built entirely with <span>Claude Code</span></div>
+        <span>© 2026 Resonant Labs</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chatbot.js"></script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, you can read comments but won't be able to leave one.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script src="../js/consentkit.js" defer></script>
+</body>
+</html>
