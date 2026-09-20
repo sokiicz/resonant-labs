@@ -337,7 +337,7 @@ window.SITE_DATA = {
       image: null,
       gradientFrom: "#E88B45",
       gradientTo: "#2A2E33",
-      githubUrl: "https://github.com/sokiicz/sichta",
+      githubUrl: null,
       liveUrl: null,
       detailUrl: null,
       releaseDate: null,
