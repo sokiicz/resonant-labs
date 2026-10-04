@@ -68,6 +68,7 @@ window.SITE_DATA = {
       updates: [
         { date: "2026-03-06", note: "Initial release — FTP static version, GCM v2, shadow DOM isolation", label: "v1.0" },
         { date: "2026-03-21", note: "Mobile draggable reopener with drag-to-dismiss gesture; auto-hides when all cookies are accepted", label: "v1.1" },
+        { date: "2026-10-04", note: "Google Consent Mode v2 now sends ad_personalization and a consent_update event for Tag Manager; Czech texts built in; Accept and Reject look the same; re-open button shown after Accept All, optional with your own Cookie settings link (ConsentKit.openPreferences)", label: "v1.2" },
       ],
     },
     {
