@@ -425,9 +425,10 @@ function initCusdis() {
   }
 
   // --- Comment list (rendered from Cusdis public API — plain JSON, no iframe) ---
+  // Not fetched until the visitor has allowed functional cookies: the request itself
+  // reveals the visitor's IP address to cusdis.com.
   const listEl = document.createElement('div');
   listEl.className = 'cusdis-comment-list';
-  listEl.innerHTML = '<p class="cusdis-loading">Loading comments…</p>';
   container.insertBefore(listEl, thread);
 
   // --- Pending approval note ---
@@ -437,8 +438,13 @@ function initCusdis() {
   pending.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg> Comments are reviewed before appearing — yours will show up after approval.';
   container.insertBefore(pending, thread);
 
-  // Fetch approved comments from Cusdis public API
-  fetch(`https://cusdis.com/api/open/comments?appId=${encodeURIComponent(appId)}&pageId=${encodeURIComponent(pageId)}`)
+  // Fetch approved comments from Cusdis public API (only after functional consent)
+  let commentsRequested = false;
+  function loadComments() {
+    if (commentsRequested) return;
+    commentsRequested = true;
+    listEl.innerHTML = '<p class="cusdis-loading">Loading comments…</p>';
+    fetch(`https://cusdis.com/api/open/comments?appId=${encodeURIComponent(appId)}&pageId=${encodeURIComponent(pageId)}`)
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
       const comments = data?.data?.data || [];
@@ -464,6 +470,7 @@ function initCusdis() {
       }
     })
     .catch(() => { listEl.innerHTML = ''; });
+  }
 
   // --- Write area: button if consent granted, soft note if not ---
   let writeEl = null;
@@ -474,6 +481,7 @@ function initCusdis() {
     if (loaded) return;
 
     if (hasFunctionalConsent()) {
+      loadComments();
       const btn = document.createElement('button');
       btn.className = 'comments-toggle-btn';
       btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Write a comment';
@@ -495,7 +503,7 @@ function initCusdis() {
     } else {
       const note = document.createElement('p');
       note.className = 'cusdis-consent-note';
-      note.innerHTML = 'Want to leave a comment? Accept <strong>functional cookies</strong> using the cookie settings button.';
+      note.innerHTML = 'To read and write comments, accept <strong>functional cookies</strong> using the cookie settings button.';
       writeEl = note;
     }
     container.insertBefore(writeEl, thread);
@@ -507,6 +515,15 @@ function initCusdis() {
   window.addEventListener('storage', (e) => {
     if (e.key === 'ck_consent') renderWriteArea();
   });
+  // The storage event does not fire in the tab that changed the choice, so also
+  // watch for the ConsentKit consent update in dataLayer.
+  window.dataLayer = window.dataLayer || [];
+  const pushToDataLayer = window.dataLayer.push;
+  window.dataLayer.push = function (item) {
+    const result = pushToDataLayer.apply(this, arguments);
+    if (item && item[0] === 'consent' && item[1] === 'update') setTimeout(renderWriteArea, 0);
+    return result;
+  };
 }
 
 /* ============================================
