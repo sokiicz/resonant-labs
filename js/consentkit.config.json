@@ -9,7 +9,7 @@
   "banner": {
     "position": "center-popup",
     "title": "Before you explore",
-    "description": "This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.",
+    "description": "This site is free, open-source, and built entirely with AI. We use cookies to understand what works. Nothing shady — you pick what you are okay with.",
     "acceptAllLabel": "Accept All",
     "rejectAllLabel": "Reject All",
     "customizeLabel": "Let me choose",
@@ -40,13 +40,6 @@
       "key": "marketing",
       "label": "Marketing",
       "description": "Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.",
-      "locked": false,
-      "defaultEnabled": false
-    },
-    {
-      "key": "functional",
-      "label": "Functional",
-      "description": "Powers the comment sections. Without this, comments are hidden.",
       "locked": false,
       "defaultEnabled": false
     }

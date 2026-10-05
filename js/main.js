@@ -402,131 +402,6 @@ function initShareButtons() {
 }
 
 /* ============================================
-   CUSDIS COMMENTS
-   ============================================ */
-function initCusdis() {
-  const thread = document.getElementById('cusdis_thread');
-  if (!thread) return;
-  const appId = thread.dataset.appId || '';
-  const pageId = thread.dataset.pageId || '';
-  if (!appId || !pageId) return;
-  if (!thread.dataset.pageUrl) thread.dataset.pageUrl = window.location.href;
-  if (!thread.dataset.pageTitle) thread.dataset.pageTitle = document.title;
-
-  thread.style.display = 'none';
-  const container = thread.parentNode;
-
-  // Check if visitor has accepted functional cookies via ConsentKit
-  function hasFunctionalConsent() {
-    try {
-      const record = JSON.parse(localStorage.getItem('ck_consent') || '{}');
-      return !!(record.choices && record.choices.functional === true);
-    } catch { return false; }
-  }
-
-  // --- Comment list (rendered from Cusdis public API — plain JSON, no iframe) ---
-  // Not fetched until the visitor has allowed functional cookies: the request itself
-  // reveals the visitor's IP address to cusdis.com.
-  const listEl = document.createElement('div');
-  listEl.className = 'cusdis-comment-list';
-  container.insertBefore(listEl, thread);
-
-  // --- Pending approval note ---
-  const pending = document.createElement('div');
-  pending.className = 'comments-pending-note';
-  pending.style.display = 'none';
-  pending.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg> Your comment may take a moment to appear.';
-  container.insertBefore(pending, thread);
-
-  // Fetch approved comments from Cusdis public API (only after functional consent)
-  let commentsRequested = false;
-  function loadComments() {
-    if (commentsRequested) return;
-    commentsRequested = true;
-    listEl.innerHTML = '<p class="cusdis-loading">Loading comments…</p>';
-    fetch(`https://cusdis.com/api/open/comments?appId=${encodeURIComponent(appId)}&pageId=${encodeURIComponent(pageId)}`)
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const comments = data?.data?.data || [];
-      listEl.innerHTML = '';
-      if (comments.length === 0) {
-        listEl.innerHTML = '<p class="cusdis-no-comments">No comments yet — be the first.</p>';
-      } else {
-        comments.forEach(c => {
-          const el = document.createElement('div');
-          el.className = 'cusdis-comment-item';
-          const meta = document.createElement('div');
-          meta.className = 'cusdis-comment-meta';
-          const name = document.createElement('strong');
-          name.textContent = c.by_nickname || 'Anonymous';
-          const date = document.createElement('time');
-          date.textContent = new Date(c.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-          meta.append(name, document.createTextNode(' · '), date);
-          const body = document.createElement('p');
-          body.textContent = c.content;
-          el.append(meta, body);
-          listEl.appendChild(el);
-        });
-      }
-    })
-    .catch(() => { listEl.innerHTML = ''; });
-  }
-
-  // --- Write area: button if consent granted, soft note if not ---
-  let writeEl = null;
-  let loaded = false;
-
-  function renderWriteArea() {
-    if (writeEl) { writeEl.remove(); writeEl = null; }
-    if (loaded) return;
-
-    if (hasFunctionalConsent()) {
-      loadComments();
-      const btn = document.createElement('button');
-      btn.className = 'comments-toggle-btn';
-      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Write a comment';
-      btn.addEventListener('click', () => {
-        if (!loaded) {
-          loaded = true;
-          listEl.remove();
-          btn.remove();
-          writeEl = null;
-          pending.style.display = '';
-          thread.style.display = '';
-          const s = document.createElement('script');
-          s.src = 'https://cusdis.com/js/cusdis.es.js';
-          s.async = true;
-          document.body.appendChild(s);
-        }
-      });
-      writeEl = btn;
-    } else {
-      const note = document.createElement('p');
-      note.className = 'cusdis-consent-note';
-      note.innerHTML = 'To read and write comments, accept <strong>functional cookies</strong> using the cookie settings button.';
-      writeEl = note;
-    }
-    container.insertBefore(writeEl, thread);
-  }
-
-  renderWriteArea();
-
-  // Re-evaluate if the visitor updates their consent preferences
-  window.addEventListener('storage', (e) => {
-    if (e.key === 'ck_consent') renderWriteArea();
-  });
-  // The storage event does not fire in the tab that changed the choice, so also
-  // watch for the ConsentKit consent update in dataLayer.
-  window.dataLayer = window.dataLayer || [];
-  const pushToDataLayer = window.dataLayer.push;
-  window.dataLayer.push = function (item) {
-    const result = pushToDataLayer.apply(this, arguments);
-    if (item && item[0] === 'consent' && item[1] === 'update') setTimeout(renderWriteArea, 0);
-    return result;
-  };
-}
-
-/* ============================================
    READING PROGRESS BAR
    ============================================ */
 function initReadingProgress() {
@@ -779,7 +654,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initCounters();
   initShareButtons();
-  initCusdis();
   initReadingProgress();
   initNewsletter();
   initLightbox();

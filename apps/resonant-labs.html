@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resonant Labs Website — Resonant Labs</title>
-  <meta name="description" content="The Resonant Labs portfolio site itself — dark space theme, animated orbs, app cards, blog, cookie consent, comments, newsletter. Built entirely with Claude Code.">
+  <meta name="description" content="The Resonant Labs portfolio site itself — dark space theme, animated orbs, app cards, blog, cookie consent, newsletter. Built entirely with Claude Code.">
   <meta property="og:title" content="Resonant Labs Website — Resonant Labs">
-  <meta property="og:description" content="The Resonant Labs portfolio site itself — dark space theme, app cards, blog, cookie consent, comments, newsletter. Built entirely with Claude Code.">
+  <meta property="og:description" content="The Resonant Labs portfolio site itself — dark space theme, app cards, blog, cookie consent, newsletter. Built entirely with Claude Code.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resonantlabs.online/apps/resonant-labs.html">
   <meta property="og:image" content="https://resonantlabs.online/Media/ResonantLabs.png">
   <meta property="og:site_name" content="Resonant Labs">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Resonant Labs Website — Resonant Labs">
-  <meta name="twitter:description" content="The Resonant Labs portfolio site itself — dark space theme, app cards, blog, cookie consent, comments, newsletter. Built entirely with Claude Code.">
+  <meta name="twitter:description" content="The Resonant Labs portfolio site itself — dark space theme, app cards, blog, cookie consent, newsletter. Built entirely with Claude Code.">
   <meta name="twitter:image" content="https://resonantlabs.online/Media/ResonantLabs.png">
   <link rel="canonical" href="https://resonantlabs.online/apps/resonant-labs.html">
   <link rel="stylesheet" href="../css/style.css">
@@ -75,7 +75,7 @@
         <div class="app-hero-info fade-in">
           <span class="badge badge-primary" style="margin-bottom:20px;">Web App · Portfolio · Open Source</span>
           <h1>Resonant Labs</h1>
-          <p class="app-hero-tagline">This very website — a full portfolio platform built entirely through AI conversation. Dark space theme, animated background, app cards, blog, cookie consent, comments, and newsletter. Not a single line written by hand.</p>
+          <p class="app-hero-tagline">This very website — a full portfolio platform built entirely through AI conversation. Dark space theme, animated background, app cards, blog, cookie consent, and newsletter. Not a single line written by hand.</p>
           <div class="app-hero-actions">
             <a href="https://github.com/sokiicz/resonant-labs" target="_blank" rel="noopener" class="btn btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
@@ -114,9 +114,8 @@
             <li>Deep dark space theme with animated breathing orbs across the full page</li>
             <li>App cards rendered from a single data file — add a new app by editing one JSON-like file</li>
             <li>Tag filtering across apps and blog posts</li>
-            <li>Full blog with reading progress, sidebar, share buttons, and comments</li>
+            <li>Full blog with reading progress, sidebar, and share buttons</li>
             <li>Cookie consent (<a href="./consentkit.html">ConsentKit</a>) — built from scratch as part of this project</li>
-            <li>Comments via <a href="https://cusdis.com" target="_blank" rel="noopener">Cusdis</a> — open-source, no account needed to comment</li>
             <li>Idea submission chatbot — floating widget to collect app ideas from visitors</li>
             <li>Newsletter via <a href="https://buttondown.com" target="_blank" rel="noopener">Buttondown</a></li>
             <li>Google Tag Manager + Google Consent Mode v2</li>
@@ -145,7 +144,6 @@
             <div class="tech-item"><span class="tech-icon">🌐</span>HTML / CSS</div>
             <div class="tech-item"><span class="tech-icon">⚡</span>Vanilla JS</div>
             <div class="tech-item"><span class="tech-icon">🍪</span>ConsentKit</div>
-            <div class="tech-item"><span class="tech-icon">💬</span>Cusdis</div>
             <div class="tech-item"><span class="tech-icon">📊</span>Google Tag Manager</div>
             <div class="tech-item"><span class="tech-icon">📧</span>Buttondown</div>
             <div class="tech-item"><span class="tech-icon">📂</span>GitHub Pages</div>
@@ -183,16 +181,10 @@
     </div>
   </section>
 
-  <section class="comments-section">
-    <div class="container">
-      <h3>Got thoughts?</h3>
-      <p class="comments-intro">Questions about how it was built, ideas for what to add next — all welcome. No account needed.</p>
-      <div id="cusdis_thread"
-           data-host="https://cusdis.com"
-           data-app-id="28a85f51-4564-4fc1-bb33-5dd218c38b0e"
-           data-page-id="resonant-labs-site"
-           data-theme="dark">
-      </div>
+  <section class="comments-section" aria-labelledby="comments-heading">
+    <div class="container" style="max-width: 900px;">
+      <h3 id="comments-heading">Got thoughts?</h3>
+      <p class="comments-intro">Reactions, questions, a different take — write to <a href="mailto:contactme@resonantlabs.online">contactme@resonantlabs.online</a>.</p>
     </div>
   </section>
 
@@ -221,7 +213,7 @@
   <script src="../js/site-data.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/chatbot.js"></script>
-  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works and to power things like comments. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Counts which pages and apps get visited. No ads, no personal profiles built by us.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false},{"key":"functional","label":"Functional","description":"Powers the comment sections. Without this, comments are hidden.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
+  <script>window.__consentKitConfig={"version":"1.1","lang":"en","geo":{"showInGDPRCountries":true,"showInCCPAStates":true,"showGlobally":true},"banner":{"position":"center-popup","title":"Before you explore","description":"This site is free, open-source, and built entirely with AI. We use cookies to understand what works. Nothing shady — you pick what you are okay with.","acceptAllLabel":"Accept All","rejectAllLabel":"Reject All","customizeLabel":"Let me choose","savePreferencesLabel":"Save my choices","privacyPolicyUrl":"../privacy.html","primaryColor":"#13132e","accentColor":"#8b5cf6","textColor":"#f8fafc","borderRadius":"16px","logoUrl":""},"categories":[{"key":"necessary","label":"Necessary","description":"Core cookies that keep the site working — things like remembering your consent choice. Always on.","locked":true,"defaultEnabled":true},{"key":"analytics","label":"Analytics","description":"Counts which pages and apps get visited. No ads, no personal profiles built by us.","locked":false,"defaultEnabled":false},{"key":"marketing","label":"Marketing","description":"Not currently in use, but included for when we ever run campaigns. Won't be enabled without your say-so.","locked":false,"defaultEnabled":false}],"consentLogging":{"enabled":false,"retentionDays":1825},"googleConsentMode":{"enabled":true,"defaultAdStorage":"denied","defaultAnalyticsStorage":"denied","defaultFunctionalityStorage":"denied","defaultPersonalizationStorage":"denied","defaultAdUserData":"denied","defaultSecurityStorage":"granted"},"ccpa":{"enabled":false,"doNotSellLinkText":"Do Not Sell or Share My Personal Information"}};</script>
   <script src="../js/consentkit.js" defer></script>
 </body>
 </html>
