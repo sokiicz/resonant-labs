@@ -34,7 +34,7 @@ jobs:
           mkdir _site
           cp index.html apps.html blog.html blog-post.html app-detail.html privacy.html \
              CNAME robots.txt sitemap.xml favicon.svg _site/
-          cp -r css js Media apps blog _site/
+          cp -r css fonts js Media apps blog _site/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
