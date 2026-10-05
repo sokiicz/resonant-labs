@@ -169,7 +169,7 @@
           <p>The same discipline applies to secrecy. There is exactly one function through which game state can reach a phone, and it has its own tests asserting that a worker's payload does not contain the string "saboteur" anywhere. Not "we remembered to hide it", but "it structurally cannot leave."</p>
 
           <h3>Where the interesting bugs were</h3>
-          <p>Not in the game logic. Forty one tests kept that honest. The bugs were in the seams.</p>
+          <p>Not in the game logic. The test suite kept that honest. The bugs were in the seams.</p>
           <p>One screen was being skipped entirely because a side effect had been tucked inside a state updater, and React runs those twice in development, which advanced the game by two phases instead of one. No unit test could see it. Playing the game in a real browser found it in thirty seconds.</p>
           <p>The best one: the room code generator on the server used a 32 character alphabet, while the keypad in the app only offered 17 of them. Every test passed. Every code was valid. And roughly half of all generated codes were physically impossible to type. Both now read from the same constant, with tests that fail if they ever drift apart again.</p>
 
