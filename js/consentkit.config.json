@@ -32,7 +32,7 @@
     {
       "key": "analytics",
       "label": "Analytics",
-      "description": "Help us understand which pages and apps get the most love. Data is anonymous — no personal profiles.",
+      "description": "Counts which pages and apps get visited. No ads, no personal profiles built by us.",
       "locked": false,
       "defaultEnabled": false
     },
@@ -46,7 +46,7 @@
     {
       "key": "functional",
       "label": "Functional",
-      "description": "Powers the comment sections. Without this, you can read comments but won't be able to leave one.",
+      "description": "Powers the comment sections. Without this, comments are hidden.",
       "locked": false,
       "defaultEnabled": false
     }
