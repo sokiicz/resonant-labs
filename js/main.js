@@ -435,7 +435,7 @@ function initCusdis() {
   const pending = document.createElement('div');
   pending.className = 'comments-pending-note';
   pending.style.display = 'none';
-  pending.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg> Comments are reviewed before appearing — yours will show up after approval.';
+  pending.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg> Your comment may take a moment to appear.';
   container.insertBefore(pending, thread);
 
   // Fetch approved comments from Cusdis public API (only after functional consent)
@@ -564,7 +564,7 @@ function initNewsletter() {
       mode: 'no-cors',
     })
       .then(() => {
-        form.innerHTML = '<p style="color:var(--green);font-weight:600;text-align:center;padding:8px 0;">You\'re in! Check your inbox to confirm. 🎉</p>';
+        form.innerHTML = '<p style="color:var(--green);font-weight:600;text-align:center;padding:8px 0;">Thanks! Check your inbox in case you need to confirm your address.</p>';
       })
       .catch(() => {
         if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
