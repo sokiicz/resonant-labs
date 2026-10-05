@@ -1,14 +1,17 @@
 /**
+ * NOT IN USE (2026-10-05). The site no longer calls this script and the owner switched
+ * the deployment off. Kept only as a record; do not redeploy it as it is (read access
+ * by a password in the URL, write access for anyone).
+ *
  * Resonant Labs — Idea Inbox Backend
  * Google Apps Script — deploy as a Web App
  *
- * Setup:
+ * Setup (historical):
  *  1. Replace YOUR_SHEET_ID with the ID from your Google Sheet URL
  *  2. Replace YOUR_ADMIN_SECRET with a password only you know
  *  3. Deploy → New deployment → Web app
  *     - Execute as: Me
  *     - Who has access: Anyone
- *  4. Copy the web app URL into admin.html and js/chatbot.js
  */
 
 const SHEET_ID    = 'YOUR_SHEET_ID';

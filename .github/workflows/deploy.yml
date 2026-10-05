@@ -24,10 +24,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Inject secrets into chatbot.js
-        run: |
-          sed -i "s|__WEB3FORMS_KEY__|${{ secrets.WEB3FORMS_KEY }}|g" js/chatbot.js
-
       # Only files listed here are published. A new root file or folder
       # (another page, 404.html, .well-known) must be added to this list.
       - name: Assemble site files
