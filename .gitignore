@@ -18,6 +18,7 @@ admin.html
 # Secrets — never commit these
 .env
 .env.*
+*.env
 secrets.json
 
 # Node (if ever used)
@@ -26,4 +27,16 @@ node_modules/
 # Logs
 *.log
 *.png
+!Media/*.png
 app-meta.json
+
+# Agent and local files (never in the public repo, rule N2)
+CLAUDE.md
+AGENTS.md
+STAV.md
+PROJEKT.md
+.mcp.json
+
+# Build output
+dist/
+_site/
