@@ -56,7 +56,7 @@
     "retentionDays": 1825
   },
   "googleConsentMode": {
-    "enabled": false,
+    "enabled": true,
     "defaultAdStorage": "denied",
     "defaultAnalyticsStorage": "denied",
     "defaultFunctionalityStorage": "denied",
