@@ -102,21 +102,12 @@
     if (input) input.placeholder = ph || 'Type here...';
   }
 
-  /* ---- Final step: newsletter checkbox + send button ---- */
+  /* ---- Final step: send button ---- */
   function showFinalStep() {
     const row = document.getElementById('chatbot-input-row');
     if (!row) return;
-    const hasEmail = !!(answers.email && answers.email.trim());
     row.innerHTML = `
       <div class="chatbot-final-step">
-        <label class="chatbot-newsletter-label">
-          <input type="checkbox" id="chatbot-newsletter" class="chatbot-newsletter-check" ${hasEmail ? '' : 'disabled'} />
-          <span class="chatbot-newsletter-text">
-            Subscribe me to the Sunday newsletter
-            ${!hasEmail ? '<span style="color:var(--text-4);"> (add email above first)</span>' : ''}
-          </span>
-        </label>
-        ${hasEmail ? '<p class="chatbot-privacy-note">Unsubscribe anytime. Your email is only used for this.</p>' : ''}
         <button class="chatbot-send-final" id="chatbot-send-final">
           Send my idea
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -126,7 +117,15 @@
     document.getElementById('chatbot-send-final').addEventListener('click', submitIdea);
   }
 
-  /* ---- Submit via Web3Forms; optionally subscribe to Buttondown ---- */
+  /* ---- Shown when sending fails, so the visitor still has a way to reach me ---- */
+  function showSendError() {
+    const row = document.getElementById('chatbot-input-row');
+    if (row) {
+      row.innerHTML = '<p style="font-size:0.82rem;color:var(--text-4);padding:12px;">Couldn\'t send — please email me at contactme@resonantlabs.online</p>';
+    }
+  }
+
+  /* ---- Submit via Web3Forms ---- */
   function submitIdea() {
     if (submitted) return;
     submitted = true;
@@ -134,7 +133,6 @@
     const btn = document.getElementById('chatbot-send-final');
     if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
 
-    const newsletterChecked = !!(document.getElementById('chatbot-newsletter') || {}).checked;
     const email = (answers.email || '').trim();
 
     const payload = {
@@ -145,7 +143,6 @@
       problem: answers.problem || '',
       name: answers.name || 'Not given',
       email: email || 'Not given',
-      newsletter_opt_in: newsletterChecked ? 'Yes' : 'No',
     };
 
     // Main submission
@@ -160,20 +157,16 @@
         if (data.success) {
           if (row) row.innerHTML = '';
           showBotMessage('Sent! I\'ll read it soon. Thanks for sharing 🙌', 200);
-
-          // Newsletter opt-in is captured in the Web3Forms submission above.
-          // Manually add them to Buttondown from your dashboard if newsletter_opt_in === 'Yes'.
         } else {
+          // Web3Forms answered but refused the message (bad key, limit, spam
+          // filter). Before this, the button just reset with no explanation.
           submitted = false;
-          if (btn) { btn.textContent = 'Send my idea'; btn.disabled = false; }
+          showSendError();
         }
       })
       .catch(() => {
         submitted = false;
-        const row = document.getElementById('chatbot-input-row');
-        if (row) {
-          row.innerHTML = '<p style="font-size:0.82rem;color:var(--text-4);padding:12px;">Couldn\'t send — please email me at contactme@resonantlabs.online</p>';
-        }
+        showSendError();
       });
   }
 

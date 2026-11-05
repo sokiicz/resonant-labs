@@ -212,15 +212,29 @@ function renderWipSection(containerId) {
     const githubAttrs = app.githubUrl ? 'target="_blank" rel="noopener"' : '';
     const githubHref  = app.githubUrl || '#';
 
+    // An app in progress can already be open to early users (e.g. Ylaway, by
+    // invitation). Then the card links to it instead of saying "Coming soon".
+    const earlyAccess = !!app.liveUrl;
+    const statusLabel = earlyAccess ? (app.liveLabel || 'Early access') : 'Coming soon';
+    const liveButton = earlyAccess
+      ? `<a href="${app.liveUrl}" class="btn-live" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              ${statusLabel}
+            </a>`
+      : `<a href="#" class="btn-live" style="opacity:0.38;pointer-events:none;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
+              Coming Soon
+            </a>`;
+
     return `
       <article class="app-card fade-in fade-in-delay-${delay}" data-tags="${app.tags.map(t => t.toLowerCase()).join(',')}">
         <div class="app-card-preview">
           ${previewHtml}
-          <span class="wip-card-badge">In Progress</span>
+          <span class="wip-card-badge">${earlyAccess ? 'Early Access' : 'In Progress'}</span>
         </div>
         <div class="app-card-body">
           <div class="app-card-meta">
-            <span class="app-release-date">Coming soon</span>
+            <span class="app-release-date">${statusLabel}</span>
           </div>
           <h3 class="app-card-title">${titleHtml}</h3>
           <p class="app-card-desc">${app.shortDesc}</p>
@@ -229,10 +243,7 @@ function renderWipSection(containerId) {
             ${app.tags.map(t => `<span class="tag">${t}</span>`).join('')}
           </div>
           <div class="app-card-actions">
-            <a href="#" class="btn-live" style="opacity:0.38;pointer-events:none;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
-              Coming Soon
-            </a>
+            ${liveButton}
             <a href="${githubHref}" class="btn-github" ${githubAttrs} ${githubStyle}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
               GitHub
@@ -434,38 +445,6 @@ function initReadingProgress() {
     const progress = total > 0 ? Math.max(0, Math.min(100, (-article.getBoundingClientRect().top / total) * 100)) : 0;
     bar.style.width = progress + '%';
   }, { passive: true });
-}
-
-/* ============================================
-   NEWSLETTER FORM
-   ============================================ */
-function initNewsletter() {
-  const form = document.getElementById('newsletter-form');
-  if (!form) return;
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const emailInput = form.querySelector('input[type="email"]');
-    const btn = form.querySelector('button[type="submit"]');
-    const email = emailInput ? emailInput.value.trim() : '';
-    if (!email) return;
-
-    if (btn) { btn.textContent = 'Subscribing...'; btn.disabled = true; }
-
-    // Submit to Buttondown embed endpoint — no API key required
-    const data = new FormData();
-    data.append('email', email);
-    fetch('https://buttondown.email/api/emails/embed-subscribe/ResonantLabs', {
-      method: 'POST',
-      body: data,
-      mode: 'no-cors',
-    })
-      .then(() => {
-        form.innerHTML = '<p style="color:var(--green);font-weight:600;text-align:center;padding:8px 0;">Thanks! Check your inbox in case you need to confirm your address.</p>';
-      })
-      .catch(() => {
-        if (btn) { btn.textContent = 'Subscribe'; btn.disabled = false; }
-      });
-  });
 }
 
 /* ============================================
@@ -717,7 +696,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initShareButtons();
   initReadingProgress();
-  initNewsletter();
   initLightbox();
   initBgAmbient();
   initDraggableCookieWidget();

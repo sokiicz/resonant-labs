@@ -9,7 +9,7 @@
   "banner": {
     "position": "center-popup",
     "title": "Before you explore",
-    "description": "This site is free, open-source, and built entirely with AI. We use cookies to understand what works. Nothing shady — you pick what you are okay with.",
+    "description": "We use cookies to see which pages and apps get visited. Nothing shady — you pick what you are okay with.",
     "acceptAllLabel": "Accept All",
     "rejectAllLabel": "Reject All",
     "customizeLabel": "Let me choose",
