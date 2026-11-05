@@ -16,7 +16,22 @@ const BLOG_POSTS = (window.SITE_DATA && window.SITE_DATA.posts) || [];
 // page — render a visible error in the grid so the outage is obvious.
 const DATA_LOAD_FAILED = !window.SITE_DATA || !APPS.length;
 const DATA_ERROR_HTML = '<p style="color:var(--text-3);padding:2rem 0;">⚠️ App data failed to load. Please refresh the page — if this persists, the site data file is broken.</p>';
-const LIVE_APPS  = APPS.filter(a => a.status === 'live').sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
+
+/* Release dates arrive both as "2026-06-19" and as "6 May 2026". new Date()
+   on the second form is not reliable across browsers (Safari), so parse both
+   by hand. Returns null for anything else. */
+const MONTHS = { jan:0, feb:1, mar:2, apr:3, may:4, jun:5, jul:6, aug:7, sep:8, oct:9, nov:10, dec:11 };
+function parseSiteDate(s) {
+  if (!s) return null;
+  let m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if (m) return new Date(+m[1], +m[2] - 1, +m[3]);
+  m = /^(\d{1,2}) ([A-Za-z]{3})[a-z]* (\d{4})$/.exec(s);
+  if (m && MONTHS[m[2].toLowerCase()] !== undefined) return new Date(+m[3], MONTHS[m[2].toLowerCase()], +m[1]);
+  return null;
+}
+const dateValue = s => (parseSiteDate(s) || new Date(0)).getTime();
+
+const LIVE_APPS  = APPS.filter(a => a.status === 'live').sort((a, b) => dateValue(b.releaseDate) - dateValue(a.releaseDate));
 const WIP_APPS   = APPS.filter(a => a.status === 'wip');
 
 /* Render one card in isolation. A card built from incomplete app data used to
@@ -98,11 +113,16 @@ function renderActivityTicker(containerId) {
   const viewport = document.getElementById(containerId);
   if (!viewport) return;
 
-  // Collect updates from public apps only, newest first
-  const all = [];
-  APPS.filter(a => a.status !== 'hidden').forEach(app => {
+  // Collect updates from public apps only, newest first. Several updates of one
+  // app on the same day become one item, and nothing older than 90 days is
+  // shown: a strip labelled "Activity" must not present old news as current.
+  const cutoff = Date.now() - 90 * 24 * 60 * 60 * 1000;
+  const byAppDay = new Map();
+  APPS.filter(a => a.status === 'live' || a.status === 'wip').forEach(app => {
     (app.updates || []).forEach(u => {
-      all.push({
+      if (!u.date || dateValue(u.date) < cutoff) return;
+      // Updates are oldest first, so the last one of the day overwrites the rest.
+      byAppDay.set(app.id + '|' + u.date, {
         date: u.date,
         label: u.label || u.note,
         name: app.name,
@@ -110,6 +130,7 @@ function renderActivityTicker(containerId) {
       });
     });
   });
+  const all = [...byAppDay.values()];
   all.sort((a, b) => b.date.localeCompare(a.date));
   const recent = all.slice(0, 10);
   if (!recent.length) {
@@ -512,29 +533,70 @@ function initBgAmbient() {
 }
 
 function populateDynamicStats() {
+  // Count each app once, even if the data lists it twice.
+  const uniqueIds = list => new Set(list.map(a => a.id)).size;
+
   // Total apps built (live + wip, excludes hidden)
   const appsTotalEl = document.getElementById('stat-apps-total');
-  if (appsTotalEl) appsTotalEl.textContent = LIVE_APPS.length + WIP_APPS.length;
+  if (appsTotalEl) appsTotalEl.textContent = uniqueIds([...LIVE_APPS, ...WIP_APPS]);
 
   // Apps in progress
   const inProgressEl = document.getElementById('stat-in-progress');
-  if (inProgressEl) inProgressEl.textContent = WIP_APPS.length;
+  if (inProgressEl) inProgressEl.textContent = uniqueIds(WIP_APPS);
 
-  // Code lines written (last 7 days) — from code-stats.js
+  // Code lines written (last 7 days) — from code-stats.js. The file is only
+  // refreshed when someone uploads it, so an old number would be presented as
+  // "last 7 days". If the data is more than 14 days old, hide the stat.
   const codeLinesEl = document.getElementById('stat-code-lines');
   if (codeLinesEl) {
-    const n = (window.CODE_STATS && window.CODE_STATS.lines7d) || 0;
-    codeLinesEl.textContent = n >= 1000 ? (n / 1000).toFixed(1) + 'k' : n;
+    const stats = window.CODE_STATS;
+    const updated = stats && parseSiteDate(stats.updatedAt);
+    const fresh = updated && (Date.now() - updated.getTime()) <= 14 * 24 * 60 * 60 * 1000;
+    if (fresh) {
+      const n = stats.lines7d || 0;
+      codeLinesEl.textContent = n >= 1000 ? (n / 1000).toFixed(1) + 'k' : n;
+    } else {
+      const item = codeLinesEl.closest('.stat-item');
+      if (item) item.remove();
+      document.querySelector('.stats-grid')?.classList.add('stats-grid-3');
+    }
   }
 
   // Apps released this month
   const releasedMonthEl = document.getElementById('stat-released-month');
   if (releasedMonthEl) {
     const now = new Date();
-    const ym = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
-    const count = LIVE_APPS.filter(a => (a.releaseDate || '').startsWith(ym)).length;
+    const count = new Set(LIVE_APPS.filter(a => {
+      const d = parseSiteDate(a.releaseDate);
+      return d && d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth();
+    }).map(a => a.id)).size;
     releasedMonthEl.textContent = count;
   }
+}
+
+/* ============================================
+   COOKIE SETTINGS LINK (footer)
+   Withdrawing consent must be as easy as giving it. The floating reopener can
+   be dragged away for the session, so every footer also gets a link that
+   reopens the ConsentKit preferences.
+   ============================================ */
+function initCookieSettingsLink() {
+  // First footer column ("Explore"): the bottom-right corner is covered by
+  // the chatbot button, so the link goes into the list every footer has.
+  const list = document.querySelector('footer .footer-col ul');
+  if (!list || list.querySelector('.footer-cookie-settings')) return;
+  const li = document.createElement('li');
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'footer-cookie-settings';
+  btn.textContent = 'Cookie settings';
+  btn.addEventListener('click', () => {
+    if (window.ConsentKit && typeof window.ConsentKit.openPreferences === 'function') {
+      window.ConsentKit.openPreferences();
+    }
+  });
+  li.appendChild(btn);
+  list.appendChild(li);
 }
 
 /* ============================================
@@ -659,5 +721,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initBgAmbient();
   initDraggableCookieWidget();
+  initCookieSettingsLink();
   requestAnimationFrame(() => observeFadeIns());
 });
