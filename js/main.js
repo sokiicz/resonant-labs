@@ -572,7 +572,13 @@ function initCookieSettingsLink() {
   btn.addEventListener('click', () => {
     if (window.ConsentKit && typeof window.ConsentKit.openPreferences === 'function') {
       window.ConsentKit.openPreferences();
+      return;
     }
+    // The consent widget did not load (blocked script, network). Do not fail
+    // silently: open the privacy page, which explains how to change consent.
+    const cfg = window.__consentKitConfig;
+    const url = (cfg && cfg.banner && cfg.banner.privacyPolicyUrl) || '/privacy.html';
+    window.location.href = url;
   });
   li.appendChild(btn);
   list.appendChild(li);

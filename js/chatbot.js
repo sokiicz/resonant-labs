@@ -117,12 +117,18 @@
     document.getElementById('chatbot-send-final').addEventListener('click', submitIdea);
   }
 
-  /* ---- Shown when sending fails, so the visitor still has a way to reach me ---- */
+  /* ---- Shown when sending fails: the answers are kept, so the visitor can
+     try again, or use e-mail instead ---- */
   function showSendError() {
     const row = document.getElementById('chatbot-input-row');
-    if (row) {
-      row.innerHTML = '<p style="font-size:0.82rem;color:var(--text-4);padding:12px;">Couldn\'t send — please email me at contactme@resonantlabs.online</p>';
-    }
+    if (!row) return;
+    row.innerHTML = `
+      <div class="chatbot-final-step">
+        <p style="font-size:0.82rem;color:var(--text-4);margin:0;">Couldn't send — try again, or email me at contactme@resonantlabs.online</p>
+        <button class="chatbot-send-final" id="chatbot-send-final">Try again</button>
+      </div>
+    `;
+    document.getElementById('chatbot-send-final').addEventListener('click', submitIdea);
   }
 
   /* ---- Submit via Web3Forms ---- */
