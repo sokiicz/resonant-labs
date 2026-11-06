@@ -148,8 +148,14 @@
       idea: answers.idea || '',
       problem: answers.problem || '',
       name: answers.name || 'Not given',
-      email: email || 'Not given',
     };
+    // Web3Forms uses "email" as the reply-to address, so only send it when the
+    // visitor typed something that looks like one ("Not given" was sent before).
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      payload.email = email;
+    } else if (email) {
+      payload.contact = email;
+    }
 
     // Main submission
     fetch('https://api.web3forms.com/submit', {
@@ -157,20 +163,24 @@
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(payload),
     })
-      .then(r => r.json())
+      // A refusal can come back as a non-JSON page (e.g. 403); keep its status.
+      .then(r => r.json().catch(() => ({ success: false, message: 'HTTP ' + r.status })))
       .then(data => {
         const row = document.getElementById('chatbot-input-row');
         if (data.success) {
           if (row) row.innerHTML = '';
           showBotMessage('Sent! I\'ll read it soon. Thanks for sharing 🙌', 200);
         } else {
-          // Web3Forms answered but refused the message (bad key, limit, spam
-          // filter). Before this, the button just reset with no explanation.
+          // Web3Forms answered but refused the message (bad key, blocked
+          // domain, limit, spam filter). Its own explanation goes to the
+          // console, so the cause can be read without guessing.
+          console.warn('[chatbot] Web3Forms refused the message:', data && data.message);
           submitted = false;
           showSendError();
         }
       })
-      .catch(() => {
+      .catch(err => {
+        console.warn('[chatbot] Could not reach Web3Forms:', err && err.message);
         submitted = false;
         showSendError();
       });
