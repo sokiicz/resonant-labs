@@ -169,7 +169,7 @@
         const row = document.getElementById('chatbot-input-row');
         if (data.success) {
           if (row) row.innerHTML = '';
-          showBotMessage('Sent! I\'ll read it soon. Thanks for sharing 🙌', 200);
+          showBotMessage('Sent! Thanks for sharing 🙌', 200);
         } else {
           // Web3Forms answered but refused the message (bad key, blocked
           // domain, limit, spam filter). Its own explanation goes to the
