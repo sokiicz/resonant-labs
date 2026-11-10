@@ -223,7 +223,7 @@ function renderWipSection(containerId) {
             </a>`
       : `<a href="#" class="btn-live" style="opacity:0.38;pointer-events:none;">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2 2"/></svg>
-              Coming Soon
+              Not public yet
             </a>`;
 
     return `
