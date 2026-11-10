@@ -129,7 +129,7 @@ window.SITE_DATA = {
     {
       id: "covid-timelapse",
       name: "COVID-19 Timelapse",
-      shortDesc: "The whole pandemic as one continuous flight around a 3D Earth, week by week: cases and deaths, with measures and vaccination as layers of an interactive globe. Data from WHO, OxCGRT and Our World in Data.",
+      shortDesc: "The pandemic week by week on an interactive 3D globe: reported cases and deaths, vaccination and government measures, from WHO, OxCGRT and Our World in Data.",
       tags: ["Maps", "Data Viz"],
       emoji: "🌍",
       status: "wip",

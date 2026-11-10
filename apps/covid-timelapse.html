@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>COVID-19 Timelapse — Resonant Labs</title>
-  <meta name="description" content="Work in progress: the whole COVID-19 pandemic as one continuous flight around a 3D Earth, week by week: cases and deaths, with measures and vaccination as layers of an interactive globe. Data from WHO, OxCGRT and Our World in Data.">
+  <meta name="description" content="Work in progress: the pandemic week by week on an interactive 3D globe: reported cases and deaths, vaccination and government measures, from WHO, OxCGRT and Our World in Data.">
   <meta property="og:title" content="COVID-19 Timelapse — Resonant Labs">
-  <meta property="og:description" content="Work in progress: the whole COVID-19 pandemic as one continuous flight around a 3D Earth, week by week.">
+  <meta property="og:description" content="Work in progress: the pandemic week by week on an interactive 3D globe.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resonantlabs.online/apps/covid-timelapse.html">
   <meta property="og:image" content="https://resonantlabs.online/Media/Covid-Timelapse.jpg">
@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://resonantlabs.online/Media/Covid-Timelapse.jpg">
   <meta name="twitter:title" content="COVID-19 Timelapse — Resonant Labs">
-  <meta name="twitter:description" content="Work in progress: the whole COVID-19 pandemic as one continuous flight around a 3D Earth, week by week.">
+  <meta name="twitter:description" content="Work in progress: the pandemic week by week on an interactive 3D globe.">
   <link rel="canonical" href="https://resonantlabs.online/apps/covid-timelapse.html">
   <link rel="stylesheet" href="../css/style.css">
   <script>document.documentElement.classList.add('js-ready');</script>
@@ -75,16 +75,16 @@
         <div class="app-hero-info fade-in">
           <span class="badge badge-cyan" style="margin-bottom:20px;">3D · Data · In progress</span>
           <h1>COVID-19 Timelapse</h1>
-          <p class="app-hero-tagline">The whole pandemic as one continuous flight around the Earth, week by week: from the first reported cases in Wuhan to the years when reporting faded.</p>
+          <p class="app-hero-tagline">The pandemic week by week on an interactive 3D globe, from the first reported cases in Wuhan to the years when reporting faded.</p>
           <div class="app-hero-meta">
             <span class="app-hero-meta-item">🗓️ Started Nov 2026</span>
             <span class="app-hero-meta-item">🚧 Not public yet</span>
             <span class="app-hero-meta-item">🤖 Built with Claude Code</span>
-            <span class="app-hero-meta-item">🌍 3D globe · Blender · three.js</span>
+            <span class="app-hero-meta-item">🌍 Interactive 3D globe · three.js</span>
           </div>
         </div>
         <div class="app-preview-container fade-in fade-in-delay-2">
-          <img src="../Media/Covid-Timelapse.jpg" alt="3D globe at night and day, with Europe and Iran glowing red from reported COVID-19 cases in March 2020" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+          <img src="../Media/Covid-Timelapse.jpg" alt="3D globe with Europe glowing red from reported COVID-19 cases in November 2020" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
         </div>
       </div>
     </div>
@@ -103,18 +103,24 @@
       <div class="tab-pane active" id="cvd-overview">
         <div class="content-prose fade-in">
           <h3>What is it?</h3>
-          <p>A 3D globe that plays the COVID-19 pandemic from December 2019 onward, as one continuous flight around the Earth. You see where the disease spread and where people died. In the interactive globe you can also switch on how strict the measures were and how vaccination grew. In the end, reporting fades.</p>
-          <p>COVID-19 didn't disappear. The ending flies over the countries that still reported the most cases in the last weeks of the data.</p>
+          <p>An interactive 3D globe that plays the COVID-19 pandemic from December 2019 to October 2026, week by week. Press play for a guided tour, or drag the globe while time keeps running, click a country or region for its figures, and compare a group of countries without the extremes of the rest of the world.</p>
           <h3>How to read the globe</h3>
           <ul>
             <li><strong>Cases:</strong> countries glow red. The brighter, the more reported cases per million that week.</li>
             <li><strong>Deaths:</strong> white columns. The height follows the reported deaths that week.</li>
-            <li><strong>Measures:</strong> borders glow icy blue. The brighter, the stricter. This data ends in 2022 (interactive globe).</li>
-            <li><strong>Vaccination:</strong> countries fill teal by the share of people with at least one dose (interactive globe).</li>
+            <li><strong>Vaccination:</strong> countries fill teal by the share of people with at least one dose.</li>
+            <li><strong>Measures:</strong> borders glow blue. The brighter, the stricter. This data ends in 2022.</li>
             <li><strong>Fading:</strong> a country that stops reporting turns ash grey.</li>
+            <li><strong>Layers:</strong> switch any of these on or off in the legend.</li>
           </ul>
-          <h3>Two forms</h3>
-          <p>A video, and an interactive globe in the browser: fly anywhere while time keeps running, click a country or region for its statistics, and compare a group of countries without the extremes of the rest of the world.</p>
+          <h3>What you can do</h3>
+          <ul>
+            <li>Fly anywhere while time keeps running.</li>
+            <li>Open a country or region for weekly figures, measures in force, vaccination and key dates.</li>
+            <li>Compare continents, regions or your own group of countries, ranked per million people.</li>
+            <li>Read short notes on why some countries fared better or worse, with sources.</li>
+          </ul>
+          <p>COVID-19 didn't disappear. The tour ends over the countries that still reported the most cases in the last weeks of the data, while fewer and fewer countries report at all.</p>
           <h3>Status</h3>
           <p>In progress and not public yet. The data, the texts and the country notes are being checked first.</p>
         </div>
@@ -122,8 +128,6 @@
 
       <div class="tab-pane" id="cvd-built">
         <div class="content-prose fade-in">
-          <h3>The idea</h3>
-          <p>Not chapters, not a dashboard: one nonstop timelapse of the whole Earth, with the camera following where things were happening, from China to Europe, across the Atlantic and back.</p>
           <h3>Honest limits</h3>
           <p>Reported cases depend on how much a country tested. Reported deaths compare better, but they miss many deaths too: WHO estimates 14.9 million excess deaths in 2020 and 2021 (range 13.3 to 16.6 million). From 2023 on, fewer and fewer countries report at all. The globe shows that as greying, not as the end of the disease.</p>
           <p>The visuals are meant to be clear and memorable, but they don't bend the numbers: the column height is proportional to the reported deaths.</p>
@@ -134,7 +138,6 @@
       <div class="tab-pane" id="cvd-tech">
         <div class="content-prose fade-in">
           <div class="tech-stack-grid">
-            <div class="tech-item"><span class="tech-icon">🎬</span>Blender (Cycles)</div>
             <div class="tech-item"><span class="tech-icon">🌐</span>three.js</div>
             <div class="tech-item"><span class="tech-icon">🐍</span>Python</div>
             <div class="tech-item"><span class="tech-icon">📊</span>WHO weekly data</div>
@@ -146,7 +149,7 @@
             <div class="tech-item"><span class="tech-icon">✨</span>NASA/Goddard SVS star map, Gaia DR2: ESA/Gaia/DPAC</div>
             <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
           </div>
-          <p style="margin-top:var(--space-4);">Gaps in the WHO data for a few countries in 2020 are filled from Johns Hopkins University.</p>
+          <p style="margin-top:var(--space-4);">Gaps in the WHO data in 2020 and early 2021 for a few countries are filled from Johns Hopkins University.</p>
           <h3>Image credits</h3>
           <p>Earth imagery: NASA Earth Observatory (Blue Marble, Black Marble). Stars: NASA/Goddard Space Flight Center Scientific Visualization Studio. Gaia DR2: ESA/Gaia/DPAC. Data: World Health Organization, WHO COVID-19 dashboard.</p>
         </div>
