@@ -54,5 +54,40 @@
     "updates": [
       { "date": "2024-11-24", "label": "Live", "note": "Released: one page that checks every 15 minutes whether Bitcoin is at $100K yet.", "web": true }
     ]
+  },
+  {
+    "id": "random-thoughts-podcast",
+    "name": "Random Thoughts Podcast",
+    "shortDesc": "Every Friday, one random thought, followed all the way down: strange true stories from history. Research and scripts by AI, reviewed by a human; all voices are AI-generated.",
+    "tags": ["Podcast"],
+    "emoji": "🎙️",
+    "status": "live",
+    "gradientFrom": "#8b5cf6",
+    "gradientTo": "#f472b6",
+    "githubUrl": null,
+    "liveUrl": "https://open.spotify.com/show/6aOeI5lnobTznt3vS0YAOK",
+    "liveLabel": "Listen on Spotify",
+    "detailUrl": "apps/random-thoughts-podcast.html",
+    "releaseDate": "2025-01-17",
+    "updates": [
+      { "date": "2026-10-10", "label": "Season 2", "note": "Season 2 started: new episodes on Fridays, made with a new AI workflow.", "web": true }
+    ]
+  },
+  {
+    "id": "covid-timelapse",
+    "name": "COVID-19 Timelapse",
+    "shortDesc": "The whole pandemic as one continuous flight around a 3D Earth, week by week: cases, deaths, measures and vaccination from WHO, OxCGRT and Our World in Data.",
+    "tags": ["Maps", "Data Viz"],
+    "emoji": "🌍",
+    "status": "wip",
+    "gradientFrom": "#1e3a8a",
+    "gradientTo": "#dc2626",
+    "githubUrl": null,
+    "liveUrl": null,
+    "detailUrl": "apps/covid-timelapse.html",
+    "releaseDate": null,
+    "updates": [
+      { "date": "2026-11-05", "label": "Started", "note": "Work started on a 3D globe that plays the whole pandemic week by week.", "web": true }
+    ]
   }
 ]
