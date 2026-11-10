@@ -9,8 +9,10 @@
   <meta property="og:description" content="Work in progress: the whole COVID-19 pandemic as one continuous flight around a 3D Earth, week by week.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://resonantlabs.online/apps/covid-timelapse.html">
+  <meta property="og:image" content="https://resonantlabs.online/Media/Covid-Timelapse.jpg">
   <meta property="og:site_name" content="Resonant Labs">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://resonantlabs.online/Media/Covid-Timelapse.jpg">
   <meta name="twitter:title" content="COVID-19 Timelapse — Resonant Labs">
   <meta name="twitter:description" content="Work in progress: the whole COVID-19 pandemic as one continuous flight around a 3D Earth, week by week.">
   <link rel="canonical" href="https://resonantlabs.online/apps/covid-timelapse.html">
@@ -82,9 +84,7 @@
           </div>
         </div>
         <div class="app-preview-container fade-in fade-in-delay-2">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1e3a8a,#dc2626);display:flex;align-items:center;justify-content:center;">
-            <span style="font-size:7rem;filter:drop-shadow(0 4px 20px rgba(0,0,0,0.4));">🌍</span>
-          </div>
+          <img src="../Media/Covid-Timelapse.jpg" alt="3D globe at night and day, with Europe and Iran glowing red from reported COVID-19 cases in March 2020" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
         </div>
       </div>
     </div>
@@ -103,14 +103,14 @@
       <div class="tab-pane active" id="cvd-overview">
         <div class="content-prose fade-in">
           <h3>What is it?</h3>
-          <p>A 3D globe that plays the COVID-19 pandemic from December 2019 onward, as one continuous flight around the Earth. You see where the disease spread, where people died, how strict the measures were and how vaccination grew, and finally how both the disease and its tracking faded.</p>
-          <p>COVID-19 didn't disappear. It became part of normal life, and the ending shows that honestly.</p>
+          <p>A 3D globe that plays the COVID-19 pandemic from December 2019 onward, as one continuous flight around the Earth. You see where the disease spread and where people died. In the interactive globe you can also switch on how strict the measures were and how vaccination grew. In the end, reporting fades.</p>
+          <p>COVID-19 didn't disappear. The ending flies over the countries that still reported the most cases in the last weeks of the data.</p>
           <h3>How to read the globe</h3>
           <ul>
             <li><strong>Cases:</strong> countries glow red. The brighter, the more reported cases per million that week.</li>
             <li><strong>Deaths:</strong> white columns. The height follows the reported deaths that week.</li>
-            <li><strong>Measures:</strong> borders glow icy blue. The brighter, the stricter. This data ends in 2022.</li>
-            <li><strong>Vaccination:</strong> how many people have had at least one dose.</li>
+            <li><strong>Measures:</strong> borders glow icy blue. The brighter, the stricter. This data ends in 2022 (interactive globe).</li>
+            <li><strong>Vaccination:</strong> countries fill teal by the share of people with at least one dose (interactive globe).</li>
             <li><strong>Fading:</strong> a country that stops reporting turns ash grey.</li>
           </ul>
           <h3>Two forms</h3>
@@ -125,7 +125,7 @@
           <h3>The idea</h3>
           <p>Not chapters, not a dashboard: one nonstop timelapse of the whole Earth, with the camera following where things were happening, from China to Europe, across the Atlantic and back.</p>
           <h3>Honest limits</h3>
-          <p>Reported cases depend on how much a country tested, so the deaths show the impact more reliably. From 2023 on, fewer and fewer countries report at all. The globe shows that as greying, not as the end of the disease.</p>
+          <p>Reported cases depend on how much a country tested. Reported deaths compare better, but they miss many deaths too: WHO estimates 14.9 million excess deaths in 2020 and 2021. From 2023 on, fewer and fewer countries report at all. The globe shows that as greying, not as the end of the disease.</p>
           <p>The visuals are meant to be striking, but they don't bend the numbers: the column height is proportional to the reported deaths.</p>
         </div>
       </div>
@@ -140,9 +140,14 @@
             <div class="tech-item"><span class="tech-icon">🏛️</span>Oxford COVID-19 Government Response Tracker</div>
             <div class="tech-item"><span class="tech-icon">💉</span>Our World in Data</div>
             <div class="tech-item"><span class="tech-icon">🛰️</span>NASA Blue Marble &amp; Black Marble</div>
+            <div class="tech-item"><span class="tech-icon">🗺️</span>Natural Earth (borders)</div>
+            <div class="tech-item"><span class="tech-icon">📍</span>ECDC and COVID-19 Data Hub (regional data)</div>
+            <div class="tech-item"><span class="tech-icon">✨</span>NASA/Goddard SVS star map, Gaia DR2: ESA/Gaia/DPAC</div>
             <div class="tech-item"><span class="tech-icon">🤖</span>Claude Code</div>
           </div>
           <p style="margin-top:var(--space-4);">Gaps in the WHO data for a few countries in 2020 are filled from Johns Hopkins University.</p>
+          <h3>Image credits</h3>
+          <p>Earth imagery: NASA Earth Observatory (Blue Marble, Black Marble). Stars: NASA/Goddard Space Flight Center Scientific Visualization Studio. Gaia DR2: ESA/Gaia/DPAC. Data: World Health Organization, WHO COVID-19 dashboard.</p>
         </div>
       </div>
       </div><!-- end main -->

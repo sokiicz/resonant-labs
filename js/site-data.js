@@ -138,6 +138,7 @@ window.SITE_DATA = {
       githubUrl: null,
       liveUrl: null,
       detailUrl: "apps/covid-timelapse.html",
+      image: "Media/Covid-Timelapse.jpg",
       releaseDate: null,
       updates: [
         { date: "2026-11-05", label: "Started", note: "Work started on a 3D globe that plays the whole pandemic week by week." },
