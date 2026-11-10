@@ -111,7 +111,7 @@ window.SITE_DATA = {
     {
       id: "random-thoughts-podcast",
       name: "Random Thoughts Podcast",
-      shortDesc: "Every Friday, one random thought, followed all the way down: strange true stories from history. Research and scripts by AI, reviewed by a human; all voices are AI-generated.",
+      shortDesc: "Every Friday, one random thought, followed all the way down: strange true stories from history, science and the human mind. Research and scripts by AI, reviewed by a human; all voices are AI-generated.",
       tags: ["Podcast"],
       emoji: "🎙️",
       status: "live",
@@ -123,13 +123,13 @@ window.SITE_DATA = {
       detailUrl: "apps/random-thoughts-podcast.html",
       releaseDate: "2025-01-17",
       updates: [
-        { date: "2026-10-10", label: "Season 2", note: "Season 2 started: new episodes on Fridays, made with a new AI workflow." },
+        { date: "2026-10-10", label: "Season 2", note: "Season 2 started: new episodes on Fridays, made with a new workflow." },
       ],
     },
     {
       id: "covid-timelapse",
       name: "COVID-19 Timelapse",
-      shortDesc: "The whole pandemic as one continuous flight around a 3D Earth, week by week: cases, deaths, measures and vaccination from WHO, OxCGRT and Our World in Data.",
+      shortDesc: "The whole pandemic as one continuous flight around a 3D Earth, week by week: cases and deaths, with measures and vaccination as layers of an interactive globe. Data from WHO, OxCGRT and Our World in Data.",
       tags: ["Maps", "Data Viz"],
       emoji: "🌍",
       status: "wip",

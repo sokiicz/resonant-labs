@@ -213,9 +213,9 @@ function renderWipSection(containerId) {
     const githubHref  = app.githubUrl || '#';
 
     // An app in progress can already be open to early users (e.g. Ylaway, by
-    // invitation). Then the card links to it instead of saying "Coming soon".
+    // invitation). Then the card links to it instead of saying "Not public yet".
     const earlyAccess = !!app.liveUrl;
-    const statusLabel = earlyAccess ? (app.liveLabel || 'Early access') : 'Coming soon';
+    const statusLabel = earlyAccess ? (app.liveLabel || 'Early access') : 'Not public yet';
     const liveButton = earlyAccess
       ? `<a href="${app.liveUrl}" class="btn-live" target="_blank" rel="noopener">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
