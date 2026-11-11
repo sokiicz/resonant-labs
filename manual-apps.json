@@ -76,19 +76,20 @@
   {
     "id": "covid-timelapse",
     "name": "COVID-19 Timelapse",
-    "shortDesc": "The pandemic week by week on an interactive 3D globe: reported cases and deaths, vaccination and government measures, from WHO, OxCGRT and Our World in Data.",
+    "shortDesc": "The pandemic week by week on an interactive 3D globe: reported cases and deaths, vaccination and measures.",
     "tags": ["Maps", "Data Viz"],
     "emoji": "🌍",
-    "status": "wip",
+    "status": "live",
     "gradientFrom": "#1e3a8a",
     "gradientTo": "#dc2626",
-    "githubUrl": null,
-    "liveUrl": null,
+    "githubUrl": "https://github.com/sokiicz/covid-timelapse",
+    "liveUrl": "https://sokiicz.github.io/covid-timelapse/",
+    "liveLabel": "Open the globe",
     "detailUrl": "apps/covid-timelapse.html",
     "image": "Media/Covid-Timelapse.jpg",
-    "releaseDate": null,
+    "releaseDate": "2026-11-10",
     "updates": [
-      { "date": "2026-11-05", "label": "Started", "note": "Work started on a 3D globe that plays the whole pandemic week by week.", "web": true }
+      { "date": "2026-11-10", "label": "Live", "note": "The interactive globe is live: the pandemic week by week, with key events, vaccination and measures, and totals and key facts at the end.", "web": true }
     ]
   }
 ]
